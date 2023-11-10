@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/keyboard.css">
+    <link rel="stylesheet" type="text/css" href="../css/numeric_keyboard.css">
+</head>
+<body>
+    <main>
+        <div class="ladoesquerdo">
+            <div class="contentColumn">
+                <p class="algizText">ALGIZ </p>
+                <p class="subAlgizText">ALGIZ</p>                
+            </div>            
+        </div>
+        <div class="ladodireito">
+            <p class="helloText">Seja Bem Vindo!</p>
+            <div class="input-container">
+                <span class="icon"><img src="icons/mdi_account.svg" alt=""></span>
+                <input id="input_login" class="inputField use-keyboard-input"  placeholder="Login">
+            </div>
+            <div class="input-container" style="top: 41%;">
+                <span class="icon"><img src="icons/mdi_lock.svg" alt=""></span>
+                <input id="input_senha" class="inputField use-numerico-input" style="font-size: 24;" type="password"  placeholder="Senha">
+            </div>
+            <a href="" class="forgotPasswordLink">Esqueci minha senha</a>
+            <button class="loginButton">ENTRAR</button>
+            <a href="cadastro.html">
+                <button class="firstAccessLink" id="btn_primeiro_acesso">Primeiro acesso</button>
+            </a>
+        </div>
+    </main>
+
+    <script src="../javascript/keyboard.js"></script>
+    <script src="../javascript/numerico.js"></script>
+        
+</body>
+</html>

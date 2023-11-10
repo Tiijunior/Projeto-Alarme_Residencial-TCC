@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/primeiro_passos/cadastro_equipamento.css">
+    <link rel="stylesheet" href="../../css/keyboard.css">
+    <link rel="stylesheet" href="../../css/numeric_keyboard.css">
+</head>
+<body class="container">
+    <!--Cabeçalho-->
+    <header>
+        <div class="barra">
+            <div class="logo"><img src="../../icons/Logo 3 - Algiz - Branco.svg" alt=""></div>
+            <div class="logo_wifi"><img src="../../icons/mdi_wifi-strength-off-outline.svg" alt=""></div>
+        </div>
+    </header>
+
+    <!--Corpo Principal-->
+    <main>
+        <div>
+            <div class="saudacao"><p>Olá, <label id="messagemId"></label>!</p></div>
+            <div id="relogio" class="relogio"></div>
+            <div class="texto"><p>Bem-vindo ao Algiz System, seu novo sistema de monitoramento residencial! Vamos começar com o cadastro do seu endereço.</p></div>
+        </div>
+        <div>
+            <input id="nome_equipamento" class="use-keyboard-input" type="text" placeholder="Nome do Equipamento">
+            <input id="endereco" class="use-keyboard-input" type="text" placeholder="Endereço">
+            <input id="numero" type="text" class="use-numerico-input" placeholder="Número">
+            <input id="cep" type="text" class="use-numerico-input" placeholder="CEP">
+            <input id="cidade" type="text" class="use-keyboard-input" placeholder="Cidade">
+            <select id="estados" name="estados">
+                <option disabled selected>Selecione seu estado</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>           
+        </div>
+        <div>
+            <button id="btn_proximo" type="button" onclick="proximo()">Próximo passo</button>
+        </div>
+    </main>
+
+    <script src="../../javascript/cadastro_equipamento.js"></script>
+    <script src="../../javascript/relogio.js"></script>
+    <script src="../../javascript/keyboard.js"></script>
+    <script src="../../javascript/numerico.js"></script>
+    <script src="../../modal/javascript/chamar_modal.js"></script>
+</body>
+</html>

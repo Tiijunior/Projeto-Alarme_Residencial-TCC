@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="../../css/primeiro_passos/cadastro_user.css">
+    <link rel="stylesheet" type="text/css" href="../../css/keyboard.css">
+    <link rel="stylesheet" type="text/css" href="../../css/numeric_keyboard.css">
+</head>
+<body class="container">
+    <!--Cabeçalho-->
+    <header>
+        <div class="barra">
+            <div class="logo"><img src="../../icons/Logo 3 - Algiz - Branco.svg" alt=""></div>
+            <div class="logo_wifi"><img src="../../icons/mdi_wifi-strength-off-outline.svg" alt=""></div>
+        </div>
+    </header>
+
+    <!--Corpo Principal-->
+    <main>
+        <div>
+            <div class="saudacao"><p>Olá, <label id="messagemId"></label>!</p></div>
+            <div id="relogio" class="relogio"></div>
+            <div class="texto"><p>Muito bom, você já cadastrou os cômodos da sua residência, é hora de adicionar novos perfis ao sistema, esse passo não é obrigatório, caso não tenha outros usuários que precisem ter acesso ao sistema, basta clicar no botão “Pular passo”.</p></div>
+        </div>
+        <form id="formulario" action="formulario">
+            <div id="bloco_perfil">
+                <input id="nome" class="nome use-keyboard-input" type="text" placeholder="Nome">
+                <input id="email" class="email use-keyboard-input" type="email" placeholder="E-mail">
+                <input id="senha" class="senha use-numerico-input" type="password" placeholder="Senha">
+                <span id="exibir_senha" style="margin-top: -50px; margin-left: 400px;" class="icon" onclick="exibir('senha')"><img style="width: 35px; height: 35px;" src="../../icons/ant-design_eye-invisible-filled.svg"></span>
+                <input id="conf_senha" class="conf_senha use-numerico-input" type="password" placeholder="Confirmação de senha">
+                <span id="exibir_conf_senha" style="margin-left: 850px" class="icon" onclick="exibir('conf_senha')"><img style="width: 35px; height: 35px;" src="../../icons/ant-design_eye-invisible-filled.svg"></span>
+                <span id="error" class="icon" style="display: none; margin-left: 805px;"><img style="width: 35px; height: 35px;" src="../../icons/error.svg" alt=""></span>
+                <span id="check" class="icon" style="display: none; margin-left: 805px;"><img style="width: 35px; height: 35px;" src="../../icons/check.svg" alt=""></span>
+                <select name="" id="funcao" class="funcao">
+                    <option selected disabled value="">Função</option>
+                    <option>Administrador</option>
+                    <option value="usuario">Usuário Comum</option>
+                </select>
+            </div>
+        </form>
+
+        <!--Botões-->
+        <div>
+            <button id="btn_anterior" class="botao" type="button" onclick="passoAnterior()">Passo anterior</button>
+            <button id="btn_novoperfil" class="botao" type="button" onclick="adicionar_novoperfil()">Novo perfil</button>
+            <button id="btn_pularpasso" class="botao" type="button" onclick="pularpasso()">Pular passo</button>
+            <button id="btn_entrar" class="botao" type="button" onclick="concluir()">Concluir</button>
+        </div>
+    </main>
+    <script src="../../javascript/relogio.js"></script>
+    <script src="../../javascript/cadastro_user.js"></script>
+    <script src="../../javascript/verificarsenha.js"></script>
+    <script src="../../javascript/keyboard.js"></script>
+    <script src="../../javascript/numerico.js"></script>
+    <script src="../../modal/javascript/chamar_modal.js"></script>
+</body>
+</html>

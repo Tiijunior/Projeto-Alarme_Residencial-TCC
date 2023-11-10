@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/primeiro_passos/cadastro_zona.css">
+    <link rel="stylesheet" href="../../modal/css/modal_tipocomodo.css">
+    <link rel="stylesheet" type="text/css" href="../../css/keyboard.css">
+</head>
+<body class="container">
+    <!--Cabeçalho-->
+    <header>
+        <div class="barra">
+            <div class="logo"><img src="../../icons/Logo 3 - Algiz - Branco.svg" alt=""></div>
+            <div class="logo_wifi"><img src="../../icons/mdi_wifi-strength-off-outline.svg" alt=""></div>
+        </div>
+    </header>
+
+    <!--Corpo Principal-->
+    <main>
+        <div>
+            <div class="saudacao"><p>Olá, <label id="messagemId"></label>!</p></div>
+            <div id="relogio" class="relogio"></div>
+            <div id="texto_comodo" class="texto"><p>Agora que você já cadastrou seu endereço, vamos configurar as principais funções de segurança. Começando pelos cômodos onde os sensores foram instalados.</p></div>
+        </div>
+        <div class="bloco_comodo">
+            <input id="nome_zona" class="use-keyboard-input" type="text" placeholder="Nome do Local">
+            <div><span></span>
+                <button id="tipo_comodo" class="tipo_zona" value="" onclick="mostrar_tipocomodo()">Tipo
+                </button>
+                <div id="modal_tipocomodo">
+                    <button id="quarto" class="modal_tipocomodo_button" value="quarto" onclick="mostrar_tipocomodo(), selecionar_comodo('quarto') "><img src="../../icons/Quarto.svg" style="width: 50px; height: 35px; margin-right: 20px;" alt="">Quarto</button>
+                    <button id="cozinha" class="modal_tipocomodo_button" value="cozinha" onclick="mostrar_tipocomodo(), selecionar_comodo('cozinha')"><img src="../../icons/Cozinha.svg" style="width: 50px; height: 35px; margin-right: 20px" alt="">Cozinha</button>
+                    <button id="sala" class="modal_tipocomodo_button" value="sala" onclick="mostrar_tipocomodo(), selecionar_comodo('sala')"><img src="../../icons/Sala.svg" style="width: 50px; height: 35px; margin-right: 20px" alt="">Sala</button>
+                    <button id="banheiro" class="modal_tipocomodo_button" value="banheiro" onclick="mostrar_tipocomodo(), selecionar_comodo('banheiro')"><img src="../../icons/Banheiro.svg" style="width: 50px; height: 35px; margin-right: 20px" alt="">Banheiro</button>
+                    <button id="externo" class="modal_tipocomodo_button" value="externo" onclick="mostrar_tipocomodo(), selecionar_comodo('externo')"><img src="../../icons/Externo.svg" style="width: 50px; height: 35px; margin-right: 20px" alt="">Externo</button>
+                </div>
+            </div>
+
+            </select>
+            <select name="zona" id="zona">
+                <option disabled selected value="">Zona</option>
+                <option value="Zona 1">Zona 1</option>
+                <option value="Zona 2">Zona 2</option>
+                <option value="Zona 3">Zona 3</option>
+                <option value="Zona 4">Zona 4</option>
+                <option value="Zona 5">Zona 5</option>                
+            </select>           
+        </div>
+
+        <!--Parte Oculta-->
+        <div id="novo_sensor" class="ocultar">
+            <p id="texto_sensor" class="texto texto_sensor">Adicione os sensores ao sistema, não esqueça de conferir as portas que o sensor foi adicionado.</p>
+            <div id="formulario">
+                <div id="sensor">
+                    <input id="nome_sensor" class="nome_sensor use-keyboard-input" type="text" onfocus="verificar_teclado()" placeholder="Nome do sensor">
+                    <select id="tipo_sensor" class="seletcion_sensor" name="">
+                        <option selected disabled>Tipo</option>
+                        <option value="magnetico">Sensor Magnético (abertura de Janela)</option>
+                        <option value="switch">Sensor Switch (abertura de Porta)</option>
+                        <option value="vibracao">Sensor de Vibração (Janela)</option>
+                        <option value="infra_passivo">Sensor Infravermelho Passivo (Movimento Interno)</option>
+                        <option value="infra_ativo">Sensor Infravermelho Ativo (Movimento Externo)</option>
+                    </select>
+                    <select id="porta_sensor" class="seletcion_sensor" name="">
+                        <option selected disabled>Porta</option>
+                        <option value="Porta 1">Porta 1</option>
+                        <option value="Porta 2">Porta 2</option>
+                        <option value="Porta 3">Porta 3</option>
+                        <option value="Porta 4">Porta 4</option>
+                        <option value="Porta 5">Porta 5</option>
+                        <option value="Porta 6">Porta 6</option>
+                        <option value="Porta 7">Porta 7</option>
+                        <option value="Porta 8">Porta 8</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!--Botões-->
+        <div>
+            <button id="btn_anterior" type="button" onclick="passoAnterior()">Passo anterior</button>
+            <button id="btn_novosensor" type="button" onclick="novo_sensor()">Pular passo</button>
+            <button id="btn_proximo" type="button" onclick="adicionar_sensor()">Próximo passo</button>
+        </div>
+    </main>
+    <script src="../../javascript/relogio.js"></script>
+    <script src="../../modal/javascript/modal_comodo.js"></script>
+    <script src="../../javascript/cadastro_zona.js"></script>
+    <script src="../../javascript/keyboard.js"></script>
+    <script src="../../modal/javascript/chamar_modal.js"></script>
+    <script src="../../modal/javascript/recebermsg.js"></script>
+</body>
+</html>

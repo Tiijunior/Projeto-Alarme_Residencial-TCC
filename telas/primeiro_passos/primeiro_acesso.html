@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/primeiro_passos/primeiro_acesso.css">
+</head>
+<body class="container" onload="mensagem_texto('Tiago')">
+    <!--Cabeçalho-->
+    <header>
+        <div class="barra">
+            <div class="logo"><img src="../../icons/Logo 3 - Algiz - Branco.svg" alt=""></div>
+            <div class="logo_wifi"><img src="../../icons/mdi_wifi-strength-off-outline.svg" style="width: 45px; height: 45px;" alt=""></div>
+        </div>
+    </header>
+
+    <!--Corpo Principal-->
+    <main>
+        <div>
+            <!--Bloco do Lado Esquerdo-->
+           <div class="lado_esquerdo">
+            <div class="saudacao">Olá, <label id="mensagemId"></label>!</div>
+            <p class="texto_esquerdo">Para começar a utilizar os nossos sensores, você precisar inseri-los ao seu perfil, clique no botão abaixo para começar.</p>
+            <button type="button" class="botao" id="btn_primeiro" onclick="proximo()">Primeiro acesso</button>
+           </div>
+
+           <!--Bloco do Lado Direito-->
+           <div class="lado_direito">
+            <!--Relógio-->
+            <div id="relogio" class="relogio"></div>
+            <p class="texto_direito">
+                Você também pode ter acesso ao sistema através do aplicativo, logo abaixo, você encontrará o QR Code para download em sua PlayStore, e no botão ao lado encontrará seu acesso, por QR Code ou Token.
+            </p>
+            <div class="qrcode"></div>
+           </div>
+        </div>      
+    </main>
+    <script>function proximo() {
+        setTimeout(function() {
+            window.location.replace('./cadastro_equipamento.html');
+        }, 1000);
+    }
+    </script>
+    <script src="../../javascript/relogio.js"></script>
+    <script src="../../modal/javascript/recebermsg.js"></script>
+</body>
+</html>

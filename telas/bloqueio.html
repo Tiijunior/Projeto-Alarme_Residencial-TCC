@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bloqueio.css">
+    <link rel="stylesheet" href="../css/numeric_keyboard.css">   
+</head>
+<body id="home" class="container" onload="buscarUsuario()">
+    <!--Cabeçalho-->
+    <header>
+        <!--Barra do cabeçalho-->
+        <div class="barra">
+            <div class="logo"><img src="../icons/Logo 3 - Algiz - Branco.svg" alt=""></div>
+        </div>
+    </header>
+    <!--Corpo Principal-->
+    <main>
+        <div id="fade">
+            <div id="relogio"></div>
+            <div id="cadeado" onclick="desbloquear()"></div>
+        </div>
+
+    <!--Lista de Usuários-->
+        <div id="lista_user">
+        <div id="admin" class="imag_user"  onclick="chamar_senha(this.id)"><p class="nome_principal">Usuário Principal</p></div>
+        <div id="user1" class="imag_user" style="margin-top: 120px; margin-bottom: 30px;" onclick="chamar_senha(this.id)"><p class="nome_principal">Usuário 01</p></div>
+        <div class="imag_user" style="margin-top: 230px; margin-bottom: 30px;"><p class="nome_principal">Usuário 02</p></div>
+        <div class="imag_user" style="margin-top: 340px; margin-bottom: 30px;"><p class="nome_principal">Usuário 03</p></div>
+        <div class="imag_user" style="margin-top: 450px; margin-bottom: 30px;"><p class="nome_principal">Usuário 04</p></div>
+        <div class="imag_user" style="margin-top: 560px; margin-bottom: 30px;"><p class="nome_principal">Usuário 05</p></div>
+        <div class="imag_user" style="margin-top: 670px; margin-bottom: 30px;"><p class="nome_principal">Usuário 06</p></div>
+        <div class="imag_user" style="margin-top: 780px; margin-bottom: 30px;"><p class="nome_principal">Usuário 07</p></div>
+        </div>
+
+    <!--Bloco de Senha-->
+        <div id="bloco_senha">
+            <input id="input_senha" class="use-numerico-input" type="password" placeholder="Senha"><span id="icon_senha" onclick="exibir('input_senha')"></span>
+            <button id="botao_senha">ENTRAR</button>
+        </div>
+    </main>
+    
+    <script src="../javascript/relogio.js"></script>
+    <script src="../javascript/telabloqueio.js"></script>
+    <script src="../javascript/verificarsenha.js"></script>
+    <script src="../javascript/usuario.js"></script>
+    <script src="../javascript/numerico.js"></script>
+    <script src="../modal/javascript/chamar_modal.js"></script>
+
+</body>
+</html>

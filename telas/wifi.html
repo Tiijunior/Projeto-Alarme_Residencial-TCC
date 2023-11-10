@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/wifi.css">
+    <link rel="stylesheet" href="../css/numeric_keyboard.css">   
+</head>
+<body id="home" class="container" onload="buscarUsuario()">
+    <!--Cabeçalho-->
+    <header>
+        <!--Barra do cabeçalho-->
+        <div class="barra">
+            <div class="logo"><img src="../icons/Logo 3 - Algiz - Branco.svg" alt=""></div>
+            <div class="logo_wifi"><img src="../icons/mdi_wifi-strength-off-outline.svg" alt=""></div>
+            <div id="relogio"></div>
+            <div class="botao_bloqueio"  onclick="bloquear()"><img src="../icons/bxs_exit.svg" alt=""></div>
+        </div>
+    </header>
+    <!--Corpo Principal-->
+    <main>
+        <!--Barra do corpo principal-->
+        <div id="barra_main">
+            <button id="btn_comodos" onclick="chamar_comodos()"><img src="../icons/mdi_shield-home.svg" alt=""></button>
+            <button id="btn_home" onclick="chamar_home()"><img src="../icons/mdi_home.svg" alt=""></button>
+            <button id="btn_perfil" onclick="chamar_perfis()"><img src="../icons/mdi_shield-account.svg" alt=""></button>
+        </div>
+        <!--Barra Esquerda-->
+        <div id="menu_esquerdo">
+            <p style="position: fixed; margin-top: 5px; margin-left: 25px; font-size: 32px;
+            text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);">Locais</p>
+            <button id="adicionar_comodos"></button>
+            <p style="width: 286px; height: 40px; margin-top: 79px; margin-left: 25px; font-size: 16px;
+            font-weight: 500;">Para visualizar mais detalhes do local, basta clicar nele.</p>                
+        </div>
+    
+        <!--Meio-->
+        <div id="meio">
+            <p id="t_wifi" style="position: fixed; top: 110px; left: 50px; font-size: 36px; text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);">Wifi</p>
+            <div id="switch_ligarwifi" onclick="ativar_wifi()"></div>
+            <div id="lista_wifi">
+
+                <p style="position: relative; font-size: 32px; margin-top: 0; left: 50px; text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);">Rede atual</p>
+                <div id="fundo_wifi">
+                    <div id="icon_wifi"></div>
+                    <p id="nome_wifi" style="position: absolute; width: 228px; height: 37px; margin-top: 20px; margin-left: 90px; color: #c5c4c4; font-size: 30px; font-weight: 600;">
+                        LOREM IPSUM</p>
+                    <p id="status_wifi" style="position: absolute; margin-top: 20px; left: 950px; color: #707070; font-size: 24px;">
+                        Desconecatado</p>
+                    <p id="texto_velocidade" style="position: absolute; margin-top: 71px; left: 84px;  color: #FFF; font-size: 24px;">Velocidade</p>
+                    <p id="texto_seguranca" style="position: absolute; margin-top: 71px; left: 352px; color: #FFF; font-size: 24px;">Segurança</p>
+                    <p id="velocidade" style="position: absolute; width: 128px; height: 29px; margin-top: 115px; left: 85px; color: #c5c4c4; font-size: 24px; font-weight: 500;">390 Mbps</p>
+                    <p id="seguranca" style="position: absolute; width: 263px; height: 29px; margin-top: 115px; left: 352px; color: #c5c4c4; font-size: 24px; font-weight: 500;">WPA/WPA2-Personal</p>
+                    <p id="texto_reconexao" style="position: absolute; margin-top: 115px; left: 750px; color: #FFF; font-size: 24px; font-weight: 500;">Reconexão Automática</p>
+                    <div id="reconexao"></div>
+                </div>
+                <p style="position: relative; margin-top: 10px; left: 50px; font-size: 32px; text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);">Redes dispovíveis</p>
+                <div id="fundo_listawifi">
+                    <div class="itens_wifi"><p class="texto_wifi">Ipsum Lorem</p></div>
+                    <div class="itens_wifi"><p class="texto_wifi">Ipsum</p></div>
+                    <div class="itens_wifi"><p class="texto_wifi">Lorem</p></div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Barra Direita-->
+        <div id="menu_direito">
+            <div id="img_perfil"><img src="../icons/mdi_account-circle.svg" alt=""></div>
+            <div id="nome_user">Minha conta</div>
+            <p style="width: 89px; height: 39px; margin-top: 205px; margin-left: 23px; font-size: 32px;">Perfis</p>
+            <button id="adicionar_perfis"></button>
+            <div></div>
+        </div>
+
+        <!--Tela de Bloqueio-->
+        <div id="overlay" style="display: none;">
+            <div id="relogio_bloqueio" class="relogio" style="position: fixed; top: 28%; right: 35%; font-size: 8rem;"></div>
+            <button id="desbloquear" class="desbloquear" onclick="chamar_senha()"></button>
+            <span id="senha_ico" style="display: none;"><img src="../icons/mdi_lock.svg" style="position: sticky; margin-top: -100%; width: 32px; height: 32px;" alt=""></span>
+            <input id="senha" type="password" style="margin-top: 23.5%;" maxlength="6" class="use-numerico-input senha" placeholder="Senha">
+            <button id="botao_senha" class="botao_senha" onclick="verifcar_login()">ENTRAR</button>
+        </div>
+        
+    </main>
+    <script src="../javascript/wifi.js"></script>
+    <script src="../javascript/home.js"></script>
+    <script src="../javascript/usuario.js"></script>
+    <script src="../javascript/relogio.js"></script>
+    <script src="../javascript/telabloqueio.js"></script>
+    <script src="../javascript/numerico.js"></script>
+    <script src="../javascript/senha.js"></script>
+    <script src="../javascript/verificarsenha.js"></script>
+    <script src="../modal/javascript/chamar_modal.js"></script>
+
+</body>
+</html>

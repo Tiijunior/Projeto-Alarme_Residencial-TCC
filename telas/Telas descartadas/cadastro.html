@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/CSS descartados/cadastro.css">
+    <link rel="stylesheet" type="text/css" href="../css/keyboard.css">
+    <link rel="stylesheet" type="text/css" href="../css/numeric_keyboard.css">
+
+</head>
+<body class="container">
+    <main>
+        <div class="lado_esquerdo">
+            <div class="contentColumn">
+                <p class="algizText">ALGIZ </p>
+                <p class="subAlgizText">ALGIZ</p>                
+            </div>     
+        </div>
+        <div class="lado_direito">
+            <p class="saudacao">Boas Vindas ao Algiz!</p>
+            <p class="texto" style="top: 2%;">Preencha os campos abaixo para ter acesso ao sistema.</p>
+            <div id="formulario" class="input-container">
+
+                <!--Cadastro de Cliente-->
+                <div class="input-field">
+                    <span class="icon" style=" position: sticky; left: 27%;"><img src="../icons/mdi_account.svg" alt=""></span>
+                    <input class="use-keyboard-input" type="text" style="margin-left: 20%;" id="nome" placeholder="Nome Completo">
+                </div>
+                <div class="input-field">
+                    <span class="icon" style=" position: sticky; left: 27%;"><img src="../icons/mdi_shield-account.svg" alt=""></span>
+                    <input class="use-keyboard-input" type="text" style="margin-left: 20%;" id="email" placeholder="E-mail">
+                </div>
+                <div class="input-field">
+                    <span class="icon" style=" position: sticky; left: 28%;"><img src="../icons/Vector.svg" alt=""></span>
+                    <input class="use-numerico-input" type="password" style="margin-left: 21%;" id="senha" placeholder="Senha">
+                </div>
+                <div class="input-field">
+                    <span id="error" class="icon" style="display: none; position: sticky; top: 42.8%; left: 75%;"><img src="../icons/error.svg" alt=""></span>
+                    <span id="check" class="icon" style="display: none; position: sticky; top: 42.8%; left: 75%;"><img src="../icons/check.svg" alt=""></span>
+                    <span class="icon" style=" position: sticky; left: 28%;"><img src="../icons/Vector.svg" alt=""></span>
+                    <input class="use-numerico-input" type="password" style="margin-left: 21%;" id="conf_senha" onchange ="verificarSenha()" placeholder="Confirmação de senha">
+                    
+                </div>
+                <div class="input-field">
+                    <select id="tipo_usuario">
+                        <option disabled selected>Tipo de Usuário</option>
+                        <option value="Administrador">Administrador</option>
+                        <option disabled style="color: rgba(209, 207, 207, 0.5);" value="Usuário Comum">Usuário Comum</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <span class="icon" style=" position: sticky; left: 27%;"><img src="../icons/mdi_cellphone.svg" alt=""></span>
+                    <input class="use-numerico-input" type="text" style="margin-left: 20%;" id="telefone" placeholder="Telefone">
+                </div>
+                <div class="input-field">
+                    <select id="tipo_telefone">
+                        <option disabled selected>Tipo de Telefone</option>
+                        <option value="Fixo">Fixo</option>
+                        <option value="Celular">Celular</option>
+                    </select>
+                </div>
+
+                <!--Cadastro do Equipamento-->
+                <p class="texto" style="margin-top: 3%; margin-bottom: 5%; font-size: larger; margin-left: 35%;">Cadastro do Equipamento</p>
+                <div class="input-field">
+                    <input class="use-keyboard-input" type="text" style="font-size: 16px;" id="nome_equipamento"  placeholder="Nome do Equipamento Ex: CASA">
+                </div>
+                <div class="input-field">
+                    <input class="use-keyboard-input" type="text" id="logradouro" placeholder="Logradouro">
+                </div>
+                <div class="input-field">
+                    <input class="use-numerico-input" type="text" id="numero" placeholder="Número">
+                </div>
+                <div class="input-field">
+                    <input class="use-keyboard-input" type="text" id="cidade" placeholder="Cidade">
+                </div>
+                <div class="input-field">
+                    <input class="use-numerico-input" type="text" id="cep" placeholder="CEP">
+                </div>
+            </div>
+            <button class="azul" id="btn_enviar" onclick="cadastro()">ENVIAR</button>
+            <a href="login.html" style="color: inherit; text-decoration: none;">
+                <button style="display: none;" class="branco" id="btn_cancelar">CANCELAR</button>
+            </a>
+            
+        </div>
+    </main>
+    <script src="../javascript/verificarsenha.js"></script>
+    <script src="../javascript/cadastro.js"></script>
+    <script src="../modal/javascript/chamar_modal.js"></script>
+    <script src="../modal/javascript/modal_error.js"></script>  
+    <script src="../javascript/keyboard.js"></script>
+    <script src="../javascript/numerico.js"></script>
+    <!--<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var telefoneInput = document.getElementById("telefone");
+            
+            Inputmask({ mask: "(99) 99999-9999" }).mask(telefoneInput);
+        });
+    </script>-->
+</body>
+</html>

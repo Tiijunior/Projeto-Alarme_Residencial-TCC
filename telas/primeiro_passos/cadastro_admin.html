@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/primeiro_passos/cadastro_admin.css">
+    <link rel="stylesheet" type="text/css" href="../../css/keyboard.css">
+    <link rel="stylesheet" type="text/css" href="../../css/numeric_keyboard.css">
+
+<body class="container">
+    <div class="fundo"></div>
+    <!--Cabeçalho-->
+    <header>
+        <div class="logo"></div>
+    </header>
+    <!--Corpo Principal-->
+    <main>
+        <div><p class="boas_vindas">Boas vindas ao Algiz!</p></div>
+        <div><p class="texto">Preencha os campos abaixo para que possamos te dar acesso ao sistema.</p></div>
+        <div>
+            <input class="use-keyboard-input" style="margin-left: 40px;" type="text" id="nome" placeholder="Nome">
+            <input class="use-keyboard-input" style="margin-left: 20px;" type="text" id="email" placeholder="E-mail">
+            <input class="use-numerico-input" style="margin-top: 30px; margin-left: 40px;" type="text" id="telefone" placeholder="Telefone">
+            <select class="input"  style="margin-left: 20px;" id="tipo_telefone">
+                <option disabled selected>Tipo de Telefone</option>
+                <option value="Fixo">Fixo</option>
+                <option value="Celular">Celular</option>
+            </select>
+            <input id="senha" class="use-numerico-input" style="margin-top: 30px; margin-left: 40px;" type="password" placeholder="Senha">
+            <span style="left: 545px;" class="icon" onclick="exibir('senha')"><img style="width: 35px; height: 35px;" src="../../icons/ant-design_eye-invisible-filled.svg"></span>
+            <input id="conf_senha"  class="use-numerico-input" style="margin-left: 20px;" type="password" placeholder="Confirmação de Senha">
+            <span id="error" class="icon" style="display: none; left: 1101px;"><img style="width: 35px; height: 35px;" src="../../icons/error.svg" alt=""></span>
+            <span id="check" class="icon" style="display: none; left: 1101px;"><img style="width: 35px; height: 35px;" src="../../icons/check.svg" alt=""></span>
+            <span style="left: 1151px;" class="icon" onclick="exibir('conf_senha')"><img style="width: 35px; height: 35px;" src="../../icons/ant-design_eye-invisible-filled.svg"></span>
+        </div>
+        <div>
+            <div class="foto" id="foto"></div>
+            <div><p class="texto2">Defina Sua foto de Perfil</p></div>
+            <button class="button_imagem" id="btn_imagem">Selecionar Imagem</button>
+            
+        </div>
+        <button type="button" class="button_entrar" id="btn_entrar" onclick="verificar_campos('Cadastro concluído com sucesso!')">ENTRAR</button>
+    </main>
+    <script src="../../modal/javascript/chamar_modal.js"></script>
+    <script src="../../javascript/verificarsenha.js"></script>
+    <script src="../../javascript/cadastro_admin.js"></script>    
+    <script src="../../javascript/keyboard.js"></script>
+    <script src="../../javascript/numerico.js"></script>
+    <script src="../../modal/javascript/recebermsg.js"></script>
+</body>
+</html>
