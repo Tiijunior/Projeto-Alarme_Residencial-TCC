@@ -1,0 +1,110 @@
+@font-face {
+    font-family: Monda;
+    src: url(../../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+
+
+#modal{
+    position: fixed;
+    display: block;
+    width: 463px;
+    height: 368px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    opacity: 1;
+    
+}
+
+.modal_fechar{
+    position: fixed;
+    margin-top: 20px;
+    margin-left: 413px;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+
+    background: url(../../icons/mdi_close-circle.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    border: none;    
+}
+
+.modal_fechar:active {
+    width: 28px;
+    height: 28px;
+}
+
+.modal_p {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 30.81px;
+    color: #000000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.modal_input {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 18px;
+    width: 401px;
+    height: 45px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    border: 1px solid  #2C2C7C;
+    background:  #FFF;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 20px;
+}
+
+.modal_button {
+    display: flex;
+    margin-top: 35px;
+    margin-left: 81px;
+    width: 300px;
+    height: 34px;
+    padding: 7px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 15px;
+    background: #2C2C7C;
+    box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25) inset, -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+}
+
+#modal.mostrar {
+    opacity: 1;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/modal_sensor.css">
+    <link rel="stylesheet" type="text/css" href="../../css/keyboard.css">
+
+</head>
+<body onload="mensagem_texto('Quarto Principal')">
+    <main>
+        <div id="modal">
+            <button class="modal_fechar" onclick="fechar_modal()"></button>
+            <label id="mensagemId" for="" class="modal_p"></label>
+            <input id="nome_sensor" type="text" class="modal_input use-keyboard-input" placeholder="Nome do Sensor">
+            <select name="porta_sensor" id="" class="modal_input" style="width: 425px;">
+                <option selected disabled>Selecione o Sensor</option>
+                <option value="infravermelho-passivo">Sensor de Movimento Interno</option>
+                <option value="infravermelho-ativo">Sensor de Movimento Externo</option>
+                <option value="magnetico">Sensor Magnetico (Janela)</option>
+                <option value="vibracao">Sensor de Vibração (Vidro)</option>
+                <option value="switch">Sensor de Abertura de Porta</option>
+            </select>
+            <select name="tipo_sensor" id="" class="modal_input" style="width: 425px;">
+                <option selected disabled>Selecione a Porta do Sensor</option>
+                <option value="porta 1">Porta 1</option>
+                <option value="porta 2">Porta 2</option>
+                <option value="porta 3">Porta 3</option>
+                <option value="porta 4">Porta 4</option>
+                <option value="porta 5">Porta 5</option>
+            </select>
+            <button class="modal_button">Finalizar</button>
+        </div>
+        
+    </main>
+    <script src="../javascript/mostrar_modal.js"></script>
+    <script src="../javascript/recebermsg.js"></script>
+    <script src="../javascript/chamar_modal.js"></script>
+    <script src="../../javascript/keyboard.js"></script>
+
+</body>
+</html>

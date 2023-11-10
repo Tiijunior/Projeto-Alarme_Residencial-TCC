@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/modal_alarme.css">
+</head>
+<body onload="mensagem_texto('QUARTO PRINCIPAL'), alternarCores()">
+    <main>
+        <div id="fade"></div>
+        <div id="modal">
+            <div id="modal_corpo">
+                <div id="modal_texto">
+                    HOUVE UMA MOVIMENTAÇÃO SUSPEITA NO
+                    <label id="mensagemId"></label>
+                    <p>CONFIRME O CÓDIGO DE SEGURANÇA PARA DESATIVAR O ALARME.</p>
+                </div>
+                <div id="modal_imagem">
+                    <img src="../../icons/mdi_alert.svg" alt="">
+                </div>
+                <div>
+                    <a href="modal_codigo.html" style="color: inherit; text-decoration: none;">
+                        <button class="modal_button">Confirmar</button></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../javascript/mostrar_modal.js"></script>
+    <script src="../javascript/recebermsg.js"></script>
+    <script src="../javascript/alarme.js"></script>
+</body>
+</html>

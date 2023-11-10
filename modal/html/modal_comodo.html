@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/modal_comodo.css">
+    <link rel="stylesheet" href="../css/modal_tipocomodo.css">
+    <link rel="stylesheet" type="text/css" href="../../css/keyboard.css">
+
+</head>
+<body>
+    <main>
+        <div id="modal">
+            <button id="fechar" class="modal_fechar" onclick="fechar_modal()"></button>
+            <p class="modal_p">Novo Local</p>
+            <input id="nome_comodo" class="modal_input use-keyboard-input" style="margin-top: 30px;" type="text" placeholder="Nome">
+            <div>
+                <button id="tipo_comodo" class="modal_input" style="width: 425px;" onclick="mostrar_tipocomodo()">
+                <p>Tipo</p>
+                <span style="width: 20px; height: 20px; background: url(../../icons/mdi_chevron-down.svg); background-repeat: no-repeat; background-size: cover;"></span>
+                </button>
+            <div>
+                <div id="modal_tipocomodo">
+                    <button id="quarto" class="modal_tipocomodo_button" onclick="mostrar_tipocomodo(), selecionar_comodo('quarto') "><img src="../../icons/Quarto.svg" alt="">
+                        <p class="modal_tipocomodo_p" style="margin-left: 15px;">Quarto</p></button>
+                    <button class="modal_tipocomodo_button" onclick="mostrar_tipocomodo(), selecionar_comodo('cozinha')"><img src="../../icons/Cozinha.svg" alt="">
+                        <p class="modal_tipocomodo_p" style="margin-left: 30px;">Cozinha</p></button>
+                    <button class="modal_tipocomodo_button" onclick="mostrar_tipocomodo(), selecionar_comodo('sala')"><img src="../../icons/Sala.svg" alt="">
+                        <p class="modal_tipocomodo_p" style="margin-left: 20px;">Sala</p></button>
+                    <button class="modal_tipocomodo_button" onclick="mostrar_tipocomodo(), selecionar_comodo('banheiro')"><img src="../../icons/Banheiro.svg" alt="">
+                        <p class="modal_tipocomodo_p" style="margin-left: 28px;">Banheiro</p></button>
+                    <button class="modal_tipocomodo_button" onclick="mostrar_tipocomodo(), selecionar_comodo('externo')"><img src="../../icons/Externo.svg" alt="">
+                        <p class="modal_tipocomodo_p" style="margin-left: 28px;">Externo</p></button>
+                </div>
+            </div>
+        </div>
+            <select name="ZONA" id="Zona" class="modal_input" style="width: 425px;">
+                <option disabled selected value="">Seleciona a Zona</option>
+                <option value="ZONA 1">ZONA 1</option>
+                <option value="ZONA 2">ZONA 2</option>
+                <option value="ZONA 3">ZONA 3</option>
+                <option value="ZONA 4">ZONA 4</option>
+                <option value="ZONA 5">ZONA 5</option>
+            </select>
+            <a href="../html/modal_sensor.html" style="color: inherit; text-decoration: none;">
+                <button id="proximo" class="modal_button">Próxima</button>
+            </a>
+        </div>    
+    </main>
+    <script src="../javascript/modal_comodo.js"></script>
+    <script src="../javascript/chamar_modal.js"></script>
+    <script src="../../javascript/keyboard.js"></script>
+
+</body>
+</html>

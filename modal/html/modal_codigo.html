@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/modal_codigo.css">
+    <link rel="stylesheet" href="../../css/numeric_keyboard.css">
+</head>
+<body onload="alternarCores()">
+    <main>
+        <div id="fade"></div>
+        <div id="modal">
+            <div id="modal_corpo">
+                <div id="modal_texto"><p>Confirme o código de segurança para desativar o alarme.</p></div>
+                <div>
+                    <input id="entrada1" class="quadro_senha use-numerico-input" maxlength="1" type="password" style="display: inline-block; margin-top: 1rem; margin-left: 1.75rem;">
+                    <input id="entrada2" class="quadro_senha use-numerico-input" maxlength="1" type="password" style="display: inline-block; margin-top: 1rem; margin-left: 0.938rem;">
+                    <input id="entrada3" class="quadro_senha use-numerico-input" maxlength="1" type="password" style="display: inline-block; margin-top: 1rem; margin-left: 0.938rem;">
+                    <input id="entrada4" class="quadro_senha use-numerico-input" maxlength="1" type="password" style="display: inline-block; margin-top: 1rem; margin-left: 0.938rem;">
+                    <input id="entrada5" class="quadro_senha use-numerico-input" maxlength="1" type="password" style="display: inline-block; margin-top: 1rem; margin-left: 0.938rem;">
+                    <input id="entrada6" class="quadro_senha use-numerico-input" maxlength="1" type="password" style="display: inline-block; margin-top: 1rem; margin-left: 0.938rem;">
+                    <input type="hidden" disabled>
+                </div>
+                <div><button id="modal_button" onclick="senha()">Confirmar</button></div>
+            </div>
+        </div>
+    </main>
+    <script src="../javascript/senha.js"></script>
+    <script src="../javascript/mostrar_modal.js"></script>
+    <script src="../javascript/alarme.js"></script>
+    <script src="../javascript/teclado_desbloqueio.js"></script>
+
+</body>
+</html>

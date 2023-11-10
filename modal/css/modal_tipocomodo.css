@@ -1,0 +1,66 @@
+@font-face {
+    font-family: Monda;
+    src: url(../../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+#modal_tipocomodo {
+    position: fixed;
+    display: none;
+    top: 342px;
+    left: 638px;
+    transform: translate(-50% -50%);
+    width: 280px;
+    height: 296px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    border: 1px solid #2C2C7C;
+    background: #FFF;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    opacity: 0;
+    z-index: 3;
+}
+
+.modal_tipocomodo_button {
+    display: flex;
+    width: 250px;
+    height: 41px;
+    flex-shrink: 0;
+
+    margin-top: 15px;
+    margin-left: 20px;
+    border: none;
+    background: #FFF;   
+
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.modal_tipocomodo_button:hover {
+    background: #2C2C7C;
+}
+
+.modal_tipocomodo_p {
+    margin-left: 15px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: -2px;
+}
+
+#modal_tipocomodo.mostrar {
+    display: block;
+    opacity: 1;
+}
