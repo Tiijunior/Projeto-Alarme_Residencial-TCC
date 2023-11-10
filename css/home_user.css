@@ -1,0 +1,182 @@
+@font-face {
+    font-family: Monda;
+    src: url(../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+
+.container{
+    display: flex;
+    position: fixed;
+    width: 1280px;
+    height: 720px;
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    background-size: 1280px 720px;
+    background-repeat: no-repeat;
+}
+
+p{
+    position: fixed;
+    color: white;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+/*Cabeçalho*/
+.barra{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 55px;
+    flex-direction: 0;
+    top: 0;
+    left: 0;
+
+    background: rgba(44, 44, 124, 0.8) ;
+}
+
+.logo {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.logo_wifi {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    
+    margin-top: 5px;
+    margin-left: 980px;
+}
+
+.botao_bloqueio{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+
+/*Corpo Principal*/
+
+#barra_main{
+    display: flex;
+    position: fixed;
+    width: 1280px;
+    height: 70px;
+    flex-shrink: 0;
+
+    top: 55px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.60);
+}
+
+#btn_comodos{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+
+    top: 65px;
+    left: 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#btn_home{
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    
+    top: 67px;
+    left: 607px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#btn_perfil{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+
+    top: 65px;
+    left: 1200px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/*Barra Esquerda*/
+#menu_esquerdo{
+    display: flex;
+    position: fixed;
+    width: 330px;
+    height: 675px;
+    flex-shrink: 0;
+
+    top: 125px;
+    left: -330px;
+    background: rgba(0, 0, 0, 0.40);
+    z-index: 1;
+}
+
+#adicionar_comodos{
+    position: fixed;
+    margin-top: 10px;
+    margin-left: 275px;
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+
+    fill: white;
+    background: url(../icons/Adicionador.svg), rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+}
+
+
+/*Meio*/
+.texto_meio{
+    position: fixed;
+    width: 397px;
+    height: 78px;
+    top: 240px;
+    left: 441px;
+    
+
+    color: white;
+    
+    font-family: Montserrat;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;   
+}
+
+#relogio{
+    position: fixed;
+    width: 258px;
+    height: 117px;
+    top: 320px;
+    left: 511px;
+
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

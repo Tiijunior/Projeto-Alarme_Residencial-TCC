@@ -1,0 +1,210 @@
+@font-face {
+    font-family: Monda;
+    src: url(../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+
+.container{
+    display: flex;
+    position: fixed;
+    width: 1280px;
+    height: 720px;
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    background-size: 1280px 720px;
+    background-repeat: no-repeat;
+}
+
+p{
+    position: fixed;
+    color: white;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+/*Cabeçalho*/
+.barra{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 55px;
+    flex-direction: 0;
+    top: 0;
+    left: 0;
+
+    background: rgba(44, 44, 124, 0.8) ;
+}
+
+.logo {
+    position: fixed;
+    margin-top: 10px;
+    margin-left: 568px;
+}
+
+/*Corpo Principal*/
+
+#fade {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 740px;
+    
+    top: -700px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#relogio {
+    position: fixed;
+    width: 344px;
+    height: 156px;
+    top: -600px;
+    left: 468px;
+
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#cadeado {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    top: -400px;
+    left: 601px;
+
+    background: url(../icons/mdi_lock.svg); 
+    filter: invert(80%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/*Lista de Usuários*/
+
+#lista_user {
+    display: list-item;
+    position: fixed;
+    top: 810px;
+    right: -20px;
+    width: 20%;
+    height: 610px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.imag_user {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    left: 95px;
+    flex-shrink: 0;
+    fill: #FFF;
+    background: url(../icons/mdi_account-circle.svg);
+    background-repeat: no-repeat;
+    background-size: cover;   
+}
+
+.nome_principal {
+    display: flex;
+    position: absolute;
+    width: 210px;
+    max-width: 256px;
+    max-height: 29px;
+    margin-top: 70px;
+    margin-left: -100%;
+    
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    
+}
+
+#bloco_senha{
+    display: none;
+    position: fixed;
+}
+
+#input_senha {
+    display: flex;
+    position: fixed;
+    width: 548px;
+    height: 60px;
+    flex-shrink: 0;
+    top: 331px;
+    left: 219px;
+
+    border-radius: 20px;
+    border: 1px solid #2C2C7C;
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#icon_senha {
+    display: block;
+    position: relative;
+    width: 33.833px;
+    height: 35px;
+    flex-shrink: 0;
+
+    margin-top: -23px;
+    margin-left: 100px;
+    background: url(../icons/ant-design_eye-invisible-filled.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#botao_senha {
+    display: flex;
+    position: fixed;
+    width: 480px;
+    height: 70px;
+    top: 431px;
+    left: 268px;
+
+    padding: 20px 0px 21px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    background: #2C2C7C;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25) inset;
+
+    color: var(--Branco, #FFF);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

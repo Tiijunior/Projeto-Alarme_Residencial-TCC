@@ -1,0 +1,186 @@
+@font-face {
+    font-family: Monda;
+    src: url(../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+
+/* Estilo para o contêiner principal */
+.ladoesquerdo {
+    width: 850px;
+    height: 720px;
+    left: -150px;
+    top: 0px;
+    position: fixed;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url('../imagem/Display - Tela principal.jpg');
+    background-size: 850px 720px;
+    background-repeat: no-repeat;
+}
+
+.ladoesquerdo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
+}
+
+  
+  
+  /* Estilo para a coluna direita (conteúdo) */
+  .contentColumn {
+    width: 300px;
+    height: auto;
+    left: 602px;
+    top: 34%;
+    left: 40%;
+    position: absolute;
+  }
+  
+  /* Estilo para o texto "ALGIZ" */
+  .algizText {
+    position: absolute;
+    left: 0px; 
+    top: 0px; 
+    color: #EC9900;
+    font-size: 64px;
+    font-family: Monda;
+    font-weight: 400;
+    word-wrap: break-word;
+    top: auto;
+  }
+  
+  /* Estilo para o subtexto "ALGIZ" */
+  .subAlgizText {
+    position: absolute;
+    left: 6px; 
+    top: 4px; 
+    color: #2C2C7C;
+    font-size: 60px;
+    font-family: Monda;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+
+  .ladodireito {
+    background: white;
+    width: 800px;
+    height: 720px;
+    left: 700px;
+    top: 0px;
+    position: fixed;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%);
+  }
+  
+  /* Estilo para o texto "Olá, usuário!" */
+  .helloText {
+    position: absolute;
+    left: 140px;
+    top: 138px;
+    position: absolute;
+    color: #2C2C7C;
+    font-size: 32px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  /* Estilo para o link "Esqueci minha senha" */
+  .forgotPasswordLink {
+    left: 322px;
+    top: 382px;
+    position: absolute;
+    color: #2C2C7C;
+    font-size: 12px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+
+  .input-container{
+    position: relative;
+    top: 38%;
+    left: 14%;
+  }
+    
+  /* Estilo para os ícones dentro dos campos de entrada */
+  .icon img{
+    position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        z-index: 1;
+  }
+  
+  /* Estilo para os campos de entrada */
+  .inputField {
+    width: 300px;
+    height: 36px;
+    font-family: Montserrat;
+    background: white;
+    box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 20px;
+    border: 1px #2C2C7C solid;
+    padding-left: 40px; /* Ajuste o valor conforme necessário para acomodar o ícone */
+    color: #707070;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+
+  /* Estilo para o botão "ENTRAR" */
+  .loginButton {
+    width: 300px;
+    height: 34px;
+    display: flex;
+    position: absolute;
+    top: 60%;
+    left: 17%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background: #2C2C7C;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    color: white;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+  
+  /* Estilo para o link "Primeiro acesso" */
+  .firstAccessLink {
+    width: 300px;
+    height: 34px;
+    display: flex;
+    position: absolute;
+    top: 67%;
+    left: 17%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 76px;
+    padding-right: 85px;
+    background: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 15px;
+    border: 1px #2C2C7C solid;
+    justify-content: center;
+    align-items: center;
+    color: #2C2C7C;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+  
+  button:active{
+    color: rgba(0, 0, 0, 0.205);
+    background-color: rgba(0, 0, 0, 0.205);
+}

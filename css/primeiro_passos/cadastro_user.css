@@ -1,0 +1,273 @@
+@font-face {
+    font-family: Monda;
+    src: url(../../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+.container{
+    display: flex;
+    position: fixed;
+    width: 1280px;
+    height: 720px;
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    background-size: 1280px 720px;
+    background-repeat: no-repeat;
+}
+
+.barra{
+    width: 1280px;
+    height: 55px;
+    flex-shrink: 0;
+    top: 0%;
+    left: 0%;
+    position: fixed;
+
+    background: rgba(44, 44, 124, 0.80);
+}
+
+.logo {
+    position: fixed;
+    width: 143.836px;
+    height: 35px;
+    flex-shrink: 0;
+
+    top: 10px;
+    left: 10px;
+}
+
+.logo_wifi {
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    top: 5px;
+    left: 1150px;
+}
+
+.saudacao{
+    position: fixed;
+    top: 30px;
+    left: 50px;
+
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.relogio {
+    position: fixed;
+    width: 86px;
+    height: 39px;
+    top: 85px;
+    left: 1122px;
+
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.texto{
+    position: fixed;
+    width: 1181px;
+    top: 99px;
+    left: 50px;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#formulario{
+    width: 100%;
+    height: 265px;
+    margin-top: 130px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+#bloco_perfil{
+    display: block;
+    position: relative;
+}
+
+input{
+    border-radius: 20px;
+    border: 1px solid var(--Azul, #2C2C7C);
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+select{
+    height: 30px;
+    overflow-y: auto;
+    
+    border-radius: 20px;
+    border: 1px solid var(--Azul, #2C2C7C);
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.nome{
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 530px;
+    height: 60px;
+    flex-shrink: 0;
+
+}
+
+.email{
+    width: 542px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-left: 22px;
+
+}
+
+.senha{
+    
+    width: 385px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.conf_senha{
+    position: relative;
+    width: 400px;
+    height: 60px;
+    flex-shrink: 0;
+    top: -55px;
+    margin-left: 465px;
+}
+
+.icon {
+    display: block;
+    position: relative;
+    margin-top: -103px;
+}
+
+
+.funcao{
+    position: relative;
+    width: 280px;
+    height: 61px;
+    flex-shrink: 0;
+    top: -51.5px;
+    left: 915px;
+}
+
+hr{
+    margin-top: -30px;
+    margin-left: 30px;
+    width: 1170px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.70);
+}
+
+
+.botao{
+    display: flex;
+    position: fixed;
+    width: 277px;
+    height: 60px;
+    top: 500px;
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid white;
+    
+    color: white;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#btn_anterior{
+    left: 51.5px;
+}
+
+#btn_anterior:active{
+    color: var(--Preto, #030303);
+    background-color: white;
+}
+
+#btn_novoperfil{
+    left: 351.5px;
+}
+
+#btn_novoperfil:active{
+    color: var(--Preto, #030303);
+    background-color: white;
+}
+
+#btn_pularpasso{
+    left: 651.5px;
+}
+
+#btn_pularpasso:active{
+    color: var(--Preto, #030303);
+    background-color: white;
+}
+
+#btn_entrar{
+    left: 951px;
+
+    border-radius: 15px;
+    background: #2C2C7C;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset, 5px 5px 4px 0px rgba(0, 0, 0, 0.25) inset;    
+    border: none;
+
+    color: var(--Branco, #FFF);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+

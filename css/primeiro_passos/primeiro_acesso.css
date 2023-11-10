@@ -1,0 +1,157 @@
+@font-face {
+    font-family: Monda;
+    src: url(../../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+.container {
+    display: flex;
+    position: fixed;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    background-size: 1280px 720px;
+    background-repeat: no-repeat;
+}
+
+
+.barra {
+    width: 100%;
+    height: 55px;
+    flex-shrink: 0;
+    top: 0%;
+    left: 0%;
+    position: fixed;
+
+    background: rgba(44, 44, 124, 0.80);
+}
+
+.logo {
+    position: fixed;
+    width: 143.836px;
+    height: 35px;
+    flex-shrink: 0;
+
+    top: 10px;
+    left: 10px;
+}
+
+.logo_wifi {
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    top: 5px;
+    left: 1150px;
+
+}
+
+.lado_esquerdo {
+    position: absolute;
+    width: 580px;
+    top: 67px;
+    left: 42px;
+}
+
+.saudacao {
+    color: var(--Branco, #FFF);
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.texto_esquerdo {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.lado_direito {
+    position: fixed;
+    height: 630px;
+    top: 67px;
+    left: 54%;
+}
+
+.texto_direito {
+    position: fixed;
+    top: 109px;
+    left: 680px;
+    bottom: 417px;
+    
+    width: 580px;
+    height: 32px;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+.qrcode {
+    position: fixed;
+    top: 428px;
+    left: 1074px;
+
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    fill: #FFF;
+    background-image: url(../../imagem/QRCODE/qrcode.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.relogio {
+    position: fixed;
+    width: 86px;
+    height: 39px;
+    left: 1133px;
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.botao{
+    display: flex;
+    width: 480px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 15px;
+    border: 2px solid white;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 255, 0);
+    
+    color: var(--Branco, #FFF);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    transition: background-color 0.3s;
+}
+
+.botao:active {
+    color: var(--Preto, #030303);
+    background-color: white;
+}

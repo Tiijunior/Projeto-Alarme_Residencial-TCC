@@ -1,0 +1,330 @@
+@font-face {
+    font-family: Monda;
+    src: url(../../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+.container{
+    display: flex;
+    position: fixed;
+    width: 1280px;
+    height: 720px;
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    background-size: 1280px 720px;
+    background-repeat: no-repeat;
+}
+
+.barra{
+    width: 1280px;
+    height: 55px;
+    flex-shrink: 0;
+    top: 0%;
+    left: 0%;
+    position: fixed;
+
+    background: rgba(44, 44, 124, 0.80);
+}
+
+.logo {
+    position: fixed;
+    width: 143.836px;
+    height: 35px;
+    flex-shrink: 0;
+
+    top: 10px;
+    left: 10px;
+}
+
+.logo_wifi {
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    top: 5px;
+    left: 1150px;
+}
+
+.saudacao{
+    position: fixed;
+    top: 30px;
+    left: 50px;
+
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.relogio {
+    position: fixed;
+    width: 86px;
+    height: 39px;
+    top: 85px;
+    left: 1122px;
+
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.texto{
+    position: fixed;
+    width: 1181px;
+    top: 99px;
+    left: 50px;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bloco_comodo{
+    margin-top: -50px;
+    margin-left: -640px;
+}
+
+input{
+    border-radius: 20px;
+    border: 1px solid var(--Azul, #2C2C7C);
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+select{
+    height: 30px;
+    overflow-y: auto;
+    
+    border-radius: 20px;
+    border: 1px solid var(--Azul, #2C2C7C);
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#nome_zona{
+    position: fixed;
+    margin-top: -40px;
+    margin-left: 40px;
+    width: 530px;
+    height: 58px;
+    flex-shrink: 0;
+
+}
+
+.tipo_zona{
+    display: flex;
+    position: fixed;
+    margin-top: -40px;
+    margin-left: 630px;
+    width: 280px;
+    height: 62px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    border: 1px solid  #2C2C7C;
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 15px;
+    padding-left: 30px;
+
+}
+
+span{
+    position: fixed;
+    margin-top: -20px;
+    margin-left: 890px;
+    width: 20px; 
+    height: 20px; 
+    background: url(../../icons/mdi_chevron-down.svg); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    z-index: 1;
+    
+}
+
+#zona{
+    display: flex;
+    position: fixed;
+    margin-top: -40px;
+    margin-left: 930px;
+    width: 280px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+
+#btn_anterior{
+    position: fixed;
+    width: 379px;
+    height: 60px;
+    
+    margin-top: 77px;
+    left: 50px;
+    /*left: 445px;*/
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid white;
+
+    color: white;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#btn_anterior:active{
+    color: var(--Preto, #030303);
+    background-color: white;
+}
+
+#btn_proximo{
+    display: flex;
+    position: fixed;
+    width: 379px;
+    height: 60px;
+
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: 77px;
+    left: 852px;
+
+    border-radius: 15px;
+    background: #2C2C7C;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset, 5px 5px 4px 0px rgba(0, 0, 0, 0.25) inset;    
+
+    color: var(--Branco, #FFF);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+}
+
+.mostrar{
+    display: '';
+    opacity: 1;
+    transition: 1s;
+}
+
+.ocultar{
+    display: none;
+    opacity: 0;
+}
+
+.texto_sensor{
+    top: 330px;
+}
+
+#formulario {
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    margin-top: 120px;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.nome_sensor{
+    margin-left: 33px;
+    width: 530px;
+    height: 58px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    border: 1px solid 2C2C7C;
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;    
+}
+
+.seletcion_sensor{
+    margin-left: 20px;
+    width: 280px;
+    height: 60px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    border: 1px solid #2C2C7C;
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+#btn_novosensor{
+    position: fixed;
+    width: 379px;
+    height: 60px;
+    
+    margin-top: 77px;
+    left: 450px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid white;
+
+    color: white;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#btn_novosensor:active{
+    color: var(--Preto, #030303);
+    background-color: white;
+}

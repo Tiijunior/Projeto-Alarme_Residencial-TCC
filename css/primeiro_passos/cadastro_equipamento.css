@@ -1,0 +1,212 @@
+@font-face {
+    font-family: Monda;
+    src: url(../../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+.container{
+    display: flex;
+    position: fixed;
+    width: 1280px;
+    height: 720px;
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    background-size: 1280px 720px;
+    background-repeat: no-repeat;
+}
+
+.barra{
+    width: 1280px;
+    height: 55px;
+    flex-shrink: 0;
+    top: 0%;
+    left: 0%;
+    position: fixed;
+
+    background: rgba(44, 44, 124, 0.80);
+}
+
+.logo {
+    position: fixed;
+    width: 143.836px;
+    height: 35px;
+    flex-shrink: 0;
+
+    top: 10px;
+    left: 10px;
+}
+
+.logo_wifi {
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    top: 5px;
+    left: 1150px;
+}
+
+.saudacao{
+    position: fixed;
+    top: 30px;
+    left: 50px;
+
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.relogio {
+    position: fixed;
+    width: 86px;
+    height: 39px;
+    top: 85px;
+    left: 1122px;
+
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.texto{
+    position: fixed;
+    width: 1181px;
+    top: 99px;
+    left: 50px;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+input{
+    border-radius: 20px;
+    border: 1px solid var(--Azul, #2C2C7C);
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+select{
+    height: 30px;
+    overflow-y: auto;
+    
+    border-radius: 20px;
+    border: 1px solid var(--Azul, #2C2C7C);
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#nome_equipamento {
+    position: fixed;
+    top: 272px;
+    left: 50px;
+    width: 350px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+#endereco{
+    position: fixed;
+    top: 272px;
+    left: 450px;
+    width: 530px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+#numero{
+    position: fixed;
+    top: 272px;
+    left: 1030px;
+    width: 140px;
+    height: 60px;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+#cep{
+    position: fixed;
+    top: 362px;
+    left: 50px;
+    width: 350px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+#cidade{
+    position: fixed;
+    top: 362px;
+    left: 450px;
+    width: 350px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+#estados{
+    position: fixed;
+    top: 362px;
+    left: 855px;
+    width: 350px;
+    height: 63px;
+    flex-shrink: 0;
+}
+
+#btn_proximo{
+    display: flex;
+    position: fixed;
+    width: 379px;
+    height: 60px;
+    top: 470px;
+    left: 852px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    
+    border-radius: 15px;
+    background: #2C2C7C;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset, 5px 5px 4px 0px rgba(0, 0, 0, 0.25) inset;    
+
+    color: var(--Branco, #FFF);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+}

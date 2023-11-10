@@ -1,0 +1,60 @@
+.numeric {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 16%;
+    padding: 5px;
+    background: #414141e1;
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.466);
+    user-select: none;
+    border-radius: 15%;
+    transition: bottom 0.4s;
+    z-index: 9999;
+}
+
+.numeric--hidden {
+    bottom: -150%;
+}
+
+.numeric__keys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 7px;
+    text-align: center;
+    justify-content: center;
+    align-content: space-between;
+    grid-template-areas:
+        "key1 key2 key3"
+        "key4 key5 key6"
+        "key7 key8 key9"
+        "keydone keybackspace key0";
+}
+
+.numeric__key {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.7);
+    flex-shrink: 0;
+    font-size: 20px;
+}
+
+.numeric__key--wide {
+    grid-column: span 2;
+    grid-area: keydone;
+}
+
+.numeric__key--extra-wide {
+    grid-column: span 3;
+    grid-area: key0;
+}
+
+.numeric__key--dark {
+    background: rgba(8, 201, 59, 0.37);
+}
