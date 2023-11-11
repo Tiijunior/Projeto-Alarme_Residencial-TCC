@@ -1,19 +1,27 @@
 {
   "name": "electronjs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Um sistema feito com Raspberry Pi para gerenciar alarmes residências.",
   "main": "index.js",
   "scripts": {
     "dev": "electron ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Tiago Jr",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^27.0.0"
+    "electron": "^27.0.4",
+    "python-shell": "^5.0.0"
   },
   "dependencies": {
-    "python-shell": "^5.0.0",
-    "require": "^2.4.20"
-  }
+    "require": "^0.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tiijunior/Projeto-Alarme_Residencial-TCC.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tiijunior/Projeto-Alarme_Residencial-TCC/issues"
+  },
+  "homepage": "https://github.com/Tiijunior/Projeto-Alarme_Residencial-TCC#readme"
 }

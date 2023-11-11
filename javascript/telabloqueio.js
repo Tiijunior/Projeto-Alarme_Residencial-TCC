@@ -34,6 +34,23 @@ function desbloquear() {
     }, 1000);
 }
 
+function lista_user(numerodeusuarios){
+    var listaUser = document.getElementById('lista_user');
+    
+    for (var i = 1; i <= numerodeusuarios; i++) {
+        var novoUsuario = document.createElement('div');
+        novoUsuario.id = 'user' + i;
+        novoUsuario.className = 'imag_user';
+        novoUsuario.style.marginTop = (i * 110) + 'px';
+        novoUsuario.style.marginBottom = '30px';
+        novoUsuario.setAttribute('onclick', 'chamar_senha(this.id)');
+        var novoParagrafo = document.createElement('p');
+        novoParagrafo.className = 'nome_principal';
+        novoParagrafo.textContent = 'Usuário ' + i;
+        novoUsuario.appendChild(novoParagrafo);
+        listaUser.appendChild(novoUsuario);
+    }
+}
 
 function chamar_senha(usuario) {
     document.getElementById('relogio').style.transition = '1s';

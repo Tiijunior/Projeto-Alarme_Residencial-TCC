@@ -8,7 +8,6 @@
     src: url(../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
 }
 
-
 .container{
     display: flex;
     position: fixed;
@@ -98,16 +97,27 @@ p{
 
 /*Lista de Usuários*/
 
-#lista_user {
-    display: list-item;
+.lista{
     position: fixed;
-    top: 810px;
-    right: -20px;
+    top: 5px;
+    left: 1030px;
     width: 20%;
-    height: 610px;
-    overflow-y: auto;
-    padding: 10px;
+    height: 110%;
+    overflow-y: hidden;
 }
+
+
+
+#lista_user {
+    display: block;
+    position: absolute;
+    top: 830px;
+    width: 255px;
+    height: 610px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
 
 .imag_user {
     position: absolute;
@@ -201,7 +211,7 @@ p{
     background: #2C2C7C;
     box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25) inset;
 
-    color: var(--Branco, #FFF);
+    color: white;
     font-family: Montserrat;
     font-size: 24px;
     font-style: normal;
