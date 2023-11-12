@@ -45,6 +45,7 @@ p{
     left: 0;
 
     background: rgba(44, 44, 124, 0.8) ;
+    z-index: 2;
 }
 
 .logo {
@@ -79,6 +80,7 @@ p{
     top: 55px;
     left: 0;
     background: rgba(0, 0, 0, 0.60);
+    z-index: 2;
 }
 
 #btn_comodos{
@@ -128,7 +130,7 @@ p{
     top: 125px;
     left: -330px;
     background: rgba(0, 0, 0, 0.40);
-    z-index: 1;
+    z-index: 3;
 }
 
 #adicionar_comodos{
@@ -144,6 +146,7 @@ p{
     background-repeat: no-repeat;
     background-size: cover;
     border: none;
+    z-index: 3;
 }
 
 
@@ -162,7 +165,8 @@ p{
     font-size: 64px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;   
+    line-height: normal;  
+    z-index: 1;
 }
 
 #relogio{
@@ -192,6 +196,7 @@ p{
     top: 125px;
     right: -230px;
     background: rgba(0, 0, 0, 0.40);
+    z-index: 3;
 }
 
 #img_perfil{
@@ -202,6 +207,7 @@ p{
 
     margin-top: 20px;
     margin-left: 65px;
+    z-index: 3;
 }
 
 #nome_user{
@@ -218,6 +224,7 @@ p{
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    z-index: 3;
 }
 
 
@@ -235,4 +242,5 @@ p{
     background-repeat: no-repeat;
     background-size: cover;
     border: none;
+    z-index: 3;
 }

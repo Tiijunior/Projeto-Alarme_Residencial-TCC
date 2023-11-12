@@ -1,0 +1,190 @@
+@font-face {
+    font-family: Monda;
+    src: url(../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+body{  /*deletar quando terminar*/
+
+    width: 1280px;
+    height: 720px;
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    background-size: 1280px 720px;
+    background-repeat: no-repeat;
+}
+
+p, label {
+    position: fixed;
+    width: 440px;
+    height: 44px;
+
+    color: white;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+input {
+    border-radius: 20px;
+    border: 1px solid #2C2C7C;
+    background: #FFF;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+select{
+    width: 280px;
+    height: 60px;
+    overflow-y: auto;
+    
+    border-radius: 20px;
+    border: 1px solid var(--Azul, #2C2C7C);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.editar {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    background: url(../icons/mdi_pencil.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border: none;
+}
+
+.switch {
+    width: 78.261px;
+    height: 40px;
+    flex-shrink: 0;
+
+    background: url(../icons/mdi_toggle-switch-desativado-off.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#zona {
+    position: fixed;
+    top: 210px;
+    left: 950px;
+}
+
+.tipo_zona{
+    display: flex;
+    position: fixed;
+    width: 280px;
+    height: 62px;
+    flex-shrink: 0;
+    top: 210px;
+    left: 650px;
+
+    border-radius: 20px;
+    border: 1px solid  #2C2C7C;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 15px;
+    padding-left: 30px;
+
+}
+
+span{
+    position: fixed;
+    top: 230px;
+    left: 910px;
+    width: 20px; 
+    height: 20px; 
+    background: url(../icons/mdi_chevron-down.svg); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    z-index: 2;
+    
+}
+
+/*Sensores*/
+
+
+#adicionar_sensores {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    top: 311px;
+    left: 1190px;
+
+    flex-shrink: 0;
+
+    fill: white;
+    background: url(../icons/Adicionador.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+}
+
+.lista_sensor {
+    display: list-item;
+    position: fixed;
+    width: 1200px;
+    left: 50px;
+
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+#sensores {
+    width: 1220px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.nome_sensor {
+    width: 380px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+
+.seletcion_sensor{
+    margin-left: 20px;
+    width: 280px;
+    height: 60px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    border: 1px solid #2C2C7C;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}

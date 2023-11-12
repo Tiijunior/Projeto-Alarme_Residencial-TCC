@@ -14,8 +14,8 @@ app.on('ready', () => {
         }
     });
     
-      //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/home.html')}`);
-      mainWindow.loadURL(`file://${path.join(__dirname, '/telas/wifi.html')}`);
+      mainWindow.loadURL(`file://${path.join(__dirname, '/telas/home.html')}`);
+      //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/novo_local.html')}`);
       //mainWindow.loadURL(`file://${path.join(__dirname, 'index.html')}`);
 
 
