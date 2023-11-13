@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/numeric_keyboard.css">   
 </head>
-<body id="home" class="container" onload="buscarUsuario()">
+<body id="home" class="container" onload="buscarUsuario(), lista_user(1)">
     <!--Cabeçalho-->
     <header>
         <!--Barra do cabeçalho-->
@@ -46,8 +46,10 @@
             <div id="nome_user">Minha conta</div>
             <p style="width: 89px; height: 39px; margin-top: 205px; margin-left: 23px; font-size: 32px;">Perfis</p>
             <button id="adicionar_perfis" onclick="adicionar_perfis()"></button>
-            <div></div>
-        </div>
+            <!--Lista de Usuários-->
+            <div class="lista">
+                <div id="lista_user"></div>
+            </div>
     </main>
     <script src="../javascript/home.js"></script>
     <script src="../javascript/usuario.js"></script>

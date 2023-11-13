@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/novo_perfil.css">
+    <link rel="stylesheet" type="text/css" href="../css/editar_perfil.css">
     <link rel="stylesheet" type="text/css" href="../css/keyboard.css">
     <link rel="stylesheet" type="text/css" href="../css/numeric_keyboard.css">
 </head>
@@ -17,34 +17,38 @@
         <div id="modal_error" class='../modal/html/modal_error.html'></div>
 
         <div>
-            <p style="position: fixed; width: 326px; height: 44px; top: 100px; left: 50px;">Perfis</p>
-            <img id="foto_perfil" src="../icons/mdi_account-circle.svg" alt="">
-            <p style="position: fixed; width: 400px; height: 37px; top: 160px; left: 238px;">Defina foto de perfil</p>
-            <button id="btn_imagem">Selecionar imagem</button>
+            <p style="position: fixed; width: 326px; height: 44px; top: 100px; left: 50px;">Perfis - </p>
+            <label style="position: fixed; width: 326px; height: 44px; top: 138px; left: 185px;" for="">Usuário 01</label>
+            <button id="editar" onclick="editar()"></button>
+            <button id="excluir" disabled></button>
         </div>
         <div>
-            <input id="nome_user" class="use-keyboard-input" type="text" placeholder="Nome do perfil">
-            <input id="email" class="use-keyboard-input"  type="email" name="" placeholder="E-mail">
-            <input id="telefone" class="use-keyboard-input"  type="tel" placeholder="Telefone">
-            <select id="tipo_telefone" name="">
+            <img id="foto_perfil" src="../icons/mdi_account-circle.svg" alt="">
+            <p style="position: fixed; width: 400px; height: 37px; top: 150px; left: 238px;">Defina foto de perfil</p>
+            <button id="btn_imagem" disabled>Selecionar imagem</button>
+        </div>
+        <div>
+            <input id="nome_user" class="use-keyboard-input" type="text" placeholder="Nome do perfil" disabled>
+            <input id="email" class="use-keyboard-input"  type="email" name="" placeholder="E-mail" disabled>
+            <input id="telefone" class="use-keyboard-input"  type="tel" placeholder="Telefone" disabled>
+            <select id="tipo_telefone" name="" disabled>
                 <option selected disabled value="">Tipo de Telefone</option>
                 <option value="Fixo">Fixo</option>
                 <option value="Celular">Celular</option>
             </select>
-            <input id="senha" type="password" class="use-numerico-input" placeholder="Senha">
+            <input id="senha" type="password" class="use-numerico-input" placeholder="Senha" disabled>
             <span id="exibir_senha" style="top: 520px; left: 375px;" class="icon exibir" onclick="exibir('exibir_senha')"></span>
-            <input id="conf_senha" type="password" class="use-numerico-input" placeholder="Confirmação de senha">
+            <input id="conf_senha" type="password" class="use-numerico-input" placeholder="Confirmação de senha" disabled>
             <span id="exibir_conf_senha" style="top: 520px; left: 875px;" class="icon exibir" onclick="exibir('exibir_conf_senha')"></span>
             <span id="check" style="top: 507px; left: 823px;" class="icon check" ></span>
-            <select name="" id="funcao">
+            <select name="" id="funcao" disabled>
                 <option selected disabled value="">Tipo de Usuário</option>
                 <option>Administrador</option>
                 <option value="usuario">Usuário Comum</option>
             </select>
         </div>
-        <button id="btn_entrar">Salvar</button>
     </main>   
-    <script src="../javascript/novo_perfil.js"></script>
+    <script src="../javascript/editar_perfil.js"></script>
     <script src="../javascript/verificarsenha.js"></script>
     <script src="../javascript/keyboard.js"></script>
     <script src="../javascript/numerico.js"></script>

@@ -15,7 +15,7 @@ app.on('ready', () => {
     });
     
       mainWindow.loadURL(`file://${path.join(__dirname, '/telas/home.html')}`);
-      //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/novo_perfil.html')}`);
+      //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/editar_perfil.html')}`);
       //mainWindow.loadURL(`file://${path.join(__dirname, 'index.html')}`);
 
 

@@ -135,6 +135,42 @@ function adicionar_perfis() {
     }   
 }
 
+function perfil() {
+    if(!(document.getElementById('telas').src).includes('novo_perfil.html')) {
+        document.getElementById('relogio').style.transition = '1s';
+        for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
+            document.getElementsByClassName('texto_meio')[i].style.display = 'none';
+        }
+        document.getElementById('relogio').style.top = '8px';
+        document.getElementById('relogio').style.left = '597px';
+        document.getElementById('relogio').style.fontSize = '32px';
+        document.getElementById('relogio').style.zIndex = 2;
+        setTimeout(function() {
+            var iframe = document.getElementById('telas');
+            iframe.style.left = '1280px';
+            
+            setTimeout( function() {
+                iframe.src = './editar_perfil.html';
+                iframe.style.transition = '2s';
+                iframe.style.left = '0';
+
+                setTimeout( function() {
+                    var menu_direito = document.getElementById('menu_direito');
+                    menu_direito.style.transition = '1s';
+                    menu_direito.style.right = '-330px';
+                    menu_direito.style.display = '0';
+                    flag_menu_direito = false
+                }, 1000);
+            }, 200);
+            
+        }, 900);
+
+        document.getElementById('barra_main').style.zIndex = 3;
+        document.getElementById('btn_home').style.zIndex = 4;
+    }   
+}
+
+
 function bloquear() {
     window.location.href = './bloqueio.html';
 }
@@ -173,6 +209,24 @@ function adicionar_comodo(){
         document.getElementById('btn_home').style.zIndex = 4;
     }   
 }
+
+function lista_user(numerodeusuarios){
+    var listaUser = document.getElementById('lista_user');
+    
+    for (var i = 1; i <= numerodeusuarios; i++) {
+        var novoUsuario = document.createElement('div');
+        novoUsuario.id = 'user' + i;
+        novoUsuario.className = 'imag_user';
+        novoUsuario.style.marginTop = (i * 70) + 'px';
+        novoUsuario.setAttribute('onclick', 'perfil()');
+        var novoParagrafo = document.createElement('p');
+        novoParagrafo.className = 'nome_principal';
+        novoParagrafo.textContent = 'Usuário ' + i;
+        novoUsuario.appendChild(novoParagrafo);
+        listaUser.appendChild(novoUsuario);
+    }
+}
+
 
 
 // Função para verificar se houve click na tela. 
