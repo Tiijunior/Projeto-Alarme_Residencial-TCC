@@ -14,7 +14,7 @@
         <!--Ambiente-->
         <div>
             <P style="top: 100px; left: 50px; font-size: 36px;">Novo Local</P>
-            <input id="nome_local" style="position: fixed; width: 548px; height: 60px; top: 210px; left: 50px;" type="text" placeholder="Nome do local">
+            <input id="nome_local" class="use-keyboard-input" style="position: fixed; width: 548px; height: 60px; top: 210px; left: 50px;" type="text" placeholder="Nome do local">
             <div><span></span>
                 <button id="tipo_comodo" class="tipo_zona" value="" onclick="mostrar_tipocomodo()">Tipo
                 </button>
@@ -44,7 +44,7 @@
             <div class="lista_sensor">
                 <div id="sensores">
                     <div id="id_sensor1">
-                        <input id="nome_sensor1" class="nome_sensor" type="text" placeholder="Nome do Sensor">
+                        <input id="nome_sensor1" class="nome_sensor use-keyboard-input" type="text" placeholder="Nome do Sensor">
                         <select id="tipo_sensor" class="seletcion_sensor" style="left: 460px;" name="">
                             <option selected disabled>Tipo</option>
                             <option value="magnetico">Sensor Magnético (abertura de Janela)</option>
@@ -68,9 +68,11 @@
                 </div>
             </div>
         </div>
-        <button id="btn_salvar">Salvar</button>
+        <button id="btn_salvar" onclick="btn_salvar()">Salvar</button>
     </main>
     <script src="../javascript/novo_local.js"></script>
+    <script src="../javascript/keyboard.js"></script>
     <script src="../modal/javascript/modal_comodo.js"></script>
+    <script src="../modal/javascript/chamar_modal.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-var { PythonShell } = require('python-shell');
+/*var { PythonShell } = require('python-shell');
     var path = require('path');
 
     var funcao_python = 'verificar_admin'
@@ -19,7 +19,9 @@ var { PythonShell } = require('python-shell');
         }
         else {
             setTimeout(function() {
-                window.location.href='./telas/primeiro_passos/cadastro_admin.html';;
+                window.location.href='./telas/primeiro_passos/cadastro_admin.html';
             }, 4000)
         };
     });
+*/
+window.location.href='./telas/primeiro_passos/cadastro_admin.html';

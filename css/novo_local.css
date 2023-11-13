@@ -159,14 +159,13 @@ span{
     position: fixed;
     width: 1200px;
     left: 50px;
-
-    background: rgba(0, 0, 0, 0);
     overflow: hidden;
 }
 
 #sensores {
     width: 1220px;
-    height: 220px;
+    height: 120px;
+    /*background: rgba(0, 0, 0, 1);*/
     overflow-y: auto;
 }
 
@@ -196,7 +195,7 @@ span{
     position: fixed;
     width: 379px;
     height: 60px;
-    top: 600px;
+    top: 500px;
     left: 850px;
 
     padding: 16px 0px 15px 0px;

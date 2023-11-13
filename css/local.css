@@ -17,9 +17,9 @@ body{  /*deletar quando terminar*/
     align-items: center;
     flex-shrink: 0;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
     background-size: 1280px 720px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
 }
 
 p, label {
@@ -37,7 +37,8 @@ p, label {
 input {
     border-radius: 20px;
     border: 1px solid #2C2C7C;
-    background: #FFF;
+
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
 
     padding-left: 30px;
@@ -56,7 +57,7 @@ select{
     
     border-radius: 20px;
     border: 1px solid var(--Azul, #2C2C7C);
-    background: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.7);
     box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
 
     padding-left: 30px;
@@ -108,7 +109,7 @@ select{
 
     border-radius: 20px;
     border: 1px solid  #2C2C7C;
-    background: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
 
     color: #707070;
@@ -185,6 +186,6 @@ span{
 
     border-radius: 20px;
     border: 1px solid #2C2C7C;
-    background: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.7);
     box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }

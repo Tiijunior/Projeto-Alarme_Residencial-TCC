@@ -1,8 +1,19 @@
 numero = 2;
 
+// Garante que o input criado dinamicamente vai receber valores do teclado virtual
+function attachKeyboardToInput(inputElement) {
+    inputElement.addEventListener("focus", () => {
+        Keyboard.open(inputElement.value, (currentValue) => {
+            inputElement.value = currentValue;
+        });
+    });
+}
+
+
 function adicionar_sensor() {
     if(document.getElementById('nome_local').value !== '') {
         if(document.querySelector('.nome_sensor').value !== '') {
+            animacao_btn();
             var form = document.querySelector('#sensores');
             
             // Cria os elementos
@@ -63,6 +74,8 @@ function adicionar_sensor() {
             form.insertBefore(select1, form.firstChild);
             form.insertBefore(input, form.firstChild);
 
+            attachKeyboardToInput(input);
+
             numero ++;
         }
 
@@ -74,4 +87,20 @@ function adicionar_sensor() {
         }
 
     }
+}
+
+function animacao_btn() {
+    if(document.getElementById('btn_salvar').getBoundingClientRect().top === 500) {
+        document.getElementById('sensores').style.height = '220px';
+        document.getElementById('btn_salvar').style.top = '550px';
+    } else if (document.getElementById('btn_salvar').getBoundingClientRect().top === 550) {
+        document.getElementById('btn_salvar').style.top = '600px';
+    }
+}
+
+function btn_salvar() {
+    modal('inicialmente os sensores estão inativos, mas você poderá ativá-los assim que deixar essa página.', '../modal/html/modal_notifica.html', 5000, '75px');
+    setTimeout(function() {
+        modal('Seu local foi configurado com sucesso!', '../modal/html/modal_sucesso.html', 5000, '75px')
+    }, 3500);
 }

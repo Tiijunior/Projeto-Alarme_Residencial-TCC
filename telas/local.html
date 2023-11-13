@@ -14,11 +14,12 @@
         <!--Ambiente-->
         <div>
             <P style="top: 100px; left: 50px; font-size: 36px;">Locais - <label>Quarto Principal</label></P>
-            <input id="nome_local" style="position: fixed; width: 548px; height: 60px; top: 210px; left: 50px;" type="text" placeholder="Quarto Principal">
-            <button id="editar_local" class="editar" style="position: fixed; top: 140px; left: 1084px;"></button>
+            <button id="editar_local" class="editar" style="position: fixed; top: 140px; left: 1084px;" onclick="editar_ambiente()"></button>
             <div id="ativar_comodo" class="switch" style="position: fixed;  top: 140px; left: 1151px;"></div>
+
+            <input id="nome_local" class="use-keyboard-input" style="position: fixed; width: 548px; height: 60px; top: 210px; left: 50px;" type="text" placeholder="Quarto Principal" disabled>
             <div><span></span>
-                <button id="tipo_comodo" class="tipo_zona" value="" onclick="mostrar_tipocomodo()">Tipo
+                <button id="tipo_comodo" class="tipo_zona" value="" onclick="mostrar_tipocomodo()" disabled>Tipo
                 </button>
                 <div id="modal_tipocomodo" style="top: 275px; left: 650px;">
                     <button id="quarto" class="modal_tipocomodo_button" value="quarto" onclick="mostrar_tipocomodo(), selecionar_comodo('quarto', '../icons/Quarto.svg') "><img src="../icons/Quarto.svg" style="width: 50px; height: 35px; margin-right: 20px;" alt="">Quarto</button>
@@ -28,8 +29,8 @@
                     <button id="externo" class="modal_tipocomodo_button" value="externo" onclick="mostrar_tipocomodo(), selecionar_comodo('externo', '../icons/Externo.svg')"><img src="../icons/Externo.svg" style="width: 50px; height: 35px; margin-right: 20px" alt="">Externo</button>
                 </div>
             </div>
-            </select>
-            <select name="zona" id="zona">
+
+            <select name="zona" id="zona" disabled>
                 <option disabled selected value="">Zona</option>
                 <option value="Zona 1">Zona 1</option>
                 <option value="Zona 2">Zona 2</option>
@@ -42,12 +43,12 @@
         <!--Sensores-->
         <div>
             <p style="margin-top: -60px; left: 50px; font-size: 32px; ">Sensores</p>
-            <button id="adicionar_sensores" onclick="adicionar_sensor()"></button>
+            <button id="adicionar_sensores" onclick="adicionar_sensor()" ></button>
             <div class="lista_sensor">
                 <div id="sensores">
                     <div id="id_sensor1">
-                        <input id="nome_sensor1" class="nome_sensor" type="text" placeholder="Nome do Sensor">
-                        <select id="tipo_sensor1" class="seletcion_sensor" style="left: 460px;" name="">
+                        <input id="nome_sensor1" class="nome_sensor use-keyboard-input" type="text" placeholder="Nome do Sensor" disabled>
+                        <select id="tipo_sensor1" class="seletcion_sensor" style="left: 460px;" name="" disabled>
                             <option selected disabled>Tipo</option>
                             <option value="magnetico">Sensor Magnético (abertura de Janela)</option>
                             <option value="switch">Sensor Switch (abertura de Porta)</option>
@@ -55,7 +56,7 @@
                             <option value="infra_passivo">Sensor Infravermelho Passivo (Movimento Interno)</option>
                             <option value="infra_ativo">Sensor Infravermelho Ativo (Movimento Externo)</option>
                         </select>
-                        <select id="porta_sensor1" class="seletcion_sensor" style="left: 756px;" name="">
+                        <select id="porta_sensor1" class="seletcion_sensor" style="left: 756px;" name="" disabled>
                             <option selected disabled>Porta</option>
                             <option value="Porta 1">Porta 1</option>
                             <option value="Porta 2">Porta 2</option>
@@ -66,8 +67,8 @@
                             <option value="Porta 7">Porta 7</option>
                             <option value="Porta 8">Porta 8</option>
                         </select>                
-                        <button class="editar" style="position: relative; top: 10px; margin-left: 10px;"></button>
-                        <div class="switch" style="position: relative; top: -55px; margin-left: 1101px;"></div>
+                        <button id="editar_sensor1" class="editar" style="position: relative; top: 10px; margin-left: 10px;" onclick="editar_sensores('1')"></button>
+                        <div id="switch_sensor1" class="switch" style="position: relative; top: -55px; margin-left: 1101px;"></div>
                     </div>
                 </div>
             </div>
@@ -75,5 +76,8 @@
     </main>
     <script src="../javascript/local.js"></script>
     <script src="../modal/javascript/modal_comodo.js"></script>
+    <script src="../javascript/keyboard.js"></script>
+    <script src="../modal/javascript/modal_comodo.js"></script>
+    <script src="../modal/javascript/chamar_modal.js"></script>
 </body>
 </html>

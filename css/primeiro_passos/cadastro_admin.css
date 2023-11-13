@@ -109,6 +109,28 @@ input {
     z-index: 2;
 }
 
+
+#check {
+    display: none;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 220px;
+    margin-left: 800px;
+    
+    background: url(../../icons/check.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#exibir_senha, #exibir_conf_senha{
+    width: 35px;
+    height: 35px;
+    background: url(../../icons/mdi_eye.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ 
 select {
     width: 575px;
     height: 60px;

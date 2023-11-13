@@ -50,10 +50,7 @@ function adicionar_novoperfil() {
     var linha = document.createElement("hr");
     var spanSenha = document.createElement("span");
     var spanConfSenha = document.createElement("span");
-    var spanError = document.createElement("span");
     var spanCheck = document.createElement("span");
-
-
 
     // Configura os atributos do inputNome
     inputNome.setAttribute("id", "nome" + numero);
@@ -78,22 +75,27 @@ function adicionar_novoperfil() {
     inputConfSenha.classList.add("conf_senha", "use-numerico-input");
     inputConfSenha.setAttribute("type", "password");
     inputConfSenha.setAttribute("placeholder", "Confirmação de senha");
+    
 
     // Configura os atributos do spanSenha
     spanSenha.setAttribute("id", "exibir_senha" + numero);
-    spanSenha.classList.add("icon");
-    spanSenha.style.marginTop = "-50px";
-    spanSenha.style.marginLeft = "400px";
-    spanSenha.innerHTML = '<img style="width: 35px; height: 35px;" src="../../icons/ant-design_eye-invisible-filled.svg">';
+    spanSenha.classList.add("icon", "exibir");
+    spanSenha.style.top = '54px';
+    spanSenha.style.left = '400px';
     spanSenha.onclick = function() { exibir(this.id);};
 
     // Configura os atributos do spanConfSenha
     spanConfSenha.setAttribute("id", "exibir_conf_senha" + numero);
-    spanConfSenha.classList.add("icon");
-    spanConfSenha.style.marginLeft = "850px";
-    spanConfSenha.innerHTML = '<img style="width: 35px; height: 35px;" src="../../icons/ant-design_eye-invisible-filled.svg">';
+    spanConfSenha.classList.add("icon", "exibir");
+    spanConfSenha.style.top = '60px';
+    spanConfSenha.style.left = '850px';
     spanConfSenha.onclick = function() { exibir(this.id);};
 
+    // Configura os atributos do spanCheck
+    spanCheck.setAttribute('id', "check" + numero)
+    spanCheck.classList.add("icon", "check");
+    spanCheck.style.position = 'relative';
+    
     // Configura as opções do selectFuncao
     var optionsFuncao = ["Função", "Administrador", "Usuário Comum"];
     optionsFuncao.forEach(function(item) {
@@ -109,11 +111,14 @@ function adicionar_novoperfil() {
     });
     selectFuncao.setAttribute("id", "funcao" + numero);
     selectFuncao.classList.add("funcao");
+    selectFuncao.style.top = '-50px';
+    selectFuncao.style.marginBottom = '30px';
 
     setTimeout(function() {
         // Adiciona os elementos criados ao início do formulário
         form.insertBefore(linha,  form.firstChild);
         form.insertBefore(selectFuncao, form.firstChild);
+        form.insertBefore(spanCheck, form.firstChild)
         form.insertBefore(spanConfSenha, form.firstChild);
         form.insertBefore(inputConfSenha, form.firstChild);
         form.insertBefore(spanSenha, form.firstChild);
@@ -140,12 +145,12 @@ function passoAnterior() {
 
 function pularpasso() {
     modal('Configurações concluídas com sucesso!' +
-    ' Agora, você seu sistema já está pronto para ser utilizado.', '../../modal/html/modal_sucesso.html', 5000, '75px');
+    ' Agora, você e seu sistema já está pronto para ser utilizado.', '../../modal/html/modal_sucesso.html', 5000, '50px');
 }
 
 function concluir() {
     modal('Configurações concluídas com sucesso!' +
-    ' Agora, você seu sistema já está pronto para ser utilizado.', '../../modal/html/modal_sucesso.html', 5000, '75px');
+    ' Agora, você e seu sistema já está pronto para ser utilizado.', '../../modal/html/modal_sucesso.html', 5000, '50px');
 }
 
 

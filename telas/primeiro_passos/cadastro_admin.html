@@ -20,18 +20,17 @@
         <div>
             <input class="use-keyboard-input" style="margin-left: 40px;" type="text" id="nome" placeholder="Nome">
             <input class="use-keyboard-input" style="margin-left: 20px;" type="text" id="email" placeholder="E-mail">
-            <input class="use-numerico-input" style="margin-top: 30px; margin-left: 40px;" type="text" id="telefone" placeholder="Telefone">
+            <input class="use-keyboard-input" style="margin-top: 30px; margin-left: 40px;" type="text" id="telefone" placeholder="Telefone">
             <select class="input"  style="margin-left: 20px;" id="tipo_telefone">
                 <option disabled selected>Tipo de Telefone</option>
                 <option value="Fixo">Fixo</option>
                 <option value="Celular">Celular</option>
             </select>
             <input id="senha" class="use-numerico-input" style="margin-top: 30px; margin-left: 40px;" type="password" placeholder="Senha">
-            <span style="left: 545px;" class="icon" onclick="exibir('senha')"><img style="width: 35px; height: 35px;" src="../../icons/ant-design_eye-invisible-filled.svg"></span>
-            <input id="conf_senha"  class="use-numerico-input" style="margin-left: 20px;" type="password" placeholder="Confirmação de Senha">
-            <span id="error" class="icon" style="display: none; left: 1101px;"><img style="width: 35px; height: 35px;" src="../../icons/error.svg" alt=""></span>
-            <span id="check" class="icon" style="display: none; left: 1101px;"><img style="width: 35px; height: 35px;" src="../../icons/check.svg" alt=""></span>
-            <span style="left: 1151px;" class="icon" onclick="exibir('conf_senha')"><img style="width: 35px; height: 35px;" src="../../icons/ant-design_eye-invisible-filled.svg"></span>
+            <span id="exibir_senha" style="left: 545px;" class="icon" onclick="exibir('exibir_senha')"></span>
+            <input id="conf_senha" class="use-numerico-input" style="margin-left: 20px;" type="password" placeholder="Confirmação de Senha">
+            <span id="check" class="icon" style="top: 420px; left: 300px;" ></span>
+            <span id="exibir_conf_senha" style="left: 1151px;" class="icon" onclick="exibir('exibir_conf_senha')"></span>
         </div>
         <div>
             <div class="foto" id="foto"></div>
