@@ -1,0 +1,211 @@
+@font-face {
+    font-family: Monda;
+    src: url(../fontes/Monda/Monda-Regular.ttf), format('ttf');
+    
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fontes/Montserrat/Montserrat-VariableFont_wght.ttf), format('ttf');
+}
+
+body{  /*deletar quando terminar*/
+    display: flex;
+    position: fixed;
+    width: 1280px;
+    height: 720px;
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    background-size: 1280px 720px;
+    background-repeat: no-repeat;*/
+}
+
+p{
+    color: var(--Branco, #FFF);
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+input {
+    border-radius: 20px;
+    border: 1px solid #2C2C7C;
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+select{
+    width: 280px;
+    height: 60px;
+    overflow-y: auto;
+    
+    border-radius: 20px;
+    border: 1px solid var(--Azul, #2C2C7C);
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    padding-left: 30px;
+    color: #707070;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.icon {
+    display: flex;
+    position: fixed;
+}
+
+.exibir{
+    width: 35px;
+    height: 35px;
+    background: url(../icons/mdi_eye.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.check {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    
+    background: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#btn_entrar {
+    position: fixed;
+    width: 379px;
+    height: 60px;
+    padding: 16px 0px 15px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    top: 590px;
+    left: 852px;
+
+    border-radius: 15px;
+    background: #2C2C7C;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25) inset, 5px 5px 4px 0px rgba(0, 0, 0, 0.25) inset;
+
+    color: var(--Branco, #FFF);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#foto_perfil {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    top: 180px;
+    left: 50px;
+    opacity: 0.7;
+}
+
+#btn_imagem{
+    position: fixed;
+    width: 380px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    top: 240px;
+    left: 238px;
+
+    background: rgba(0, 0, 0, 0);
+    border-radius: 15px;
+    border: 2px solid white;
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.25);
+
+    color: var(--Branco, #FFF);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;    
+}
+
+#nome_user {
+    position: fixed;
+    width: 548px;
+    height: 60px;
+    flex-shrink: 0;
+    top: 345px;
+    left: 50px;
+}
+
+#email {
+    position: fixed;
+    width: 548px;
+    height: 60px;
+    flex-shrink: 0;
+    top: 345px;
+    left: 650px;
+}
+
+#telefone {
+    position: fixed;
+    width: 550px;
+    height: 60px;
+    flex-shrink: 0;
+    top: 425px;
+    left: 50px;
+}
+
+#tipo_telefone {
+    position: fixed;
+    width: 580px;
+    height: 60px;
+    flex-shrink: 0;
+    top: 425px;
+    left: 650px;
+}
+
+#senha {
+    position: fixed;
+    width: 345px;
+    height: 60px;
+    flex-shrink: 0;
+    top: 505px;
+    left: 50px;
+}
+
+#conf_senha {
+    position: fixed;
+    width: 445px;
+    height: 60px;
+    flex-shrink: 0;
+    top: 505px;
+    left: 450px;
+}
+
+#funcao {
+    position: fixed;
+    width: 280px;
+    height: 60px;
+    flex-shrink: 0;
+    top: 505px;
+    left: 950px;
+}
+

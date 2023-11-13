@@ -1,7 +1,11 @@
-
 //Exibir senha
 var flag_senha = 0;
 var flag_conferir = 0;
+var path_icon = document.getElementById('path').classList.value;
+var path_icon2 = document.getElementById('path2').classList.value;
+var path_check = document.getElementById('path_check').classList.value;
+var path_error = document.getElementById('path_error').classList.value;
+var modal_erro = document.getElementById('modal_error').classList.value;
 
 function exibir(str) {
     var campo;
@@ -10,27 +14,27 @@ function exibir(str) {
 
     if (campo === "senha") {
         var campo_senha = document.getElementById(campo);
-        document.getElementById(str).style.background = 'url(../../icons/ant-design_eye-invisible-filled.svg)';
+        document.getElementById(str).style.background = path_icon;
         document.getElementById(str).style.backgroundRepeat = 'no-repeat';
         document.getElementById(str).style.backgroundSize = 'cover';
         if (flag_senha === 0) {
             campo_senha.type = 'text';
             flag_senha = 1;
         } else {
-            document.getElementById(str).style.background = 'url(../../icons/mdi_eye.svg)';
+            document.getElementById(str).style.background = path_icon2;
             campo_senha.type = 'password';
             flag_senha = 0;
         }
     } else {
         var campo_conferir = document.getElementById(campo);
-        document.getElementById(str).style.background = 'url(../../icons/ant-design_eye-invisible-filled.svg)';
+        document.getElementById(str).style.background = path_icon;
         document.getElementById(str).style.backgroundRepeat = 'no-repeat';
         document.getElementById(str).style.backgroundSize = 'cover';
         if (flag_conferir === 0) {
             campo_conferir.type = 'text';
             flag_conferir = 1;
         } else {
-            document.getElementById(str).style.background = 'url(../../icons/mdi_eye.svg)';
+            document.getElementById(str).style.background =  path_icon2;
             campo_conferir.type = 'password';
             flag_conferir = 0;
         }
@@ -53,16 +57,16 @@ function verificarSenha(valor) {
         if(campo_verificar.value !== "") {
             if (campo_senha === campo_verificar) {
                 document.getElementById('check' + numero).style.display = 'flex';
-                document.getElementById('check'  + numero).style.background = 'url(../../icons/check.svg)';
+                document.getElementById('check'  + numero).style.background = path_check;
                 document.getElementById('check' + numero).style.backgroundRepeat = 'no-repeat';
                 document.getElementById('check' + numero).style.backgroundSize = 'cover';
                 document.getElementById('conf_senha' + numero).style.borderColor = 'green';
                 btn_entrar.disabled = false;
             } else {
-                modal('As senhas não são iguais!', '../../modal/html/modal_error.html', 3000);
+                modal('As senhas não são iguais!', modal_erro, 3000);
                 document.getElementById('conf_senha' + numero).style.borderColor = 'red';
                 document.getElementById('check'  + numero).style.display = 'flex';
-                document.getElementById('check'  + numero).style.background = 'url(../../icons/error.svg)';
+                document.getElementById('check'  + numero).style.background = path_error;
                 document.getElementById('check' + numero).style.backgroundRepeat = 'no-repeat';
                 document.getElementById('check' + numero).style.backgroundSize = 'cover';
                 document.getElementById('senha' + numero).value = '';
@@ -78,16 +82,16 @@ function verificarSenha(valor) {
         if(campo_verificar.value !== "") {
             if (campo_senha === campo_verificar) {
                 document.getElementById('check').style.display = 'flex';
-                document.getElementById('check').style.background = 'url(../../icons/check.svg)';
+                document.getElementById('check').style.background = path_check;
                 document.getElementById('check').style.backgroundRepeat = 'no-repeat';
                 document.getElementById('check').style.backgroundSize = 'cover';
                 document.getElementById('conf_senha').style.borderColor = 'green';
                 btn_entrar.disabled = false;
             } else {
-                modal('As senhas não são iguais!', '../../modal/html/modal_error.html', 3000);
+                modal('As senhas não são iguais!', modal_erro, 3000);
                 document.getElementById('conf_senha').style.borderColor = 'red';
                 document.getElementById('check').style.display = 'flex';
-                document.getElementById('check').style.background = 'url(../../icons/error.svg)';
+                document.getElementById('check').style.background = path_error;
                 document.getElementById('check').style.backgroundRepeat = 'no-repeat';
                 document.getElementById('check').style.backgroundSize = 'cover';
                 document.getElementById('senha').value = '';
@@ -101,7 +105,7 @@ function verificarSenha(valor) {
 
 function verifcar_login() {
     var { PythonShell } = require('python-shell');
-    var path = require('path');
+    var path_icon = require('path_icon');
 
     var verificador = 0;    
     var funcao_python = 'verificar_login';
@@ -112,8 +116,8 @@ function verifcar_login() {
     usuario = usuario.textContent;
 
     var opcoes_python = {
-        pythonPath: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
-        scriptPath: path.join(__dirname, '../../../.././BackEnd/Python/Projeto_TCC/'),
+        pythonpath_icon: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
+        scriptpath_icon: path_icon.join(__dirname, '../../../.././BackEnd/Python/Projeto_TCC/'),
         args: [verificador, funcao_python, usuario, senha.value]
     }
 

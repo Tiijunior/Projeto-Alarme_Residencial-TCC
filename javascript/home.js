@@ -100,6 +100,41 @@ function chamar_perfis() {
     }
 }
 
+function adicionar_perfis() {
+    if(!(document.getElementById('telas').src).includes('novo_perfil.html')) {
+        document.getElementById('relogio').style.transition = '1s';
+        for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
+            document.getElementsByClassName('texto_meio')[i].style.display = 'none';
+        }
+        document.getElementById('relogio').style.top = '8px';
+        document.getElementById('relogio').style.left = '597px';
+        document.getElementById('relogio').style.fontSize = '32px';
+        document.getElementById('relogio').style.zIndex = 2;
+        setTimeout(function() {
+            var iframe = document.getElementById('telas');
+            iframe.style.left = '1280px';
+            
+            setTimeout( function() {
+                iframe.src = './novo_perfil.html';
+                iframe.style.transition = '2s';
+                iframe.style.left = '0';
+
+                setTimeout( function() {
+                    var menu_direito = document.getElementById('menu_direito');
+                    menu_direito.style.transition = '1s';
+                    menu_direito.style.right = '-330px';
+                    menu_direito.style.display = '0';
+                    flag_menu_direito = false
+                }, 1000);
+            }, 200);
+            
+        }, 900);
+
+        document.getElementById('barra_main').style.zIndex = 3;
+        document.getElementById('btn_home').style.zIndex = 4;
+    }   
+}
+
 function bloquear() {
     window.location.href = './bloqueio.html';
 }

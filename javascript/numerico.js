@@ -76,8 +76,8 @@ const NumericKeyboard = {
                     keyElement.innerHTML = "✓";
                     keyElement.addEventListener("click", () => {
                     // Verifica se o elemento com o ID "conf_senha" existe e se foi preenchido
-                    var i = 0
-                    while(!(document.querySelectorAll(".use-numerico-input")[i].id).includes('conf_senha') && i === 10){
+                    var i = 0;
+                    while(!(document.querySelectorAll(".use-numerico-input")[i].id).includes('conf_senha') && i !== 30){
                         i ++;
                     }
                     const confSenhaElement = document.getElementById(document.querySelectorAll(".use-numerico-input")[i].id);

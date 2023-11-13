@@ -18,6 +18,14 @@
 
     <!--Corpo Principal-->
     <main>
+
+        <!--Inidica onde encontrar as imagens-->
+        <div id="path" class="url(../../icons/ant-design_eye-invisible-filled.svg)"></div>
+        <div id="path2" class="url(../../icons/mdi_eye.svg)"></div>
+        <div id="path_check" class="url(../../icons/check.svg)"></div>
+        <div id="path_error" class="url(../../icons/error.svg)"></div>
+        <div id="modal_error" class='../../modal/html/modal_error.html'></div>
+        
         <div>
             <div class="saudacao"><p>Olá, <label id="messagemId"></label>!</p></div>
             <div id="relogio" class="relogio"></div>
@@ -33,7 +41,7 @@
                 <span id="exibir_conf_senha" style="top: 60px; left: 850px;" class="icon exibir" onclick="exibir('exibir_conf_senha')"></span>
                 <span id="check" class="icon check" ></span>
                 <select name="" id="funcao" class="funcao">
-                    <option selected disabled value="">Função</option>
+                    <option selected disabled value="">Tipo de Usuário</option>
                     <option>Administrador</option>
                     <option value="usuario">Usuário Comum</option>
                 </select>

@@ -1,3 +1,4 @@
+var imagemcarregada;
 
 // Carregar Imagem
 document.getElementById('btn_imagem').addEventListener('click', function() {
@@ -21,6 +22,8 @@ document.getElementById('btn_imagem').addEventListener('click', function() {
             var fotoDiv = document.getElementById('foto');
             fotoDiv.innerHTML = '';
             fotoDiv.appendChild(img);
+
+            imagemcarregada = result;
         };
         reader.readAsDataURL(file);
     };

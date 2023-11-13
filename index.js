@@ -14,9 +14,9 @@ app.on('ready', () => {
         }
     });
     
-      //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/home.html')}`);
-      //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/local.html')}`);
-      mainWindow.loadURL(`file://${path.join(__dirname, 'index.html')}`);
+      mainWindow.loadURL(`file://${path.join(__dirname, '/telas/home.html')}`);
+      //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/novo_perfil.html')}`);
+      //mainWindow.loadURL(`file://${path.join(__dirname, 'index.html')}`);
 
 
     //mainWindow.setFullScreen(true)
