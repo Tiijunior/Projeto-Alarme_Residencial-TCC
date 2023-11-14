@@ -181,6 +181,7 @@ p{
 }
 
 .icon_senha {
+    position: fixed;
     width: 35px;
     height: 35px;
     background: url(../icons/mdi_eye.svg);

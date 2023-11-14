@@ -1,4 +1,6 @@
 var imagemcarregada;
+var modal_error = document.getElementById('modal_error').classList.value;
+var modal_sucesso = document.getElementById('modal_sucesso').classList.value;
 
 // Carregar Imagem
 document.getElementById('btn_imagem').addEventListener('click', function() {
@@ -19,3 +21,8 @@ document.getElementById('btn_imagem').addEventListener('click', function() {
     };
     input.click();
 });
+
+function salvar(){
+    modal('Novo perfil foi configurado com sucesso!', modal_sucesso, 3000);
+    setTimeout(function() {parent.document.getElementById('btn_home').click();}, 3500);
+}

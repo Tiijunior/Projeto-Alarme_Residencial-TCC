@@ -44,7 +44,7 @@ function editar() {
 
         excluir.disabled = true;
         excluir.style.display = 'none';
-        modal('Perfil alterado com sucesso!', modal_sucesso, 3000);
+        modal('Suas alterações foram salvas com sucesso!', modal_sucesso, 3000);
         
     } else {
         

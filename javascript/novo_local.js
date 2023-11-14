@@ -99,8 +99,9 @@ function animacao_btn() {
 }
 
 function btn_salvar() {
-    modal('inicialmente os sensores estão inativos, mas você poderá ativá-los assim que deixar essa página.', '../modal/html/modal_notifica.html', 5000, '75px');
+    modal('inicialmente os sensores estão inativos, mas você poderá ativá-los assim que deixar essa página.', '../modal/html/modal_notifica.html', 7000, '53px');
     setTimeout(function() {
-        modal('Seu local foi configurado com sucesso!', '../modal/html/modal_sucesso.html', 5000, '75px')
-    }, 3500);
+        modal('Seu local foi configurado com sucesso!', '../modal/html/modal_sucesso.html', 5000,)
+    }, 5500);
+    setTimeout(function() {parent.document.getElementById('btn_home').click();}, 9000);
 }
