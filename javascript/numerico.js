@@ -75,18 +75,13 @@ const NumericKeyboard = {
                     keyElement.classList.add("numeric__key--extra-wide", "numeric__key--dark");
                     keyElement.innerHTML = "✓";
                     keyElement.addEventListener("click", () => {
-                    // Verifica se o elemento com o ID "conf_senha" existe e se foi preenchido
-                    var i = 0;
-                    while(!(document.querySelectorAll(".use-numerico-input")[i].id).includes('conf_senha') && i !== 30){
-                        i ++;
-                    }
-                    const confSenhaElement = document.getElementById(document.querySelectorAll(".use-numerico-input")[i].id);
+                        // Verifica se o elemento com o ID "conf_senha" existe e se foi preenchido
+                        const confSenhaElement = document.querySelector(".use-numerico-input[id*='conf_senha']");
                         if (confSenhaElement && confSenhaElement.value !== "") {
                             // Chama a função verificarSenha() se as condições forem atendidas
-                            //console.log(confSenhaElement.id);
                             verificarSenha(confSenhaElement.id);
                         }
-                    
+
                         // Fecha o teclado e aciona o evento onclose
                         this.close();
                         this._triggerEvent("onclose");

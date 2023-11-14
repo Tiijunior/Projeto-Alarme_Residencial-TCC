@@ -71,17 +71,17 @@ function chamar_senha(usuario) {
             document.getElementById('lista_user').style.top = '-600px';
             document.getElementById('lista_user').style.zIndex = '-10';
             
-            document.getElementById('input_senha').style.transition = '1s';
-            document.getElementById('input_senha').style.top = '-600px';
-            document.getElementById('input_senha').style.zIndex = '-10';
+            document.getElementById('senha').style.transition = '1s';
+            document.getElementById('senha').style.top = '-600px';
+            document.getElementById('senha').style.zIndex = '-10';
             
             document.getElementById('botao_senha').style.transition = '1s';
             document.getElementById('botao_senha').style.top = '-600px';
             document.getElementById('botao_senha').style.zIndex = '-10';
             
-            document.getElementById('icon_senha').style.transition = '1s';
-            document.getElementById('icon_senha').style.top = '-600px';
-            document.getElementById('icon_senha').style.zIndex = '-10';
+            document.getElementById('exibir_senha').style.transition = '1s';
+            document.getElementById('exibir_senha').style.top = '-600px';
+            document.getElementById('exibir_senha').style.zIndex = '-10';
             
             document.getElementById('fade').style.transition = '1s';
             document.getElementById('fade').style.top = '-600px';
@@ -90,9 +90,9 @@ function chamar_senha(usuario) {
             setTimeout(function() {
                 
                 document.getElementById('lista_user').style.display = 'none';
-                document.getElementById('input_senha').style.display = 'none';
+                document.getElementById('senha').style.display = 'none';
                 document.getElementById('botao_senha').style.display = 'none';
-                document.getElementById('icon_senha').style.display = 'none';
+                document.getElementById('exibir_senha').style.display = 'none';
                 document.getElementById('fade').style.display = 'none';
                 window.location.href = './home.html' ;
             }, 1000);
@@ -108,17 +108,17 @@ function chamar_senha(usuario) {
             document.getElementById('lista_user').style.top = '-600px';
             document.getElementById('lista_user').style.zIndex = '-10';
             
-            document.getElementById('input_senha').style.transition = '1s';
-            document.getElementById('input_senha').style.top = '-600px';
-            document.getElementById('input_senha').style.zIndex = '-10';
+            document.getElementById('senha').style.transition = '1s';
+            document.getElementById('senha').style.top = '-600px';
+            document.getElementById('senha').style.zIndex = '-10';
             
             document.getElementById('botao_senha').style.transition = '1s';
             document.getElementById('botao_senha').style.top = '-600px';
             document.getElementById('botao_senha').style.zIndex = '-10';
             
-            document.getElementById('icon_senha').style.transition = '1s';
-            document.getElementById('icon_senha').style.top = '-600px';
-            document.getElementById('icon_senha').style.zIndex = '-10';
+            document.getElementById('exibir_senha').style.transition = '1s';
+            document.getElementById('exibir_senha').style.top = '-600px';
+            document.getElementById('exibir_senha').style.zIndex = '-10';
             
             document.getElementById('fade').style.transition = '1s';
             document.getElementById('fade').style.top = '-600px';
@@ -127,9 +127,9 @@ function chamar_senha(usuario) {
             setTimeout(function() {
                 
                 document.getElementById('lista_user').style.display = 'none';
-                document.getElementById('input_senha').style.display = 'none';
+                document.getElementById('senha').style.display = 'none';
                 document.getElementById('botao_senha').style.display = 'none';
-                document.getElementById('icon_senha').style.display = 'none';
+                document.getElementById('exibir_senha').style.display = 'none';
                 document.getElementById('fade').style.display = 'none';
                 window.location.href = './home_user.html' ;
             }, 1000);

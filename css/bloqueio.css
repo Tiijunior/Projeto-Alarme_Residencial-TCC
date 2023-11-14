@@ -157,7 +157,7 @@ p{
     position: fixed;
 }
 
-#input_senha {
+#senha {
     display: flex;
     position: fixed;
     width: 548px;
@@ -180,18 +180,13 @@ p{
     line-height: normal;
 }
 
-#icon_senha {
-    display: block;
-    position: relative;
-    width: 33.833px;
+.icon_senha {
+    width: 35px;
     height: 35px;
-    flex-shrink: 0;
-
-    margin-top: -23px;
-    margin-left: 100px;
-    background: url(../icons/ant-design_eye-invisible-filled.svg);
+    background: url(../icons/mdi_eye.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 1;
 }
 
 #botao_senha {

@@ -16,6 +16,13 @@
     </header>
     <!--Corpo Principal-->
     <main>
+    <!--Inidica onde encontrar as imagens-->
+        <div id="path" class="url(../icons/ant-design_eye-invisible-filled.svg)"></div>
+        <div id="path2" class="url(../icons/mdi_eye.svg)"></div>
+        <div id="path_check" class="url(../icons/check.svg)"></div>
+        <div id="path_error" class="url(../icons/error.svg)"></div>
+        <div id="modal_error" class='../modal/html/modal_error.html'></div>
+
         <div id="fade">
             <div id="relogio"></div>
             <div id="cadeado" onclick="desbloquear()"></div>
@@ -30,7 +37,8 @@
         </div>
     <!--Bloco de Senha-->
         <div id="bloco_senha">
-            <input id="input_senha" class="use-numerico-input" type="password" placeholder="Senha"><span id="icon_senha" onclick="exibir('input_senha')"></span>
+            <input id="senha" class="use-numerico-input" type="password" placeholder="Senha">
+            <span id="exibir_senha" class="icon_senha" style="margin-top: -23px; margin-left: 100px;" onclick="exibir('exibir_senha')"></span>
             <button id="botao_senha">ENTRAR</button>
         </div>
     </main>

@@ -67,3 +67,35 @@ function editar() {
         excluir.style.display = 'none';
     }
 }
+
+function excluir() {
+    document.querySelectorAll('p')[0].style.transition = '1s';
+    document.querySelectorAll('p')[1].style.transition = '1s';
+    document.querySelector('label').style.transition = '1s';
+    document.getElementById('foto_perfil').style.transition = '1s';
+    document.getElementById('btn_imagem').style.transition = '1s';
+    document.getElementById('nome_user').style.transition = '1s';
+    document.getElementById('email').style.transition = '1s';
+    document.getElementById('telefone').style.transition = '1s';
+    document.getElementById('tipo_telefone').style.transition = '1s';
+    document.getElementById('senha').style.transition = '1s';
+    document.getElementById('exibir_senha').style.transition = '1s';
+    document.getElementById('conf_senha').style.transition = '1s';
+    document.getElementById('exibir_conf_senha').style.transition = '1s';
+    document.getElementById('funcao').style.transition = '1s';
+
+    document.querySelectorAll('p')[0].style.top = '-1000px';
+    document.querySelectorAll('p')[1].style.top = '-1000px';
+    document.querySelector('label').style.top = '-1000px';
+    document.getElementById('foto_perfil').style.top = '-1000px';
+    document.getElementById('btn_imagem').style.top = '-1000px';
+    document.getElementById('nome_user').style.top = '-1000px';
+    document.getElementById('email').style.top = '-1000px';
+    document.getElementById('telefone').style.top = '-1000px';
+    document.getElementById('tipo_telefone').style.top = '-1000px';
+    document.getElementById('senha').style.top = '-1000px';
+    document.getElementById('exibir_senha').style.top = '-1000px';
+    document.getElementById('conf_senha').style.top = '-1000px';
+    document.getElementById('exibir_conf_senha').style.top = '-1000px';
+    document.getElementById('funcao').style.top = '-1000px';
+}

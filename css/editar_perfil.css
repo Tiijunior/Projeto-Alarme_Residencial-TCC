@@ -18,9 +18,9 @@ body{  /*deletar quando terminar*/
     align-items: center;
     flex-shrink: 0;
 
-    /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
     background-size: 1280px 720px;
-    background-repeat: no-repeat;*/
+    background-repeat: no-repeat;
 }
 
 p, label{
@@ -106,7 +106,7 @@ select:disabled {
     height: 45px;
     flex-shrink: 0;
     top: 138px;
-    left: 1120px;
+    left: 1140px;
 
     border: none;
     background: url(../icons/mdi_pencil.svg);
@@ -124,7 +124,7 @@ select:disabled {
     left: 1190px;
 
     border: none;
-    background: url(../icons/mdi_close-circle-outline.svg);
+    background: url(../icons/lets-icons_remove.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
