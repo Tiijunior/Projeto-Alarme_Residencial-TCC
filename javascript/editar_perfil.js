@@ -98,4 +98,5 @@ function excluir() {
     document.getElementById('conf_senha').style.top = '-1000px';
     document.getElementById('exibir_conf_senha').style.top = '-1000px';
     document.getElementById('funcao').style.top = '-1000px';
+    setTimeout(function() {parent.document.getElementById('btn_home').click();}, 500);
 }

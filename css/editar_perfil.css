@@ -18,9 +18,9 @@ body{  /*deletar quando terminar*/
     align-items: center;
     flex-shrink: 0;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
     background-size: 1280px 720px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
 }
 
 p, label{
