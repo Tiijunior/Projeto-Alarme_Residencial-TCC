@@ -1,4 +1,6 @@
 var imagemcarregada;
+var modal_sucesso = document.getElementById('modal_sucesso').classList.value; 
+var modal_erro = document.getElementById('modal_error').classList.value;
 
 // Carregar Imagem
 document.getElementById('btn_imagem').addEventListener('click', function() {
@@ -22,7 +24,31 @@ document.getElementById('btn_imagem').addEventListener('click', function() {
 
 
 function editar() {
-    if(document.getElementById('editar').style.background.includes('pencil')) {
+    if(document.getElementById('editar').style.background.includes('check-circle')) {
+        var editar = document.getElementById('editar');
+        var excluir = document.getElementById('excluir');
+
+        document.getElementById('btn_imagem').disabled = true;
+        document.getElementById('nome_user').disabled = true;
+        document.getElementById('email').disabled = true;
+        document.getElementById('telefone').disabled = true;
+        document.getElementById('tipo_telefone').disabled = true;
+        document.getElementById('senha').disabled = true;
+        document.getElementById('conf_senha').disabled = true;
+        document.getElementById('funcao').disabled = true;
+
+        editar.style.transition = '0.5s';
+        editar.style.background = 'url(../icons/mdi_pencil.svg)';
+        editar.style.backgroundRepeat = 'no-repeat';
+        editar.style.backgroundSize = 'cover';
+
+        excluir.disabled = true;
+        excluir.style.display = 'none';
+        modal('Perfil alterado com sucesso!', modal_sucesso, 3000);
+        
+    } else {
+        
+
         var editar = document.getElementById('editar');
         var excluir = document.getElementById('excluir');
 
@@ -44,27 +70,6 @@ function editar() {
         setTimeout(function() {
             excluir.style.display = 'flex';
         }, 300);
-        
-    } else {
-        var editar = document.getElementById('editar');
-        var excluir = document.getElementById('excluir');
-
-        document.getElementById('btn_imagem').disabled = true;
-        document.getElementById('nome_user').disabled = true;
-        document.getElementById('email').disabled = true;
-        document.getElementById('telefone').disabled = true;
-        document.getElementById('tipo_telefone').disabled = true;
-        document.getElementById('senha').disabled = true;
-        document.getElementById('conf_senha').disabled = true;
-        document.getElementById('funcao').disabled = true;
-
-        editar.style.transition = '0.5s';
-        editar.style.background = 'url(../icons/mdi_pencil.svg)';
-        editar.style.backgroundRepeat = 'no-repeat';
-        editar.style.backgroundSize = 'cover';
-
-        excluir.disabled = true;
-        excluir.style.display = 'none';
     }
 }
 
@@ -98,5 +103,6 @@ function excluir() {
     document.getElementById('conf_senha').style.top = '-1000px';
     document.getElementById('exibir_conf_senha').style.top = '-1000px';
     document.getElementById('funcao').style.top = '-1000px';
-    setTimeout(function() {parent.document.getElementById('btn_home').click();}, 500);
+    modal('Perfil removido com sucesso!', modal_sucesso, 3000);
+    setTimeout(function() {parent.document.getElementById('btn_home').click();}, 3500);
 }
