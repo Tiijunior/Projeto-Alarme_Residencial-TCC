@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/home_user.css">
     <link rel="stylesheet" href="../css/numeric_keyboard.css">   
 </head>
-<body id="home" class="container" onload="buscarUsuario()">
+<body id="user" class="container" onload="buscarUsuario()">
     <!--Cabeçalho-->
     <header>
         <!--Barra do cabeçalho-->
@@ -22,7 +22,7 @@
         <div id="barra_main">
             <button id="btn_comodos" onclick="chamar_comodos()"><img src="../icons/mdi_shield-home.svg" alt=""></button>
             <button id="btn_home" onclick="chamar_home()"><img src="../icons/mdi_home.svg" alt=""></button>
-            <button id="btn_perfil"><img src="../icons/mdi_account-circle-menor.svg" alt=""></button>
+            <button id="btn_perfil" onclick="chamar_conta()"><img src="../icons/mdi_account-circle-menor.svg" alt=""></button>
         </div>
         <!--Barra Esquerda-->
         <div id="menu_esquerdo">
@@ -34,7 +34,7 @@
     
         <!--Meio-->
         <div id="meio">
-            <div class="texto_meio">Olá <label id="mensagemId">Usuário!</label></div>
+            <div id="mensagemId" class="texto_meio">Olá, Usuário!</div>
             <div id="relogio"></div>
             <iframe id="telas" frameborder="0" style="position: fixed; height: 100%; width: 100%; top: 0; left: 0;"></iframe>
         </div>

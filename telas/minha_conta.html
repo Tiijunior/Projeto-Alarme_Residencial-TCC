@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/editar_perfil.css">
+    <link rel="stylesheet" type="text/css" href="../css/minha_conta.css">
     <link rel="stylesheet" type="text/css" href="../css/keyboard.css">
     <link rel="stylesheet" type="text/css" href="../css/numeric_keyboard.css">
 </head>
@@ -19,10 +19,8 @@
 
         <div class="lista">
             <div>
-                <p style="position: absolute; width: 326px; height: 44px; left: 50px;">Perfis - </p>
-                <label style="position: absolute; width: 326px; height: 44px; top: 39px; left: 185px;" for="">Usuário 01</label>
+                <p style="position: absolute; width: 326px; height: 44px; left: 50px;">Minha conta</p>
                 <button id="editar" onclick="editar()"></button>
-                <button id="excluir" onclick="excluir()" disabled></button>
             </div>
             <div>
                 <img id="foto_perfil" src="../icons/mdi_account-circle.svg" alt="">
@@ -39,15 +37,10 @@
                     <option value="Celular">Celular</option>
                 </select>
                 <input id="senha" type="password" class="use-numerico-input" placeholder="Senha" disabled>
-                <span id="exibir_senha" style="top: 420px; left: 375px;" class="icon exibir" onclick="exibir('exibir_senha')"></span>
+                <span id="exibir_senha" style="top: 420px; left: 575px;" class="icon exibir" onclick="exibir('exibir_senha')"></span>
                 <input id="conf_senha" type="password" class="use-numerico-input" placeholder="Confirmação de senha" disabled>
-                <span id="exibir_conf_senha" style="top: 420px; left: 875px;" class="icon exibir" onclick="exibir('exibir_conf_senha')"></span>
+                <span id="exibir_conf_senha" style="top: 420px; left: 1175px;" class="icon exibir" onclick="exibir('exibir_conf_senha')"></span>
                 <span id="check" style="top: 420px; left: 830px;" class="icon check" ></span>
-                <select name="" id="funcao" disabled>
-                    <option selected disabled value="">Tipo de Usuário</option>
-                    <option>Administrador</option>
-                    <option value="usuario">Usuário Comum</option>
-                </select>
             </div>
             
             <div>
@@ -91,7 +84,7 @@
             </div>
         </div>
     </main>   
-    <script src="../javascript/editar_perfil.js"></script>
+    <script src="../javascript/minha_conta.js"></script>
     <script src="../javascript/verificarsenha.js"></script>
     <script src="../javascript/keyboard.js"></script>
     <script src="../javascript/numerico.js"></script>

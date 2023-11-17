@@ -9,7 +9,7 @@ function relogio() {
     
     
     if(!(window.location.pathname).includes('bloqueio.html')) {
-      if(!document.getElementById('home')){
+      if(!document.getElementById('home') && !document.getElementById('user')){
         if (navigator.onLine) {
           document.querySelector('.logo_wifi').innerHTML = '<img src="../../icons/wifi.svg" alt=""  style="margin-top: 5px;">';
         } else {

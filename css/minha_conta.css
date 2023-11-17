@@ -64,8 +64,6 @@ input:disabled {
 }
 
 select{
-    width: 280px;
-    height: 60px;
     overflow-y: auto;
     
     border-radius: 20px;
@@ -124,21 +122,6 @@ select:disabled {
     background-size: cover;
 }
 
-#excluir {
-    display: none;
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    flex-shrink: 0;
-    top: 39px;
-    left: 1190px;
-
-    border: none;
-    background: url(../icons/lets-icons_remove.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 #foto_perfil {
     position: absolute;
     width: 150px;
@@ -183,7 +166,7 @@ select:disabled {
 
 #email {
     position: absolute;
-    width: 548px;
+    width: 550px;
     height: 60px;
     flex-shrink: 0;
     top: 245px;
@@ -201,8 +184,8 @@ select:disabled {
 
 #tipo_telefone {
     position: absolute;
-    width: 580px;
-    height: 60px;
+    width: 585px;
+    height: 64px;
     flex-shrink: 0;
     top: 325px;
     left: 650px;
@@ -210,7 +193,7 @@ select:disabled {
 
 #senha {
     position: absolute;
-    width: 345px;
+    width: 550px;
     height: 60px;
     flex-shrink: 0;
     top: 405px;
@@ -219,21 +202,13 @@ select:disabled {
 
 #conf_senha {
     position: absolute;
-    width: 445px;
+    width: 550px;
     height: 60px;
     flex-shrink: 0;
     top: 405px;
-    left: 450px;
+    left: 650px;
 }
 
-#funcao {
-    position: absolute;
-    width: 280px;
-    height: 60px;
-    flex-shrink: 0;
-    top: 405px;
-    left: 950px;
-}
 
 /*EQUIPAMENTO*/
 

@@ -24,9 +24,12 @@ document.getElementById('btn_imagem').addEventListener('click', function() {
 
 
 function editar() {
+    var editar = document.getElementById('editar');
+    var excluir = document.getElementById('excluir');
+    var adicionar = document.getElementById('adicionar');
+
     if(document.getElementById('editar').style.background.includes('check-circle')) {
-        var editar = document.getElementById('editar');
-        var excluir = document.getElementById('excluir');
+        
 
         document.getElementById('btn_imagem').disabled = true;
         document.getElementById('nome_user').disabled = true;
@@ -36,21 +39,25 @@ function editar() {
         document.getElementById('senha').disabled = true;
         document.getElementById('conf_senha').disabled = true;
         document.getElementById('funcao').disabled = true;
-
+        document.getElementById('equipamento').disabled = true;
+        document.getElementById('endereco').disabled = true;
+        document.getElementById('numero').disabled = true;
+        document.getElementById('cep').disabled = true;
+        document.getElementById('cidade').disabled = true;
+        document.getElementById('estados').disabled = true;
+                
         editar.style.transition = '0.5s';
         editar.style.background = 'url(../icons/mdi_pencil.svg)';
         editar.style.backgroundRepeat = 'no-repeat';
         editar.style.backgroundSize = 'cover';
 
+        adicionar.disabled = true;
+        adicionar.style.display = 'none';
         excluir.disabled = true;
         excluir.style.display = 'none';
         modal('Suas alterações foram salvas com sucesso!', modal_sucesso, 3000);
         
     } else {
-        
-
-        var editar = document.getElementById('editar');
-        var excluir = document.getElementById('excluir');
 
         document.getElementById('btn_imagem').disabled = false;
         document.getElementById('nome_user').disabled = false;
@@ -60,15 +67,24 @@ function editar() {
         document.getElementById('senha').disabled = false;
         document.getElementById('conf_senha').disabled = false;
         document.getElementById('funcao').disabled = false;
+        document.getElementById('equipamento').disabled = false;
+        document.getElementById('endereco').disabled = false;
+        document.getElementById('numero').disabled = false;
+        document.getElementById('cep').disabled = false;
+        document.getElementById('cidade').disabled = false;
+        document.getElementById('estados').disabled = false;
+                
 
         editar.style.transition = '0.5s';
         editar.style.background = 'url(../icons/mdi_check-circle.svg)';
         editar.style.backgroundRepeat = 'no-repeat';
         editar.style.backgroundSize = 'cover';
         
+        adicionar.disabled = false;
         excluir.disabled = false;
         setTimeout(function() {
             excluir.style.display = 'flex';
+            adicionar.style.display = 'flex';
         }, 300);
     }
 }
@@ -88,9 +104,11 @@ function excluir() {
     document.getElementById('conf_senha').style.transition = '1s';
     document.getElementById('exibir_conf_senha').style.transition = '1s';
     document.getElementById('funcao').style.transition = '1s';
+    document.getElementById('adicionar').style.transition = '1s';
 
     document.querySelectorAll('p')[0].style.top = '-1000px';
     document.querySelectorAll('p')[1].style.top = '-1000px';
+    document.querySelectorAll('p')[2].style.top = '-1000px';
     document.querySelector('label').style.top = '-1000px';
     document.getElementById('foto_perfil').style.top = '-1000px';
     document.getElementById('btn_imagem').style.top = '-1000px';
@@ -103,6 +121,8 @@ function excluir() {
     document.getElementById('conf_senha').style.top = '-1000px';
     document.getElementById('exibir_conf_senha').style.top = '-1000px';
     document.getElementById('funcao').style.top = '-1000px';
+    document.getElementById('adicionar').style.top = '-1000px'
+
     modal('Perfil removido com sucesso!', modal_sucesso, 3000);
     setTimeout(function() {parent.document.getElementById('btn_home').click();}, 3500);
 }
