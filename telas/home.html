@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/numeric_keyboard.css">   
+    <link rel="stylesheet" href="../css/home.css">  
 </head>
 <body id="home" class="container" onload=" lista_user(1)">
     <!--Cabeçalho-->
@@ -30,7 +29,13 @@
             text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);">Locais</p>
             <button id="adicionar_comodos" onclick="adicionar_comodo()"></button>
             <p style="width: 286px; height: 40px; margin-top: 79px; margin-left: 25px; font-size: 16px;
-            font-weight: 500;">Para visualizar mais detalhes do local, basta clicar nele.</p>                
+            font-weight: 500;">Para visualizar mais detalhes do local, basta clicar nele.</p>
+            <p style="margin-top: 129px; margin-left: 25px; font-size: 20px;">Todos os Ambientes</p>
+            <button id="switch_comodo" onclick="ativar_comodo()"></button>
+            <!--Lista de Comodos-->
+            <div>
+                
+            </div>
         </div>
     
         <!--Meio-->
@@ -50,11 +55,11 @@
             <div class="lista">
                 <div id="lista_user"></div>
             </div>
+        </div>
     </main>
     <script src="../javascript/home.js"></script>
     <script src="../javascript/usuario.js"></script>
     <script src="../javascript/relogio.js"></script>
     <script src="../modal/javascript/chamar_modal.js"></script>
-
 </body>
 </html>

@@ -22,7 +22,8 @@ function chamar_wifi() {
         document.getElementById('barra_main').style.zIndex = 3;
         document.getElementById('btn_home').style.zIndex = 4;
     }
-}
+};
+
 
 function chamar_comodos() {
     var menu_esquerdo = document.getElementById('menu_esquerdo');
@@ -33,6 +34,7 @@ function chamar_comodos() {
         menu_esquerdo.style.display = 'flex';
         menu_esquerdo.style.left = '0';
         flag_menu_esquerdo = true;
+        
     }
     else {
         menu_esquerdo.style.transition = '1s';
@@ -40,8 +42,25 @@ function chamar_comodos() {
         menu_esquerdo.style.display = '0';
         flag_menu_esquerdo = false
     }
+};
 
-}
+  
+
+function ativar_comodo() {
+    var botao = document.getElementById('switch_comodo');
+    
+    if(botao.style.background.includes('switch-on')) {
+        botao.style.background = 'url(../icons/mdi_toggle-switch-desativado-off.svg)';
+        botao.style.backgroundRepeat = 'no-repeat';
+        botao.style.backgroundSize = 'cover';
+
+    } else {
+        botao.style.background = 'url(../icons/mdi_toggle-switch-on.svg)';
+        botao.style.backgroundRepeat = 'no-repeat';
+        botao.style.backgroundSize = 'cover';
+    }
+};
+
 
 function chamar_home(){
     if(!(document.getElementById('telas').src === '')) {
@@ -80,7 +99,8 @@ function chamar_home(){
             window.location.href = './home.html';
         }
     }
-}
+};
+
 
 function chamar_perfis() {
     var menu_direito = document.getElementById('menu_direito');
@@ -98,7 +118,8 @@ function chamar_perfis() {
         menu_direito.style.display = '0';
         flag_menu_direito = false
     }
-}
+};
+
 
 function chamar_conta() {
     if(!(document.getElementById('telas').src).includes('novo_perfil.html')) {
@@ -133,7 +154,7 @@ function chamar_conta() {
         document.getElementById('barra_main').style.zIndex = 3;
         document.getElementById('btn_home').style.zIndex = 4;
     }   
-}
+};
 
 
 function adicionar_perfis() {
@@ -169,7 +190,7 @@ function adicionar_perfis() {
         document.getElementById('barra_main').style.zIndex = 3;
         document.getElementById('btn_home').style.zIndex = 4;
     }   
-}
+};
 
 function perfil() {
     if(!(document.getElementById('telas').src).includes('novo_perfil.html')) {
@@ -204,12 +225,8 @@ function perfil() {
         document.getElementById('barra_main').style.zIndex = 3;
         document.getElementById('btn_home').style.zIndex = 4;
     }   
-}
+};
 
-
-function bloquear() {
-    window.location.href = './bloqueio.html';
-}
 
 function adicionar_comodo(){
     if(!(document.getElementById('telas').src).includes('novo_local.html')) {
@@ -244,7 +261,8 @@ function adicionar_comodo(){
         document.getElementById('barra_main').style.zIndex = 3;
         document.getElementById('btn_home').style.zIndex = 4;
     }   
-}
+};
+
 
 function lista_user(numerodeusuarios){
     var listaUser = document.getElementById('lista_user');
@@ -261,9 +279,11 @@ function lista_user(numerodeusuarios){
         novoUsuario.appendChild(novoParagrafo);
         listaUser.appendChild(novoUsuario);
     }
-}
+};
 
-
+function bloquear() {
+    window.location.href = './bloqueio.html';
+};
 
 // Função para verificar se houve click na tela. 
 document.onclick = function() {
