@@ -138,7 +138,7 @@ function editar_ambiente() {
         select_comodo.style.background = ' rgba(255, 255, 255, 0.7)';
         select_zona.style.background = ' rgba(255, 255, 255, 0.7)';
 
-        modal('Suas alterações foram salvas com sucesso!', '../modal/html/modal_sucesso.html', 5000, '55px');
+        modal('Suas alterações foram salvas com sucesso!', '../modal/html/modal_sucesso.html', 5000);
     }
 
 }
@@ -171,6 +171,6 @@ function editar_sensores(identificador) {
         select_comodo.style.background = ' rgba(255, 255, 255, 0.7)';
         select_zona.style.background = ' rgba(255, 255, 255, 0.7)';
 
-        modal('Suas alterações foram salvas com sucesso!', '../modal/html/modal_sucesso.html', 5000, '55px');
+        modal('Suas alterações foram salvas com sucesso!', '../modal/html/modal_sucesso.html', 5000);
     }
 }

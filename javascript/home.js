@@ -308,6 +308,7 @@ function criarComodo(imagem, nome) {
         bloco.id = 'bloco' + i;
         bloco.className = 'bloco_comodo';
         bloco.style.top = (i - 1) * 20 + 'px';
+        bloco.setAttribute('onclick', 'local(this.id)');
 
         let img = document.createElement('img');
         img.id = 'img_comodo' + i;
@@ -333,6 +334,44 @@ function criarComodo(imagem, nome) {
 
 criarComodo('Quarto', 'Quarto Casal');
 criarComodo('Cozinha', 'Cozinha');
+
+function local(elemento){
+    if(!(document.getElementById('telas').src).includes('novo_local.html')) {
+        document.getElementById('relogio').style.transition = '1s';
+        for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
+            document.getElementsByClassName('texto_meio')[i].style.display = 'none';
+        }
+        document.getElementById('relogio').style.top = '8px';
+        document.getElementById('relogio').style.left = '597px';
+        document.getElementById('relogio').style.fontSize = '32px';
+        document.getElementById('relogio').style.zIndex = 2;
+        document.getElementById('fundo').style.zIndex = 0;
+
+        setTimeout(function() {
+            var iframe = document.getElementById('telas');
+            iframe.style.left = '-1280px';
+            
+            setTimeout( function() {
+                iframe.src = './local.html';
+                iframe.style.transition = '2s';
+                iframe.style.left = '0';
+
+                setTimeout( function() {
+                    var menu_esquerdo = document.getElementById('menu_esquerdo');
+                    menu_esquerdo.style.transition = '1s';
+                    menu_esquerdo.style.left = '-330px';
+                    menu_esquerdo.style.display = '0';
+                    flag_menu_esquerdo = false
+                }, 1000);
+            }, 200);
+            
+        }, 900);
+
+        document.getElementById('barra_main').style.zIndex = 3;
+        document.getElementById('btn_home').style.zIndex = 4;
+    }   
+};
+
 
 function bloquear() {
     window.location.href = './bloqueio.html';
