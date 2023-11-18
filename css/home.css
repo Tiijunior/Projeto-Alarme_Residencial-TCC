@@ -316,15 +316,15 @@ p{
     display: block;
     position: fixed;
     width: 230px;
-    height: 290px;
+    height: 100%;
     margin-top: 250px;
     overflow: hidden;
 }
 
 #lista_user {
-    position: fixed;
-    width: 100%;
-    height: 290px;
+    position: absolute;
+    width: 260px;
+    height: 359px;
     overflow-y: auto;
 }
 
