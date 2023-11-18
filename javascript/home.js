@@ -157,11 +157,7 @@ function chamar_conta() {
                 iframe.style.left = '0';
 
                 setTimeout( function() {
-                    var menu_direito = document.getElementById('menu_direito');
-                    menu_direito.style.transition = '1s';
-                    menu_direito.style.right = '-330px';
-                    menu_direito.style.display = '0';
-                    flag_menu_direito = false
+                    if(window.location.pathname.includes('home.html')) {chamar_perfis();}
                 }, 1000);
             }, 200);
             
