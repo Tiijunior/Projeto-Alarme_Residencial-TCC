@@ -191,14 +191,14 @@ p{
 
 .ativar_comodos{
     position: absolute;
-    width: 58px;
-    height: 30px;
+    width: 48px;
+    height: 24px;
     flex-shrink: 0;
     margin-top: 21px;
     margin-left: 245px;
 
     border: none;
-    background: url(../icons/mdi_toggle-switch-off.svg); 
+    background: url(../icons/mdi_toggle-switch-desativado-off.svg); 
     background-repeat: no-repeat; 
     background-size: cover;
 }

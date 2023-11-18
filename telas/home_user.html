@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/home_user.css">
     <link rel="stylesheet" href="../css/numeric_keyboard.css">   
 </head>
-<body id="user" class="container" onload="buscarUsuario()">
+<body id="user" class="container">
     <!--Cabeçalho-->
     <header>
         <img id="fundo" src="" style="position: fixed; top: 0; left: 0; width: 1280px; height: 720px; z-index: 1;" alt="">
@@ -25,12 +25,20 @@
             <button id="btn_home" onclick="chamar_home()"><img src="../icons/mdi_home.svg" alt=""></button>
             <button id="btn_perfil" onclick="chamar_conta()"><img src="../icons/mdi_account-circle-menor.svg" alt=""></button>
         </div>
+
         <!--Barra Esquerda-->
         <div id="menu_esquerdo">
             <p style="position: fixed; margin-top: 5px; margin-left: 25px; font-size: 32px;
             text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);">Locais</p>
             <p style="width: 286px; height: 40px; margin-top: 79px; margin-left: 25px; font-size: 16px;
-            font-weight: 500;">Para visualizar mais detalhes do local, basta clicar nele.</p>                
+            font-weight: 500;">Para visualizar mais detalhes do local, basta clicar nele.</p>
+            <p style="margin-top: 129px; margin-left: 25px; font-size: 20px;">Todos os Ambientes</p>
+            <button id="switch_comodo" onclick="todos_comodos()"></button>
+            <!--Lista de Comodos-->
+            <div class="lista" style="position: absolute; width: 310px; height: 510px; top: -80px; left: 10px;">
+                <div id="lista_comodos">
+                </div>
+            </div>
         </div>
     
         <!--Meio-->
@@ -40,7 +48,7 @@
             <iframe id="telas" frameborder="0" style="position: fixed; height: 100%; width: 100%; top: 0; left: 0;"></iframe>
         </div>
     </main>
-    <script src="../javascript/home.js"></script>
+    <script src="../javascript/home_user.js"></script>
     <script src="../javascript/usuario.js"></script>
     <script src="../javascript/relogio.js"></script>
     <script src="../modal/javascript/chamar_modal.js"></script>
