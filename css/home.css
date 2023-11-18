@@ -161,6 +161,59 @@ p{
     background-size: cover;
 }
 
+/* Lista de Comodos*/
+#lista_comodos{
+    width: 330px;
+    height: 360px;
+    top: 290px;
+    overflow-y: auto;
+}
+
+.bloco_comodo {
+    position: relative;
+    width: 300px;
+    height: 80px;
+    margin-top: 20px;
+    left: 10px;
+    bottom: 80px;
+}
+
+.img_comodos {
+    position: absolute;
+    width: 50px;
+    height: 35px;
+    flex-shrink: 0;
+    margin-left: 10px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ativar_comodos{
+    position: absolute;
+    width: 58px;
+    height: 30px;
+    flex-shrink: 0;
+    margin-top: 21px;
+    margin-left: 245px;
+
+    border: none;
+    background: url(../icons/mdi_toggle-switch-off.svg); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.texto_comodos {
+    position: absolute;
+    margin-top: 56px;
+    margin-left: 10px;
+    
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
 
 /*Meio*/
 

@@ -60,7 +60,7 @@ function chamar_comodos() {
 };
 
 
-function ativar_comodo() {
+function todos_comodos() {
     var botao = document.getElementById('switch_comodo');
     
     if(botao.style.background.includes('switch-on')) {
@@ -298,6 +298,41 @@ function lista_user(numerodeusuarios){
         listaUser.appendChild(novoUsuario);
     }
 };
+
+function criarComodo(imagem, nome) {
+    var numero = 1;
+    let listaComodos = document.getElementById('lista_comodos');
+
+    for (let i = 1; i <= numero; i++) {
+        let bloco = document.createElement('div');
+        bloco.id = 'bloco' + i;
+        bloco.className = 'bloco_comodo';
+        bloco.style.top = (i - 1) * 20 + 'px';
+
+        let img = document.createElement('img');
+        img.id = 'img_comodo' + i;
+        img.className = 'img_comodos';
+        img.src = '../icons/' + imagem + '.svg';
+        img.alt = '';
+        bloco.appendChild(img);
+
+        let ativar = document.createElement('div');
+        ativar.id = 'ativar_comodo' + i;
+        ativar.className = 'ativar_comodos';
+        bloco.appendChild(ativar);
+
+        let texto = document.createElement('p');
+        texto.id = 'texto_comodo' + i;
+        texto.className = 'texto_comodos';
+        texto.textContent = nome;
+        bloco.appendChild(texto);
+
+        listaComodos.appendChild(bloco);
+    }
+};
+
+criarComodo('Quarto', 'Quarto Casal');
+criarComodo('Cozinha', 'Cozinha');
 
 function bloquear() {
     window.location.href = './bloqueio.html';
