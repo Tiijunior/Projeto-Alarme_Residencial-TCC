@@ -3,6 +3,20 @@ var flag_menu_direito = false
 var timer;
 var clicked = false;
 
+//fechar menus
+var fechar_menu = [document.getElementById('fundo'), document.getElementById('meio')];
+
+fechar_menu.forEach(function(elemento) {
+    elemento.addEventListener('click', function() {
+        if(flag_menu_direito === true) {
+            chamar_perfis();
+        }
+        if(flag_menu_esquerdo === true) {
+            chamar_comodos();
+        }
+    });
+});
+
 
 function chamar_wifi() {
     if(!(document.getElementById('telas').src).includes('wifi.html')) {
@@ -14,6 +28,7 @@ function chamar_wifi() {
         document.getElementById('relogio').style.left = '597px';
         document.getElementById('relogio').style.fontSize = '32px';
         document.getElementById('relogio').style.zIndex = 2;
+        document.getElementById('fundo').style.zIndex = 0;
         setTimeout(function() {
             var iframe = document.getElementById('telas');
             iframe.src = './wifi.html';
@@ -35,16 +50,15 @@ function chamar_comodos() {
         menu_esquerdo.style.left = '0';
         flag_menu_esquerdo = true;
         
-    }
-    else {
+    } else {
         menu_esquerdo.style.transition = '1s';
         menu_esquerdo.style.left = '-330px';
         menu_esquerdo.style.display = '0';
         flag_menu_esquerdo = false
+
     }
 };
 
-  
 
 function ativar_comodo() {
     var botao = document.getElementById('switch_comodo');
@@ -76,6 +90,7 @@ function chamar_home(){
             document.getElementById('relogio').style.top = '320px';
             document.getElementById('relogio').style.left = '511px';
             document.getElementById('relogio').style.fontSize = '96px';
+            document.getElementById('fundo').style.zIndex = 1;
             for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
                 document.getElementsByClassName('texto_meio')[i].style.display = 'flex';
             }
@@ -111,15 +126,14 @@ function chamar_perfis() {
         menu_direito.style.display = 'flex';
         menu_direito.style.right = '0';
         flag_menu_direito = true;
-    }
-    else {
+
+    } else {
         menu_direito.style.transition = '1s';
         menu_direito.style.right = '-230px';
         menu_direito.style.display = '0';
         flag_menu_direito = false
     }
 };
-
 
 function chamar_conta() {
     if(!(document.getElementById('telas').src).includes('novo_perfil.html')) {
@@ -131,6 +145,8 @@ function chamar_conta() {
         document.getElementById('relogio').style.left = '597px';
         document.getElementById('relogio').style.fontSize = '32px';
         document.getElementById('relogio').style.zIndex = 2;
+        document.getElementById('fundo').style.zIndex = 0;
+
         setTimeout(function() {
             var iframe = document.getElementById('telas');
             iframe.style.left = '1280px';
@@ -167,6 +183,8 @@ function adicionar_perfis() {
         document.getElementById('relogio').style.left = '597px';
         document.getElementById('relogio').style.fontSize = '32px';
         document.getElementById('relogio').style.zIndex = 2;
+        document.getElementById('fundo').style.zIndex = 0;
+
         setTimeout(function() {
             var iframe = document.getElementById('telas');
             iframe.style.left = '1280px';
@@ -202,6 +220,8 @@ function perfil() {
         document.getElementById('relogio').style.left = '597px';
         document.getElementById('relogio').style.fontSize = '32px';
         document.getElementById('relogio').style.zIndex = 2;
+        document.getElementById('fundo').style.zIndex = 0;
+
         setTimeout(function() {
             var iframe = document.getElementById('telas');
             iframe.style.left = '1280px';
@@ -238,6 +258,8 @@ function adicionar_comodo(){
         document.getElementById('relogio').style.left = '597px';
         document.getElementById('relogio').style.fontSize = '32px';
         document.getElementById('relogio').style.zIndex = 2;
+        document.getElementById('fundo').style.zIndex = 0;
+
         setTimeout(function() {
             var iframe = document.getElementById('telas');
             iframe.style.left = '-1280px';
@@ -288,12 +310,12 @@ function bloquear() {
 // Função para verificar se houve click na tela. 
 document.onclick = function() {
   clicked = true;
-}
+};
 
 // Função para chamar a tela de bloqueio quando não houver atividade.
 function noClick() {
   bloquear();
-}
+};
 
 // Verifica a cada 5 minutos se houve um clique
 setInterval(function() {
