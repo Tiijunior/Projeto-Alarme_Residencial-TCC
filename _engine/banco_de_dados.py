@@ -146,8 +146,8 @@ def bd_criar():
     CREATE TABLE IF NOT EXISTS tbl_usuario_equipamento (
         id_usuario INTEGER,
         id_equipamento INTEGER,
-        FOREIGN KEY (id_usuario) REFERENCES tbl_usuario (id_user),
-        FOREIGN KEY (id_equipamento) REFERENCES tbl_equipamento (id_equipamento)
+        FOREIGN KEY (id_usuario) REFERENCES tbl_usuario (id_user) ON DELETE CASCADE,
+        FOREIGN KEY (id_equipamento) REFERENCES tbl_equipamento (id_equipamento) ON DELETE CASCADE
     );
 
 -- Índices únicos

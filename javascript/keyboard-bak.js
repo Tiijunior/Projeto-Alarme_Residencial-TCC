@@ -1,5 +1,4 @@
-function teste() {
-    // Define um objeto Keyboard que conterá as funcionalidades do teclado virtual 
+// Define um objeto Keyboard que conterá as funcionalidades do teclado virtual 
 const Keyboard = {
     // Elementos do teclado
     elements: {
@@ -51,6 +50,7 @@ const Keyboard = {
     _createKeys() {
         const fragment = document.createDocumentFragment();
         const keySymbols = [
+            "'", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "/", "*", "=",
             "!", "@", "#", "$", "%", "¨", "&", "*", "(", ")", "_", "+", "?","-",
             "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "ç", "⌫",
             "⇪", "a", "s", "d", "f", "g", "h", "j", "k", "l", "↲",
@@ -65,7 +65,7 @@ const Keyboard = {
 
         keySymbols.forEach(key => {
             const keyElement = document.createElement("button");
-            const insertLineBreak = ["⌫", "✔", "↲", "-", "="].indexOf(key) !== -1;
+            const insertLineBreak = ["=", "-","⌫", "✔", "↲"].indexOf(key) !== -1;
 
             // Adiciona atributos/classes ao elemento do botão
             keyElement.setAttribute("type", "button");
@@ -213,4 +213,3 @@ document.addEventListener("click", (event) => {
         }
     }
 });
-}

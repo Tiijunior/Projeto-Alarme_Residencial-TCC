@@ -1,7 +1,58 @@
 var imagemcarregada;
 var imagem_user;
+var inputs = document.querySelectorAll('.use-keyboard-input');
+var ultimoInputFocado;
 
-// Carregar Imagem
+// Armazena qual é o ultimo input que entrou em focus.
+inputs.forEach(function(input) {
+    input.addEventListener('focus', function() {
+        ultimoInputFocado = this;
+    });
+});
+
+// Move o input para cima, facilitando para digitar.
+function moverInputs(mover) {
+    if(mover === 'subir'){
+        if(ultimoInputFocado !== undefined) {
+            if(ultimoInputFocado.id.includes('telefone')){
+                document.getElementById('linha1').style.display = 'none';
+                document.getElementById('linha3').style.display = 'none';
+                setTimeout(() => {
+                    document.getElementById('linha2').style.transition = '0.5s';
+                    document.getElementById('linha2').style.marginTop = '-150px';
+                }, 100)
+            }
+        }
+    } else if(mover === 'descer') {
+        if(ultimoInputFocado !== undefined) {
+            if(ultimoInputFocado.id.includes('telefone')){
+                document.getElementById('linha1').style.display = 'block';
+                document.getElementById('linha3').style.display = 'block';
+                document.getElementById('linha1').style.top = '241px';
+                setTimeout(() => {
+                    document.getElementById('linha2').style.transition = '0.5s';
+                    document.getElementById('linha2').style.marginTop = '0';
+                }, 100)
+            }
+        }
+    }
+};
+
+var elementos = document.querySelectorAll('#conf_senha, #senha');
+
+elementos.forEach(function(elemento) {
+    elemento.addEventListener('focus', function() {
+        if (this.id === 'conf_senha') {
+            document.querySelector('.numeric').style.left = '45%';
+        } else if (this.id === 'senha') {
+            document.querySelector('.numeric').style.left = '60%';
+        }
+    });
+});
+
+
+
+// Carregar Imagem.
 document.getElementById('btn_imagem').addEventListener('click', function() {
     var input = document.createElement('input');
     input.type = 'file';

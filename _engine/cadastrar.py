@@ -34,12 +34,12 @@ def cadastro_admin():
 
 def cadastrar_equipqmento():
     # Cadastro do Equipamento.
-    banco.tbl_equipamento['nome_equipamento'] = sys.argv[1]
-    banco.tbl_equipamento['logradouro'] = sys.argv[2]
-    banco.tbl_equipamento['numero'] = sys.argv[3]
-    banco.tbl_equipamento['cidade'] = sys.argv[4]
-    banco.tbl_equipamento['estado'] = sys.argv[5]
-    banco.tbl_equipamento['cep'] = sys.argv[6]
+    banco.tbl_equipamento['nome_equipamento'] = sys.argv[2]
+    banco.tbl_equipamento['logradouro'] = sys.argv[3]
+    banco.tbl_equipamento['numero'] = sys.argv[4]
+    banco.tbl_equipamento['cidade'] = sys.argv[5]
+    banco.tbl_equipamento['estado'] = sys.argv[6]
+    banco.tbl_equipamento['cep'] = sys.argv[7]
 
     banco.bd_inserir_equipamento()
 
@@ -47,7 +47,7 @@ def cadastrar_equipqmento():
     banco.tbl_usuario_equipamento['id_usuario'] = ((banco.bd_buscar_dados('tbl_usuario')[1])[0])[0]
     banco.tbl_usuario_equipamento['id_equipamento'] = ((banco.bd_buscar_dados('tbl_equipamento')[1])[0])[0]
 
-    banco.bd_vincular_intermediaria()
+    print(banco.bd_vincular_intermediaria())
 
 
 def cadastrar_usuario():
@@ -143,6 +143,7 @@ def testando():
 funcoes = {
     "verificar_admin": verificar_admin,
     "primeiro_acesso": cadastro_admin,
+    "cadastrar_equipqmento" : cadastrar_equipqmento,
     "cadastrar_usuario": cadastrar_usuario,
     "cadastrar_comodo": cadastrar_comodo,
     "cadastrar_sensor": cadastrar_sensor,

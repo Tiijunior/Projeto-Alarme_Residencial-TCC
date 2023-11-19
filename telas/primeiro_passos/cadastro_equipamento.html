@@ -24,12 +24,15 @@
             <div class="texto"><p>Bem-vindo ao Algiz System, seu novo sistema de monitoramento residencial! Vamos começar com o cadastro do seu endereço.</p></div>
         </div>
         <div>
-            <input id="nome_equipamento" class="use-keyboard-input" type="text" placeholder="Nome do Equipamento">
-            <input id="endereco" class="use-keyboard-input" type="text" placeholder="Endereço">
-            <input id="numero" type="text" class="use-keyboard-input" placeholder="Número">
-            <input id="cep" type="text" class="use-keyboard-input" placeholder="CEP">
-            <input id="cidade" type="text" class="use-keyboard-input" placeholder="Cidade">
-            <select id="estados" name="estados">
+            <div id="linha1">
+                <input id="nome_equipamento" class="use-keyboard-input" type="text" placeholder="Nome do Equipamento">
+                <input id="endereco" class="use-keyboard-input" type="text" placeholder="Endereço">
+                <input id="numero" type="text" class="use-keyboard-input" placeholder="Número">
+            </div>
+            <div id="linha2">
+                <input id="cep" type="text" class="use-keyboard-input" placeholder="CEP">
+                <input id="cidade" type="text" class="use-keyboard-input" placeholder="Cidade">
+                <select id="estados" name="estados">
                 <option disabled selected>Selecione seu estado</option>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
@@ -58,14 +61,17 @@
                 <option value="SP">São Paulo</option>
                 <option value="SE">Sergipe</option>
                 <option value="TO">Tocantins</option>
-            </select>           
+                </select>           
+            </div>
+            
         </div>
         <div>
-            <button id="btn_proximo" type="button" onclick="proximo()">Próximo passo</button>
+            <button id="btn_proximo" type="button" onclick="proximo(), cadastro()">Próximo passo</button>
         </div>
     </main>
 
     <script src="../../javascript/cadastro_equipamento.js"></script>
+    <script src="../../javascript/js_py/cadastro_equipamentopy.js"></script>
     <script src="../../javascript/relogio.js"></script>
     <script src="../../javascript/keyboard.js"></script>
     <script src="../../modal/javascript/chamar_modal.js"></script>

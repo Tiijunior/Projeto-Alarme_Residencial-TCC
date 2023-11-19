@@ -173,6 +173,7 @@ const Keyboard = {
         this.eventHandlers.oninput = oninput;
         this.eventHandlers.onclose = onclose;
         this.elements.main.classList.remove("keyboard--hidden");
+        if(typeof moverInputs === 'function') {moverInputs('subir');}
     },
 
     // Fecha o teclado
@@ -181,6 +182,7 @@ const Keyboard = {
         this.eventHandlers.oninput = null;
         this.eventHandlers.onclose = null;
         this.elements.main.classList.add("keyboard--hidden");
+        if(typeof moverInputs === 'function') {moverInputs('descer');}
     }
 };
 
