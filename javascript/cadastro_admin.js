@@ -57,8 +57,10 @@ function verificar_campos(frase) {
 };
 
 function sucesso() {
-    modal('Cadastro concluído com sucesso!', '../../modal/html/modal_sucesso.html', 4000);
-    setTimeout(() => {
-        window.location.replace('./primeiro_acesso.html');
-    }, 5000);
+    if(resposta.includes('sucesso')) {
+        modal('Cadastro concluído com sucesso!', '../../modal/html/modal_sucesso.html', 4000);
+        setTimeout(() => {
+            window.location.replace('./primeiro_acesso.html');
+        }, 5000);
+    }
 };

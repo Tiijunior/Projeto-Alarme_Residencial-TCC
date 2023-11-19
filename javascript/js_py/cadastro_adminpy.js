@@ -42,8 +42,9 @@ function cadastro() {
     var cadastro = new PythonShell('cadastrar.py', opcoes_python)
 
     cadastro.on('message', function (message) {
-        
+                
         if(message.includes('encerrada com sucesso')) {
+            resposta = message;
             sucesso();
         }
     });
