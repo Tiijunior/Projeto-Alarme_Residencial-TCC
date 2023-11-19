@@ -5,13 +5,13 @@ conexao = mysql.connector.connect()
 cursor = mysql.connector.connect()
 
 # Variáveis da tabela Usuário.
-tbl_usuario = dict(id_user='', nome='', sobrenome='', email='', senha='', funcao='')
+tbl_usuario = dict(id_user='', nome='', sobrenome='', email='', senha='', funcao='', imagem='')
 
 # Variáveis da tabela Telefone.
 tbl_telefone = dict(id_user='', numero_telefone='', tipo_telefone='')
 
 # Variáveis da tabela Equipamento.
-tbl_equipamento = dict(nome_equipamento='', logradouro='', numero='', cidade='', cep='')
+tbl_equipamento = dict(nome_equipamento='', logradouro='', numero='', cidade='', estado='', cep='')
 
 # Variáveis da tabela intermediária Usuário e Equipamento.
 tbl_usuario_equipamento = dict(id_usuario='', id_equipamento='')
@@ -99,7 +99,8 @@ def bd_criar():
         sobrenome VARCHAR(80),
         email VARCHAR(100) NOT NULL,
         senha VARCHAR(128) NOT NULL,
-        funcao VARCHAR(50) NOT NULL
+        funcao VARCHAR(50) NOT NULL,
+        imagem VARCHAR(100)
         );
         
     CREATE TABLE IF NOT EXISTS tbl_telefone (
@@ -116,6 +117,7 @@ def bd_criar():
         logradouro VARCHAR(100) NOT NULL,
         numero VARCHAR(10) NOT NULL,
         cidade VARCHAR(50) NOT NULL,
+        estado VARCHAR(50) NOT NULL,
         cep VARCHAR(20) NOT NULL
     );
 
@@ -186,13 +188,14 @@ def bd_inserir_usuario():
             return "Erro ao conectar ao banco de dados."
 
         cursor = conexao.cursor()
-        inserir_dados = f'INSERT INTO tbl_usuario (id_user, nome, sobrenome, email, senha, funcao) VALUES ( %s, %s, %s, %s, %s, %s)'
+        inserir_dados = f'INSERT INTO tbl_usuario (id_user, nome, sobrenome, email, senha, funcao, imagem) VALUES ( %s, %s, %s, %s, %s, %s, %s)'
         valores = (tbl_usuario['id_user'],
                    tbl_usuario['nome'],
                    tbl_usuario['sobrenome'],
                    tbl_usuario['email'],
                    tbl_usuario['senha'],
-                   tbl_usuario['funcao'])
+                   tbl_usuario['funcao'],
+                   tbl_usuario['imagem'])
         cursor.execute(inserir_dados, valores)
         id_usuario = cursor.lastrowid
 
@@ -227,12 +230,13 @@ def bd_inserir_equipamento():
             return "Erro ao conectar ao banco de dados."
 
         cursor = conexao.cursor()
-        inserir_dados_equipamento = f'INSERT INTO tbl_equipamento (nome_equipamento, logradouro, numero, cidade, cep) VALUES (%s, %s, %s, %s, %s)'
+        inserir_dados_equipamento = f'INSERT INTO tbl_equipamento (nome_equipamento, logradouro, numero, cidade, estado, cep) VALUES (%s, %s, %s, %s, %s, %s)'
         valores_equipamento = (
             tbl_equipamento['nome_equipamento'],
             tbl_equipamento['logradouro'],
             tbl_equipamento['numero'],
             tbl_equipamento['cidade'],
+            tbl_equipamento['estado'],
             tbl_equipamento['cep']
         )
         cursor.execute(inserir_dados_equipamento, valores_equipamento)
@@ -288,7 +292,7 @@ def bd_inserir_sensor():
     :return: Retorna uma mensagem de confirmação se os dados do sensor foram inseridos com sucesso no banco de dados.
     """
 
-    global cursor, conexao, tbl_sensor, tbl_modelo
+    global cursor, conexao, tbl_sensor
     try:
         if not bd_conectar():
             return "Erro ao conectar ao banco de dados."

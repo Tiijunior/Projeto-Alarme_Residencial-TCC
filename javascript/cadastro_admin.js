@@ -1,4 +1,5 @@
 var imagemcarregada;
+var imagem_user;
 
 // Carregar Imagem
 document.getElementById('btn_imagem').addEventListener('click', function() {
@@ -8,6 +9,8 @@ document.getElementById('btn_imagem').addEventListener('click', function() {
     input.onchange = function(event) {
         var file = event.target.files[0];
         var reader = new FileReader();
+        // Armazena o objeto File na variável global
+        imagem_user = event.target.files[0];
         reader.onload = function() {
             var result = reader.result;
             var img = document.createElement('img');
@@ -51,10 +54,11 @@ function verificar_campos(frase) {
     if(campo_nome === '' || campo_email === '' || campo_telefone === '' || (campo_tipo !== "Celular" && campo_tipo !== "Fixo") || campo_senha === '' || campo_conferir === '') {
         modal('Não pode haver campos em branco!', '../../modal/html/modal_error.html', 3000);
     }
-    else {
-        modal(frase, '../../modal/html/modal_sucesso.html', 5000);
-        setTimeout(function() {
-            window.location.replace('./primeiro_acesso.html');
-        }, 1000);
-    }
-}
+};
+
+function sucesso() {
+    modal('Cadastro concluído com sucesso!', '../../modal/html/modal_sucesso.html', 4000);
+    setTimeout(() => {
+        window.location.replace('./primeiro_acesso.html');
+    }, 5000);
+};

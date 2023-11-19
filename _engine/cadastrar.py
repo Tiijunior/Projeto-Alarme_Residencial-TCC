@@ -8,7 +8,7 @@ def verificar_admin():
 
 
 # Cadastro Registro do Banco de Dados.
-def primeiro_acesso():
+def cadastro_admin():
     banco.bd_criar()
 
     # Separa o Nome do Sobrenome
@@ -24,26 +24,30 @@ def primeiro_acesso():
         banco.tbl_usuario['email'] = sys.argv[3]
         banco.tbl_usuario['senha'] = cod.codificar_senha(sys.argv[4])
         banco.tbl_usuario['funcao'] = sys.argv[5]
+        banco.tbl_usuario['imagem'] = sys.argv[6]
         banco.tbl_telefone['id_user'] = banco.tbl_usuario['id_user']
-        banco.tbl_telefone['numero_telefone'] = sys.argv[6]
-        banco.tbl_telefone['tipo_telefone'] = sys.argv[7]
+        banco.tbl_telefone['numero_telefone'] = sys.argv[7]
+        banco.tbl_telefone['tipo_telefone'] = sys.argv[8]
 
-        banco.bd_inserir_usuario()
+        print(banco.bd_inserir_usuario())
 
-        # Cadastro do Equipamento.
-        banco.tbl_equipamento['nome_equipamento'] = sys.argv[8]
-        banco.tbl_equipamento['logradouro'] = sys.argv[9]
-        banco.tbl_equipamento['numero'] = sys.argv[10]
-        banco.tbl_equipamento['cidade'] = sys.argv[11]
-        banco.tbl_equipamento['cep'] = sys.argv[12]
 
-        banco.bd_inserir_equipamento()
+def cadastrar_equipqmento():
+    # Cadastro do Equipamento.
+    banco.tbl_equipamento['nome_equipamento'] = sys.argv[1]
+    banco.tbl_equipamento['logradouro'] = sys.argv[2]
+    banco.tbl_equipamento['numero'] = sys.argv[3]
+    banco.tbl_equipamento['cidade'] = sys.argv[4]
+    banco.tbl_equipamento['estado'] = sys.argv[5]
+    banco.tbl_equipamento['cep'] = sys.argv[6]
 
-        # Vincula o administrador ao Equipamento.
-        banco.tbl_usuario_equipamento['id_usuario'] = banco.tbl_usuario['id_user']
-        banco.tbl_usuario_equipamento['id_equipamento'] = ((banco.bd_buscar_dados('tbl_equipamento')[1])[0])[0]
+    banco.bd_inserir_equipamento()
 
-        banco.bd_vincular_intermediaria()
+    # Vincula o administrador ao Equipamento.
+    banco.tbl_usuario_equipamento['id_usuario'] = ((banco.bd_buscar_dados('tbl_usuario')[1])[0])[0]
+    banco.tbl_usuario_equipamento['id_equipamento'] = ((banco.bd_buscar_dados('tbl_equipamento')[1])[0])[0]
+
+    banco.bd_vincular_intermediaria()
 
 
 def cadastrar_usuario():
@@ -130,17 +134,22 @@ def modo_padraofabrica():
     banco.bd_modo_fabrica()
 
 
+def testando():
+    print('ok')
+
+
 # Estrutura para receber comandos do Javascript
 
 funcoes = {
     "verificar_admin": verificar_admin,
-    "primeiro_acesso": primeiro_acesso,
+    "primeiro_acesso": cadastro_admin,
     "cadastrar_usuario": cadastrar_usuario,
     "cadastrar_comodo": cadastrar_comodo,
     "cadastrar_sensor": cadastrar_sensor,
     "excluir_usuario": excluir_usuario,
     "excluir_comodo": excluir_comodo,
-    "excluir_sensor": excluir_sensor
+    "excluir_sensor": excluir_sensor,
+    "testando": testando
 }
 
 if sys.argv[1] in funcoes:
