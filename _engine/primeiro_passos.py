@@ -7,6 +7,31 @@ def verificar_admin():
     print(banco.bd_verificar_mostrar_banco('tbl_usuario', 'funcao', 'Administrador', 1))
 
 
+# Cadastro Registro do Banco de Dados.
+def cadastro_admin():
+    banco.bd_criar()
+
+    # Separa o Nome do Sobrenome
+    usuario_nome = (sys.argv[2].split())[0]
+    usuario_sobrenome = (sys.argv[2].split())[1:]
+    usuario_sobrenome = ' '.join(usuario_sobrenome)
+
+    if banco.bd_conectar():
+        # Cadastro do Usuário
+        banco.tbl_usuario['id_user'] = 1
+        banco.tbl_usuario['nome'] = usuario_nome
+        banco.tbl_usuario['sobrenome'] = usuario_sobrenome
+        banco.tbl_usuario['email'] = sys.argv[3]
+        banco.tbl_usuario['senha'] = cod.codificar_senha(sys.argv[4])
+        banco.tbl_usuario['funcao'] = sys.argv[5]
+        banco.tbl_usuario['imagem'] = sys.argv[6]
+        banco.tbl_telefone['id_user'] = banco.tbl_usuario['id_user']
+        banco.tbl_telefone['numero_telefone'] = sys.argv[7]
+        banco.tbl_telefone['tipo_telefone'] = sys.argv[8]
+
+        print(banco.bd_inserir_usuario())
+
+
 def cadastrar_equipamento():
     # Cadastro do Equipamento.
     banco.tbl_equipamento['nome_equipamento'] = sys.argv[2]
@@ -68,32 +93,31 @@ def cadastrar_comodo():
         print(banco.bd_inserir_comodo())
 
 
-def cadastrar_sensor():
+def cadastrar_sensor(id_comodo, nome, tipo, porta):
     # Busca os dados do ultimo registro da tabela, para verificar qual id vai adicionar.
     indice_sensor, dados_sensor = banco.bd_buscar_dados('tbl_sensor')
     ultimo_id_sensor = (dados_sensor[indice_sensor - 1])[0] if indice_sensor > 0 else indice_sensor
 
-    indice, dados = banco.bd_buscar_dados('tbl_comodo')
-    ultimo_id = (dados[indice - 1])[0] if indice > 0 else indice
-
     if banco.bd_conectar():
-        banco.tbl_sensor['id_sensor'] = sys.argv[2] if sys.argv[2] not in '' else (ultimo_id_sensor + 1)
-        teste = sys.argv[2] if sys.argv[2] not in '' else (ultimo_id_sensor + 1)
-        banco.tbl_sensor['id_comodo'] = sys.argv[3] if sys.argv[3] not in '' else ultimo_id
-        banco.tbl_sensor['nome_sensor'] = sys.argv[4]
-        banco.tbl_sensor['tipo_sensor'] = sys.argv[5]
-        banco.tbl_sensor['porta_sensor'] = sys.argv[6]
+        banco.tbl_sensor['id_sensor'] = ultimo_id_sensor + 1
+        banco.tbl_sensor['id_comodo'] = (banco.bd_verificar_mostrar_banco('tbl_comodo', 'nome_comodo', id_comodo, 0)[0])
+        banco.tbl_sensor['nome_sensor'] = nome
+        banco.tbl_sensor['tipo_sensor'] = tipo
+        banco.tbl_sensor['porta_sensor'] = porta
         banco.tbl_sensor['status_sensor'] = 0
 
-        banco.bd_inserir_sensor()
-        # print(banco.bd_inserir_sensor())
-        print(teste)
+        print(banco.bd_inserir_sensor())
 
 
-# Alterar Registro do Banco de Dados.
+def cadastrar_sensores_primeiro_passos():
+    id_comodo = sys.argv[3]
+    nome_sensor = sys.argv[4].split(',')
+    tipo_sensor = sys.argv[5].split(',')
+    porta_sensor = sys.argv[6].split(',')
 
+    for i in range(len(nome_sensor)):
+        cadastrar_sensor(id_comodo, nome_sensor[i], tipo_sensor[i], porta_sensor[i])
 
-# Excluir Registro do Banco de Dados.
 
 def excluir_usuario():
     banco.bd_excluir('tbl_usuario', 'id_user', sys.argv[2])
@@ -107,24 +131,18 @@ def excluir_sensor():
     banco.bd_excluir('tbl_sensor', 'id_sensor', sys.argv[2])
 
 
-# Modo Padrão de Fábrica
-
-
-def modo_padraofabrica():
-    banco.bd_modo_fabrica()
-
-
 # Estrutura para receber comandos do Javascript
-
 funcoes = {
     "verificar_admin": verificar_admin,
+    "primeiro_acesso": cadastro_admin,
     "cadastrar_equipamento": cadastrar_equipamento,
     "cadastrar_usuario": cadastrar_usuario,
     "cadastrar_comodo": cadastrar_comodo,
     "cadastrar_sensor": cadastrar_sensor,
     "excluir_usuario": excluir_usuario,
     "excluir_comodo": excluir_comodo,
-    "excluir_sensor": excluir_sensor
+    "excluir_sensor": excluir_sensor,
+    "cadastrar_sensores_primeiro_passos": cadastrar_sensores_primeiro_passos
 }
 
 if sys.argv[1] in funcoes:

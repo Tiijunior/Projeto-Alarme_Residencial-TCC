@@ -1,7 +1,8 @@
 # import banco_de_dados
 # import codificador_senha
-import teste_som as som
-import sensores
+# import teste_som as som
+
+from _engine import banco_de_dados
 
 """
     print("\nSeja Bem Vindo ao Sistema de Segurança Algiz Security System")
@@ -89,7 +90,6 @@ if __name__ == "__main__":
             time.sleep(1)
     except KeyboardInterrupt:
         gpio.cleanup()
-"""
 
 import sensores
 import alarme
@@ -127,5 +127,25 @@ while True:
             valores_anteriores[portas[i]] = portas[i]
         else:
             contagem[portas[i]] = 1
+"""
+"""valor = ['', '', '']
 
+teste = valor[2] if valor[2] not in '' else ((banco_de_dados.bd_buscar_dados('tbl_equipamento')[1])[0])[0]
+print(teste)
 
+id_sensor = 1
+indice, dados = banco_de_dados.bd_buscar_dados('tbl_comodo')
+ultimo_id = (dados[indice - 1])[0] if indice > 0 else indice
+valor = id_sensor if ultimo_id < 1 else ultimo_id + 1
+
+print(ultimo_id)
+print(valor)
+
+nome = "Teste,Teste 2"
+separar = nome.split(",")
+
+print(len(separar))
+"""
+
+resultado = banco_de_dados.bd_verificar_mostrar_banco('tbl_comodo', 'nome_comodo', 'Quarto Casal', 0)
+print(resultado[0])

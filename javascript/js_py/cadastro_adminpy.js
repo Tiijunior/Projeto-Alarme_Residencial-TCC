@@ -39,7 +39,7 @@ function cadastro() {
                tipo_telefone]
     }
 
-    var cadastro = new PythonShell('cadastrar.py', opcoes_python)
+    var cadastro = new PythonShell('primeiro_passos.py', opcoes_python)
 
     cadastro.on('message', function (message) {
                 

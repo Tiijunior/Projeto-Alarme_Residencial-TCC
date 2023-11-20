@@ -25,6 +25,7 @@ function selecionar_comodo(comodo, icone) {
         botao_tipocomodo.onclick = function() {
             mostrar_tipocomodo();
         };
+        tipo_comodo.value = 'quarto';
         botao_tipocomodo.className = 'tipo_zona';
     } else if (comodo === 'cozinha') {
         botao_tipocomodo.className = 'modal_tipocomodo_button';
@@ -32,6 +33,7 @@ function selecionar_comodo(comodo, icone) {
         botao_tipocomodo.onclick = function() {
             mostrar_tipocomodo();
         };
+        tipo_comodo.value = 'cozinha';
         botao_tipocomodo.className = 'tipo_zona';
     } else if (comodo === 'sala') {
         botao_tipocomodo.className = 'modal_tipocomodo_button';
@@ -39,6 +41,7 @@ function selecionar_comodo(comodo, icone) {
         botao_tipocomodo.onclick = function() {
             mostrar_tipocomodo();
         };
+        tipo_comodo.value = 'sala';
         botao_tipocomodo.className = 'tipo_zona';
     } else if (comodo === 'banheiro') {
         botao_tipocomodo.className = 'modal_tipocomodo_button';
@@ -46,6 +49,7 @@ function selecionar_comodo(comodo, icone) {
         botao_tipocomodo.onclick = function() {
             mostrar_tipocomodo();
         };
+        tipo_comodo.value = 'banheiro';
         botao_tipocomodo.className = 'tipo_zona';
     } else if (comodo === 'externo') {
         botao_tipocomodo.className = 'modal_tipocomodo_button';
@@ -53,6 +57,7 @@ function selecionar_comodo(comodo, icone) {
         botao_tipocomodo.onclick = function() {
             mostrar_tipocomodo();
         };
+        tipo_comodo.value = 'externo';
         botao_tipocomodo.className = 'tipo_zona';
     }
 }

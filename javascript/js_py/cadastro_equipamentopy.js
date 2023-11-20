@@ -4,7 +4,7 @@ function cadastro() {
     var { PythonShell } = require('python-shell');
     var path = require('path');
 
-    var funcao_python = 'cadastrar_equipqmento'
+    var funcao_python = 'cadastrar_equipamento'
 
     // Recebe os valores do Input da página Cadastro.html
     var nome_equipamento = document.getElementById('nome_equipamento').value;
@@ -15,13 +15,13 @@ function cadastro() {
     var estados = document.getElementById('estados').value;
     
 
-    /*// Limpa os valores do Input na página Cadastro.html (apagar depois)
+    // Limpa os valores do Input na página Cadastro.html (apagar depois)
     document.getElementById('nome_equipamento').value = ''
     document.getElementById('endereco').value = ''
     document.getElementById('numero').value = ''
     document.getElementById('cep').value = ''
     document.getElementById('cidade').value = ''
-    document.getElementById('estados').value = ''*/
+    document.getElementById('estados').value = ''
 
     
 
@@ -37,7 +37,7 @@ function cadastro() {
                estados]
     }
 
-    var cadastro = new PythonShell('cadastrar.py', opcoes_python)
+    var cadastro = new PythonShell('primeiro_passos.py', opcoes_python)
 
     cadastro.on('message', function (message) {
         

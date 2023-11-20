@@ -40,11 +40,11 @@
             </select>
             <select name="zona" id="zona">
                 <option disabled selected value="">Zona</option>
-                <option value="Zona 1">Zona 1</option>
-                <option value="Zona 2">Zona 2</option>
-                <option value="Zona 3">Zona 3</option>
-                <option value="Zona 4">Zona 4</option>
-                <option value="Zona 5">Zona 5</option>                
+                <option value="1">Zona 1</option>
+                <option value="2">Zona 2</option>
+                <option value="3">Zona 3</option>
+                <option value="4">Zona 4</option>
+                <option value="5">Zona 5</option>                
             </select>           
         </div>
 
@@ -53,8 +53,8 @@
             <p id="texto_sensor" class="texto texto_sensor">Adicione os sensores ao sistema, não esqueça de conferir as portas que o sensor foi adicionado.</p>
             <div id="formulario">
                 <div id="sensor">
-                    <input id="nome_sensor" class="nome_sensor use-keyboard-input" type="text" onfocus="verificar_teclado()" placeholder="Nome do sensor">
-                    <select id="tipo_sensor" class="seletcion_sensor" name="">
+                    <input id="nome_sensor1" class="nome_sensor use-keyboard-input" type="text" placeholder="Nome do sensor">
+                    <select id="tipo_sensor1" class="seletcion_sensor" name="">
                         <option selected disabled>Tipo</option>
                         <option value="magnetico">Sensor Magnético (abertura de Janela)</option>
                         <option value="switch">Sensor Switch (abertura de Porta)</option>
@@ -62,16 +62,16 @@
                         <option value="infra_passivo">Sensor Infravermelho Passivo (Movimento Interno)</option>
                         <option value="infra_ativo">Sensor Infravermelho Ativo (Movimento Externo)</option>
                     </select>
-                    <select id="porta_sensor" class="seletcion_sensor" name="">
+                    <select id="porta_sensor1" class="seletcion_sensor" name="">
                         <option selected disabled>Porta</option>
-                        <option value="Porta 1">Porta 1</option>
-                        <option value="Porta 2">Porta 2</option>
-                        <option value="Porta 3">Porta 3</option>
-                        <option value="Porta 4">Porta 4</option>
-                        <option value="Porta 5">Porta 5</option>
-                        <option value="Porta 6">Porta 6</option>
-                        <option value="Porta 7">Porta 7</option>
-                        <option value="Porta 8">Porta 8</option>
+                        <option value="1">Porta 1</option>
+                        <option value="2">Porta 2</option>
+                        <option value="3">Porta 3</option>
+                        <option value="4">Porta 4</option>
+                        <option value="5">Porta 5</option>
+                        <option value="6">Porta 6</option>
+                        <option value="7">Porta 7</option>
+                        <option value="8">Porta 8</option>
                     </select>
                 </div>
             </div>
@@ -81,12 +81,13 @@
         <div>
             <button id="btn_anterior" type="button" onclick="passoAnterior()">Passo anterior</button>
             <button id="btn_novosensor" type="button" onclick="novo_sensor()">Pular passo</button>
-            <button id="btn_proximo" type="button" onclick="adicionar_sensor()">Próximo passo</button>
+            <button id="btn_proximo" type="button" onclick="adicionar_sensor()">Próximo passo</button>            
         </div>
     </main>
     <script src="../../javascript/relogio.js"></script>
     <script src="../../modal/javascript/modal_comodo.js"></script>
     <script src="../../javascript/cadastro_zona.js"></script>
+    <script src="../../javascript/js_py/cadastro_zonapy.js"></script>
     <script src="../../javascript/keyboard.js"></script>
     <script src="../../modal/javascript/chamar_modal.js"></script>
     <script src="../../modal/javascript/recebermsg.js"></script>
