@@ -1,9 +1,25 @@
-var resposta = '';
+var resposta;
+
+var { PythonShell } = require('python-shell');
+var path = require('path');
+
+function buscar_admin() {
+    var funcao_python = 'buscar_admin'
+
+    var opcoes_python = {
+        pythonPath: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
+        scriptPath: path.join(__dirname, '../../../_engine/'),
+        args: [funcao_python]}
+
+    var resultado = new PythonShell('primeiro_passos.py', opcoes_python)
+
+    resultado.on('message', function (message) {
+        document.getElementById('messagemId').textContent = message;
+        localStorage.setItem('nome_admin', message);
+    })
+}
 
 function cadastro() {
-    var { PythonShell } = require('python-shell');
-    var path = require('path');
-
     var funcao_python = 'cadastrar_equipamento'
 
     // Recebe os valores do Input da página Cadastro.html
@@ -27,7 +43,7 @@ function cadastro() {
 
     var opcoes_python = {
         pythonPath: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
-        scriptPath: path.join(__dirname, '../../_engine/'),
+        scriptPath: path.join(__dirname, '../../../_engine/'),
         args: [funcao_python,
                nome_equipamento, 
                endereço, 
@@ -50,13 +66,13 @@ function cadastro() {
     // Manipulação de erros
     cadastro.on('error', function (error) {
         console.error('Erro ao executar Python: ' + error);
-        modal('Erro ao processar a solicitação. Verifique o console para mais informações.', '../../modal/html/modal_error.html', 5000, '75px');
+        modal('Erro ao processar a solicitação. Verifique o console para mais informações.', '../../../modal/html/modal_error.html', 5000, '75px');
     });
 
     cadastro.end(function (err) {
         if (err) {
             console.log(err)
-            modal('Erro ao encerrar PythonShell: ', '../../modal/html/modal_error.html', 5000);
+            modal('Erro ao encerrar PythonShell: ', '../../../modal/html/modal_error.html', 5000);
         }
     });
 };

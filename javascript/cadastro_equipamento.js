@@ -1,5 +1,6 @@
-var inputs = document.querySelectorAll('.use-keyboard-input');
+var nome_admin;
 var ultimoInputFocado;
+var inputs = document.querySelectorAll('.use-keyboard-input');
 
 // Armazena qual é o ultimo input que entrou em focus.
 inputs.forEach(function(input) {
@@ -46,6 +47,8 @@ function moverInputs(mover) {
 function proximo() {
     if (document.getElementById('endereco').value === '') {
         modal('Não pode haver campos em branco!', '../../modal/html/modal_error.html', 3000);
+    } else {
+        cadastro();
     }
 };
 

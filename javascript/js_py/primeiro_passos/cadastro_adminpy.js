@@ -1,9 +1,9 @@
+var { PythonShell } = require('python-shell');
+var path = require('path');
 var resposta = '';
 
 function cadastro() {
-    var { PythonShell } = require('python-shell');
-    var path = require('path');
-
+    
     var funcao_python = 'primeiro_acesso'
 
     // Recebe os valores do Input da página Cadastro.html
@@ -28,7 +28,7 @@ function cadastro() {
 
     var opcoes_python = {
         pythonPath: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
-        scriptPath: path.join(__dirname, '../../_engine/'),
+        scriptPath: path.join(__dirname, '../../../_engine/'),
         args: [funcao_python,
                nome, 
                email, 
@@ -52,13 +52,13 @@ function cadastro() {
     // Manipulação de erros
     cadastro.on('error', function (error) {
         console.error('Erro ao executar Python: ' + error);
-        modal('Erro ao processar a solicitação. Verifique o console para mais informações.', '../../modal/html/modal_error.html', 5000, '75px');
+        modal('Erro ao processar a solicitação. Verifique o console para mais informações.', '../../../modal/html/modal_error.html', 5000, '75px');
     });
 
     cadastro.end(function (err) {
         if (err) {
             console.log(err)
-            modal('Erro ao encerrar PythonShell: ', '../../modal/html/modal_error.html', 5000);
+            modal('Erro ao encerrar PythonShell: ', '../../../modal/html/modal_error.html', 5000);
         }
     });
 };

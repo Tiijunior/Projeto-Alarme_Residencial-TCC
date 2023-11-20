@@ -146,6 +146,19 @@ separar = nome.split(",")
 
 print(len(separar))
 """
+"""
+banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'funcao', 'administrador', 0)
+print((banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'funcao', 'administrador', 0))[1])
+"""
 
-resultado = banco_de_dados.bd_verificar_mostrar_banco('tbl_comodo', 'nome_comodo', 'Quarto Casal', 0)
-print(resultado[0])
+nome = []
+sobrenome = []
+nome_completo = 'Matheus Andrade, Julia Andrade'.split(",")
+
+for i in range(len(nome_completo)):
+    # Separa o Nome do Sobrenome
+    nome.append(((nome_completo[i]).split())[0])
+    sobrenome = ((nome_completo[i]).split())[1:]
+    sobrenome.append(' '.join(sobrenome))
+
+print("Nome: " + nome[0], "Sobrenome: " + sobrenome[0], "\n",  "Nome: " + nome[1], "Sobrenome: " + sobrenome[1])

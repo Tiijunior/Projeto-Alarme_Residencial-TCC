@@ -1,7 +1,7 @@
 //Modal Sucesso
 function modal(str, src, tempo, tamanho) {
-    localStorage.setItem('minhaString', str); // Armazene a string no localStorage
-    localStorage.setItem('tamanho', tamanho); // Armazene a string no localStorage
+    sessionStorage.setItem('minhaString', str); // Armazene a string no sessionStorage
+    sessionStorage.setItem('tamanho', tamanho); // Armazene a string no sessionStorage
 
     var iframe = document.createElement('iframe');
 

@@ -12,7 +12,7 @@ function cadastro_comodo(comodo, mensagem) {
 
         var opcoes_python_comodo = {
             pythonPath: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
-            scriptPath: path.join(__dirname, '../../_engine/'),
+            scriptPath: path.join(__dirname, '../../../_engine/'),
             args: [funcao,
                    '',
                    nome_ambiente,
@@ -24,7 +24,7 @@ function cadastro_comodo(comodo, mensagem) {
 
         cadastro.on('message', function (message) {
             if(mensagem) {
-                sucesso('sucesso_comodo')
+                sucesso('sucesso_comodo');
             }
         });
     };
@@ -38,7 +38,7 @@ function cadastro_sensor(sensor) {
 
         var opcoes_python_comodo = {
             pythonPath: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
-            scriptPath: path.join(__dirname, '../../_engine/'),
+            scriptPath: path.join(__dirname, '../../../_engine/'),
             args: [funcao,
                    '',
                    nome_ambiente,

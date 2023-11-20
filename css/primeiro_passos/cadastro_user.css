@@ -145,11 +145,11 @@ select{
 }
 
 .nome{
-    margin-top: 10px;
-    margin-left: 30px;
     width: 530px;
     height: 60px;
     flex-shrink: 0;
+    margin-top: 10px;
+    margin-left: 30px;
 }
 
 .email{
@@ -160,12 +160,27 @@ select{
 
 }
 
+.telefone {
+    width: 530px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.tipo_telefone {
+    width: 575px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-left: 22px;
+}
+
 .senha{
     position: relative;
     width: 385px;
     height: 60px;
     flex-shrink: 0;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 30px;
 }
 
@@ -227,7 +242,7 @@ hr{
     position: fixed;
     width: 277px;
     height: 60px;
-    top: 500px;
+    top: 570px;
 
     justify-content: center;
     align-items: center;

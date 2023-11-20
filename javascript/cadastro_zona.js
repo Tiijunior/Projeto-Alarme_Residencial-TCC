@@ -1,6 +1,8 @@
 var numero = 2;
-var inputs = document.querySelectorAll('.use-keyboard-input');
 var ultimoInputFocado;
+var inputs = document.querySelectorAll('.use-keyboard-input');
+
+var nome_admin = localStorage.getItem('nome_admin');
 
 // Armazena qual é o ultimo input que entrou em focus.
 inputs.forEach(function(input) {

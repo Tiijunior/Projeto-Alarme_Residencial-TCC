@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/keyboard.css">
     <link rel="stylesheet" type="text/css" href="../../css/numeric_keyboard.css">
 </head>
-<body class="container">
+<body class="container" onload="document.getElementById('messagemId').textContent = nome_admin">
     <!--Cabeçalho-->
     <header>
         <div class="barra">
@@ -33,16 +33,26 @@
         </div>
         <form id="formulario" action="formulario">
             <div id="bloco_perfil">
-                <input id="nome" class="nome use-keyboard-input" type="text" placeholder="Nome">
-                <input id="email" class="email use-keyboard-input" type="email" placeholder="E-mail">
-                <input id="senha" class="senha use-numerico-input" type="password" placeholder="Senha">
+                
+                <input id="nome1" class="nome use-keyboard-input" type="text" placeholder="Nome">
+                <input id="email1" class="email use-keyboard-input" type="email" placeholder="E-mail">
+                
+                <input  id="telefone1" class="telefone use-keyboard-input"  type="text" placeholder="Telefone">
+                <select id="tipo_telefone1" class="tipo_telefone input">
+                    <option disabled selected>Tipo de Telefone</option>
+                    <option value="fixo">Fixo</option>
+                    <option value="celular">Celular</option>
+                </select>
+                
+                <input id="senha" class="senha use-numerico-input" type="password" placeholder="Senha" onfocus="moverNumericKeyboard()">
                 <span id="exibir_senha" style="top: 54px; left: 400px;" class="icon exibir" onclick="exibir('exibir_senha')"></span>
                 <input id="conf_senha" class="conf_senha use-numerico-input" type="password" placeholder="Confirmação de senha">
                 <span id="exibir_conf_senha" style="top: 60px; left: 850px;" class="icon exibir" onclick="exibir('exibir_conf_senha')"></span>
                 <span id="check" class="icon check" ></span>
-                <select name="" id="funcao" class="funcao">
+                
+                <select name="" id="funcao1" class="funcao">
                     <option selected disabled value="">Tipo de Usuário</option>
-                    <option>Administrador</option>
+                    <option value="administrador">Administrador</option>
                     <option value="usuario">Usuário Comum</option>
                 </select>
             </div>
@@ -58,6 +68,7 @@
     </main>
     <script src="../../javascript/relogio.js"></script>
     <script src="../../javascript/cadastro_user.js"></script>
+    <script src="../../javascript/js_py/primeiro_passos/cadastro_userpy.js"></script>
     <script src="../../javascript/verificarsenha.js"></script>
     <script src="../../javascript/keyboard.js"></script>
     <script src="../../javascript/numerico.js"></script>

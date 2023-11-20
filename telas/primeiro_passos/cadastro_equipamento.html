@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/keyboard.css">
     <link rel="stylesheet" href="../../css/numeric_keyboard.css">
 </head>
-<body class="container">
+<body class="container" onload="buscar_admin()">
     <!--Cabeçalho-->
     <header>
         <div class="barra">
@@ -66,12 +66,12 @@
             
         </div>
         <div>
-            <button id="btn_proximo" type="button" onclick="proximo(), cadastro()">Próximo passo</button>
+            <button id="btn_proximo" type="button" onclick="proximo()">Próximo passo</button>
         </div>
     </main>
 
     <script src="../../javascript/cadastro_equipamento.js"></script>
-    <script src="../../javascript/js_py/cadastro_equipamentopy.js"></script>
+    <script src="../../javascript/js_py/primeiro_passos/cadastro_equipamentopy.js"></script>
     <script src="../../javascript/relogio.js"></script>
     <script src="../../javascript/keyboard.js"></script>
     <script src="../../modal/javascript/chamar_modal.js"></script>

@@ -9,7 +9,6 @@ def verificar_admin():
 
 # Cadastro Registro do Banco de Dados.
 def cadastro_admin():
-    banco.bd_criar()
 
     # Separa o Nome do Sobrenome
     usuario_nome = (sys.argv[2].split())[0]
@@ -32,6 +31,10 @@ def cadastro_admin():
         print(banco.bd_inserir_usuario())
 
 
+def buscar_admin():
+    print((banco.bd_verificar_mostrar_banco('tbl_usuario', 'funcao', 'administrador', 0))[1])
+
+
 def cadastrar_equipamento():
     # Cadastro do Equipamento.
     banco.tbl_equipamento['nome_equipamento'] = sys.argv[2]
@@ -50,12 +53,7 @@ def cadastrar_equipamento():
     print(banco.bd_vincular_intermediaria())
 
 
-def cadastrar_usuario():
-    # Separa o Nome do Sobrenome
-    usuario_nome = (sys.argv[2].split())[0]
-    usuario_sobrenome = (sys.argv[2].split())[1:]
-    usuario_sobrenome = ' '.join(usuario_sobrenome)
-
+def cadastrar_usuario(nome_user, sobrenome_user, email, senha, tipo_user, telefone, tipo_telefone):
     # Busca os dados do ultimo registro da tabela, para verificar qual id vai adicionar.
     id_user = 2
     indice, dados = banco.bd_buscar_dados('tbl_usuario')
@@ -64,16 +62,16 @@ def cadastrar_usuario():
     # Cadastro de Usuario
     if banco.bd_conectar():
         banco.tbl_usuario['id_user'] = id_user if ultimo_id < 2 else ultimo_id + 1      # Adiciona o id_user só se o valor de ultimo_id for menor que 2, se não adiciona o ultimo_id +1
-        banco.tbl_usuario['nome'] = usuario_nome
-        banco.tbl_usuario['sobrenome'] = usuario_sobrenome
-        banco.tbl_usuario['email'] = sys.argv[3]
-        banco.tbl_usuario['senha'] = cod.codificar_senha(sys.argv[4])
-        banco.tbl_usuario['funcao'] = sys.argv[5]
+        banco.tbl_usuario['nome'] = nome_user
+        banco.tbl_usuario['sobrenome'] = sobrenome_user
+        banco.tbl_usuario['email'] = email
+        banco.tbl_usuario['senha'] = cod.codificar_senha(senha)
+        banco.tbl_usuario['funcao'] = tipo_user
         banco.tbl_telefone['id_user'] = banco.tbl_usuario['id_user']
-        banco.tbl_telefone['numero_telefone'] = sys.argv[6]
-        banco.tbl_telefone['tipo_telefone'] = sys.argv[7]
+        banco.tbl_telefone['numero_telefone'] = telefone
+        banco.tbl_telefone['tipo_telefone'] = tipo_telefone
 
-        banco.bd_inserir_usuario()
+        print(banco.bd_inserir_usuario())
 
 
 def cadastrar_comodo():
@@ -93,7 +91,7 @@ def cadastrar_comodo():
         print(banco.bd_inserir_comodo())
 
 
-def cadastrar_sensor(id_comodo, nome, tipo, porta):
+def cadastrar_sensor(id_comodo, nome_sensor, tipo, porta):
     # Busca os dados do ultimo registro da tabela, para verificar qual id vai adicionar.
     indice_sensor, dados_sensor = banco.bd_buscar_dados('tbl_sensor')
     ultimo_id_sensor = (dados_sensor[indice_sensor - 1])[0] if indice_sensor > 0 else indice_sensor
@@ -101,7 +99,7 @@ def cadastrar_sensor(id_comodo, nome, tipo, porta):
     if banco.bd_conectar():
         banco.tbl_sensor['id_sensor'] = ultimo_id_sensor + 1
         banco.tbl_sensor['id_comodo'] = (banco.bd_verificar_mostrar_banco('tbl_comodo', 'nome_comodo', id_comodo, 0)[0])
-        banco.tbl_sensor['nome_sensor'] = nome
+        banco.tbl_sensor['nome_sensor'] = nome_sensor
         banco.tbl_sensor['tipo_sensor'] = tipo
         banco.tbl_sensor['porta_sensor'] = porta
         banco.tbl_sensor['status_sensor'] = 0
@@ -119,16 +117,24 @@ def cadastrar_sensores_primeiro_passos():
         cadastrar_sensor(id_comodo, nome_sensor[i], tipo_sensor[i], porta_sensor[i])
 
 
-def excluir_usuario():
-    banco.bd_excluir('tbl_usuario', 'id_user', sys.argv[2])
+def cadastrar_usuario_primeiro_passos():
+    nome = []
+    sobrenome = []
+    nome_completo = sys.argv[2].split(',')
+    email = sys.argv[3].split(',')
+    senha = sys.argv[4].split(',')
+    tipo_user = sys.argv[5].split(',')
+    telefone = sys.argv[6].split(',')
+    tipo_telefone = sys.argv[7].split(',')
 
+    # Separa o Nome do Sobrenome
+    for i in range(len(nome_completo)):
+        nome.append(((nome_completo[i]).split())[0])
+        separador = ((nome_completo[i]).split())[1:]
+        sobrenome.append(' '.join(separador))
 
-def excluir_comodo():
-    banco.bd_excluir('tbl_comodo', 'id_comodo', sys.argv[2])
-
-
-def excluir_sensor():
-    banco.bd_excluir('tbl_sensor', 'id_sensor', sys.argv[2])
+    for i in range(len(nome_completo)):
+        cadastrar_usuario(nome[i], sobrenome[i], email[i], senha[i], tipo_user[i], telefone[i], tipo_telefone[i])
 
 
 # Estrutura para receber comandos do Javascript
@@ -136,13 +142,10 @@ funcoes = {
     "verificar_admin": verificar_admin,
     "primeiro_acesso": cadastro_admin,
     "cadastrar_equipamento": cadastrar_equipamento,
-    "cadastrar_usuario": cadastrar_usuario,
     "cadastrar_comodo": cadastrar_comodo,
-    "cadastrar_sensor": cadastrar_sensor,
-    "excluir_usuario": excluir_usuario,
-    "excluir_comodo": excluir_comodo,
-    "excluir_sensor": excluir_sensor,
-    "cadastrar_sensores_primeiro_passos": cadastrar_sensores_primeiro_passos
+    "cadastrar_sensores_primeiro_passos": cadastrar_sensores_primeiro_passos,
+    "cadastrar_usuario_primeiro_passos": cadastrar_usuario_primeiro_passos,
+    "buscar_admin": buscar_admin
 }
 
 if sys.argv[1] in funcoes:
