@@ -84,7 +84,6 @@ function verificar_user(nome, senha) {
 
     resultado_user.on('message', function(message) {
         verificado = message.split(',');
-        console.log(message)
     });
     
 }
