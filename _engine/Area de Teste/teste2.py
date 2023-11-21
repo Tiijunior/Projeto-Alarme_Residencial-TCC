@@ -150,7 +150,7 @@ print(len(separar))
 banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'funcao', 'administrador', 0)
 print((banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'funcao', 'administrador', 0))[1])
 """
-
+"""
 nome = []
 sobrenome = []
 nome_completo = 'Matheus Andrade, Julia Andrade'.split(",")
@@ -161,4 +161,6 @@ for i in range(len(nome_completo)):
     sobrenome = ((nome_completo[i]).split())[1:]
     sobrenome.append(' '.join(sobrenome))
 
-print("Nome: " + nome[0], "Sobrenome: " + sobrenome[0], "\n",  "Nome: " + nome[1], "Sobrenome: " + sobrenome[1])
+print("Nome: " + nom" e[0], "Sobrenome: " + sobrenome[0], "\n",  "Nome: " + nome[1], "Sobrenome: " + sobrenome[1])
+"""
+

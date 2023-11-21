@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/bloqueio.css">
     <link rel="stylesheet" href="../css/numeric_keyboard.css">   
 </head>
-<body id="home" class="container" onload="lista_user(10)">
+<body id="home" class="container">
     <!--Cabeçalho-->
     <header>
         <!--Barra do cabeçalho-->
@@ -25,13 +25,13 @@
 
         <div id="fade">
             <div id="relogio"></div>
-            <div id="cadeado" onclick="desbloquear()"></div>
+            <div id="cadeado" onclick="desbloquear(), mostrar_usuarios()"></div>
         </div>
 
     <!--Lista de Usuários-->
         <div class="lista">
             <div id="lista_user">
-                <div id="admin" class="imag_user"  onclick="chamar_senha(this.id)"><p class="nome_principal">Usuário Principal</p></div>
+                <div id="admin" class="imag_user"  onclick="chamar_senha(this.id)"><p id="nome1" class="nome_principal">Usuário Principal</p></div>
             </div>
     
         </div>
@@ -45,6 +45,7 @@
     
     <script src="../javascript/relogio.js"></script>
     <script src="../javascript/telabloqueio.js"></script>
+    <script src="../javascript/js_py/telabloqueio.js"></script>
     <script src="../javascript/verificarsenha.js"></script>
     <script src="../javascript/usuario.js"></script>
     <script src="../javascript/numerico.js"></script>

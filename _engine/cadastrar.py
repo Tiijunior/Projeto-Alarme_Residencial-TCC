@@ -3,10 +3,6 @@ import banco_de_dados as banco
 import codificador_senha as cod
 
 
-def verificar_admin():
-    print(banco.bd_verificar_mostrar_banco('tbl_usuario', 'funcao', 'Administrador', 1))
-
-
 def cadastrar_equipamento():
     # Cadastro do Equipamento.
     banco.tbl_equipamento['nome_equipamento'] = sys.argv[2]
@@ -117,7 +113,6 @@ def modo_padraofabrica():
 # Estrutura para receber comandos do Javascript
 
 funcoes = {
-    "verificar_admin": verificar_admin,
     "cadastrar_equipamento": cadastrar_equipamento,
     "cadastrar_usuario": cadastrar_usuario,
     "cadastrar_comodo": cadastrar_comodo,
