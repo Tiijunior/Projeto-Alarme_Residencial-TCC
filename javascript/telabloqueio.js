@@ -118,7 +118,7 @@ document.getElementById('botao_senha').addEventListener('click', function () {
 
     setTimeout(() => {
         console.log(verificado[0])
-        if(verificado[0].includes(true)) {
+        if(verificado[0].includes('True')) {
             document.getElementById('relogio').style.transition = '1s';
             document.getElementById('relogio').style.top = '-600px';
         

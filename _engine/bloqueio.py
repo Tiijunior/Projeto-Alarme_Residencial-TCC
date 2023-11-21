@@ -26,10 +26,14 @@ def verificar_senha():
     usuario = (sys.argv[2]).replace(" ", '')
     senha = sys.argv[3]
 
-    if usuario == 'Tiago' and senha == '123':
-        print('true ')
+    if banco.bd_verificar_mostrar_banco('tbl_usuario', 'nome', usuario, 1):
+        senha_codificada = banco.bd_verificar_mostrar_banco('tbl_usuario', 'nome', usuario, 0)
+        senha_codificada = senha_codificada[4].encode()
+
+        resultado_senha = cod.verificar_senha(senha, senha_codificada)
+        print(resultado_senha)
     else:
-        print('false ')
+        print(senha)
 
 
 funcoes = {
@@ -41,3 +45,4 @@ funcoes = {
 if sys.argv[1] in funcoes:
     funcao = funcoes[sys.argv[1]]
     funcao()
+

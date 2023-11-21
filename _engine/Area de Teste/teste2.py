@@ -1,5 +1,5 @@
 # import banco_de_dados
-# import codificador_senha
+from _engine import codificador_senha
 # import teste_som as som
 
 from _engine import banco_de_dados
@@ -164,3 +164,8 @@ for i in range(len(nome_completo)):
 print("Nome: " + nom" e[0], "Sobrenome: " + sobrenome[0], "\n",  "Nome: " + nome[1], "Sobrenome: " + sobrenome[1])
 """
 
+senha_codificada = banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'nome', 'Tiago', 0)
+senha_codificada = senha_codificada[4].encode()
+senha = codificador_senha.verificar_senha('123456', senha_codificada)
+
+print(senha)

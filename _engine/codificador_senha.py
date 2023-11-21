@@ -1,5 +1,6 @@
 import bcrypt
 
+
 def codificar_senha(senha):
     # Combine o salt com a senha do usuário
     senha_codificada = senha.encode('utf-8')
