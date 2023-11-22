@@ -4,6 +4,9 @@ var timer;
 var clicked = false;
 var comodo = 1;
 var status_todos = 0;
+var nome = localStorage.nome;
+
+document.getElementById('mensagemId').textContent = 'Olá, '+ nome +'';
 
 //fechar menus
 var fechar_menu = [document.getElementById('fundo'), document.getElementById('meio')];
