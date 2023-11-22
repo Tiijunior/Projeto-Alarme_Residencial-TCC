@@ -2,6 +2,16 @@ var { PythonShell } = require('python-shell');
 var path = require('path');
 var usuario = [];
 
+
+const path_windows = 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe';
+//const path_linux = '/home/tcc/.virtualenvs/Projeto_TCC(x64)/bin/python';
+
+//No Windows
+var path_python = path_windows;
+
+//No Linux
+//var path_python = path_linux;
+
 function mostrar_usuarios() {
     // busca quantos usuarios tem cadastrado.
     var quantidade = 'quantidade_user';
@@ -9,7 +19,7 @@ function mostrar_usuarios() {
 
  
     var opcoes_quantidade = {
-        pythonPath: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
+        pythonPath: path_python,
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [quantidade]
     }
@@ -42,7 +52,7 @@ function mostrar_usuarios() {
     var user;
     
     var opcoes_administrador = {
-        pythonPath: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
+        pythonPath: path_python,
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [administrador]
     }
@@ -77,7 +87,7 @@ function verificar_user(nome, senha) {
     var usuario = 'verificar_senha';
     
     var opcoes_verificar = {
-        pythonPath: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
+        pythonPath: path_python,
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [usuario, nome, senha]
     }

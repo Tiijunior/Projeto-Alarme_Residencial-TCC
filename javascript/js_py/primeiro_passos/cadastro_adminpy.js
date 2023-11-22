@@ -1,5 +1,16 @@
 var { PythonShell } = require('python-shell');
 var path = require('path');
+
+
+const path_windows = 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe';
+//const path_linux = '/home/tcc/.virtualenvs/Projeto_TCC(x64)/bin/python';
+
+//No Windows
+var path_python = path_windows;
+
+//No Linux
+//var path_python = path_linux;
+
 var resposta = '';
 
 function cadastro() {
@@ -27,8 +38,8 @@ function cadastro() {
     
 
     var opcoes_python = {
-        pythonPath: 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe',
-        scriptPath: path.join(__dirname, '../../../_engine/'),
+        pythonPath: path_python,
+        scriptPath: path.join(__dirname, '../../_engine/'),
         args: [funcao_python,
                nome, 
                email, 
