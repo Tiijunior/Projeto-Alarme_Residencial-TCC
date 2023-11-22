@@ -6,9 +6,9 @@ function modal(str, src, tempo, tamanho) {
     var iframe = document.createElement('iframe');
 
     iframe.src = src;
-    iframe.style.position = 'absolute';
-    iframe.style.top = '-1.35%';
-    iframe.style.left = '-1%';
+    iframe.style.position = 'fixed';
+    iframe.style.top = '-2px';
+    iframe.style.left = '-2px';
     iframe.style.width = '100%';
     iframe.style.height = '100%';
     iframe.style.zIndex = '99';
