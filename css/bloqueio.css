@@ -121,8 +121,8 @@ p{
 
 .imag_user {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     top: 10px;
     left: 95px;
     flex-shrink: 0;

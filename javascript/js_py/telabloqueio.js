@@ -18,6 +18,7 @@ function mostrar_usuarios() {
 
     resultado_quantidade.on('message', function (message) {
         qtd_user = (message - 1);
+        localStorage.setItem('qtd_user', qtd_user);
         lista_user(message - 1);
     });
     // Manipulação de erros
@@ -51,6 +52,7 @@ function mostrar_usuarios() {
     resultado_usuarios.on('message', function (lista_users) {
         user = lista_users.split(',');
         usuario.push(user)
+        localStorage.setItem('usuario', usuario);
     });
 
     // Manipulação de erros
@@ -67,7 +69,7 @@ function mostrar_usuarios() {
     });
 
     setTimeout(() => {
-        usuarios(qtd_user, usuario)
+        usuarios()
     }, 1000);
 }
 

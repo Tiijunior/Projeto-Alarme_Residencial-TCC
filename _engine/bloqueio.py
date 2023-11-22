@@ -45,4 +45,3 @@ funcoes = {
 if sys.argv[1] in funcoes:
     funcao = funcoes[sys.argv[1]]
     funcao()
-

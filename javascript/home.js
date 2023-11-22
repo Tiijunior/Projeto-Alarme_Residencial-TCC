@@ -4,6 +4,13 @@ var timer;
 var clicked = false;
 var comodo = 1;
 var status_todos = 0;
+var qtd_user = localStorage.qtd_user;
+var nome = localStorage.nome;
+
+document.getElementById('mensagemId').textContent = 'Olá, '+ nome +'';
+
+
+lista_user(qtd_user)
 
 //fechar menus
 var fechar_menu = [document.getElementById('fundo'), document.getElementById('meio')];

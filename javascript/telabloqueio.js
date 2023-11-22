@@ -1,4 +1,10 @@
-function usuarios(qtd_user, usuario) {
+var usuario = [];
+var qtd_user;
+
+usuario = localStorage.usuario;
+qtd_user = localStorage.qtd_user;
+
+function usuarios() {
     var j = 1
     //Coloca os administradores em primeiro
     for(var i = 0; i <= qtd_user; i++) {
@@ -21,6 +27,7 @@ function usuarios(qtd_user, usuario) {
         } 
     }
 }
+
 
 function imagens(nomeImagem, posicao){
      
@@ -101,6 +108,16 @@ var verificado;
 function chamar_senha(usuario) {
     document.getElementById('relogio').style.transition = '1s';
     document.getElementById('relogio').style.top = '140px';
+    
+    if(ultimoBotaoClicado !== null) {
+        document.getElementById(ultimoBotaoClicado).style.width = '65px';
+        document.getElementById(ultimoBotaoClicado).style.height = '65px';
+        document.getElementById(usuario).style.width = '78px';
+        document.getElementById(usuario).style.height = '78px';
+    } else {
+        document.getElementById(usuario).style.width = '78px';
+        document.getElementById(usuario).style.height = '78px';
+    }
 
     setTimeout(function() {
         document.getElementById('bloco_senha').style.transition = '1s';
@@ -114,6 +131,7 @@ document.getElementById('botao_senha').addEventListener('click', function () {
     if (ultimoBotaoClicado !== null) {
        verificar_user((document.getElementById(ultimoBotaoClicado).textContent), (document.getElementById('senha').value))
         document.getElementById('senha').value = '';
+        
     }
 
     setTimeout(() => {
@@ -140,20 +158,65 @@ document.getElementById('botao_senha').addEventListener('click', function () {
             
             document.getElementById('fade').style.transition = '1s';
             document.getElementById('fade').style.top = '-600px';
+
+            for(var i = 0; i <= qtd_user; i++) {
+                if((document.getElementById(ultimoBotaoClicado).textContent) === (usuario[i][1])) {
+                    var nome = document.getElementById(ultimoBotaoClicado).textContent;
+                    localStorage.setItem('nome', nome);
+                    if(usuario[i][2].includes('administrador')) {
+                        
+                        setTimeout(function() {
+                
+                            document.getElementById('lista_user').style.display = 'none';
+                            document.getElementById('senha').style.display = 'none';
+                            document.getElementById('botao_senha').style.display = 'none';
+                            document.getElementById('exibir_senha').style.display = 'none';
+                            document.getElementById('fade').style.display = 'none';
             
+                            window.location.href = './home.html' ;                       
+                        }, 1000);
+                    } else {
+                        setTimeout(function() {
+                            
+                            
+                            document.getElementById('lista_user').style.display = 'none';
+                            document.getElementById('senha').style.display = 'none';
+                            document.getElementById('botao_senha').style.display = 'none';
+                            document.getElementById('exibir_senha').style.display = 'none';
+                            document.getElementById('fade').style.display = 'none';
+            
+                            window.location.href = './home_user.html' ;                                                      
+                        }, 1000);
+                    }
+                }
+            }
         
-            setTimeout(function() {
-                
-                document.getElementById('lista_user').style.display = 'none';
-                document.getElementById('senha').style.display = 'none';
-                document.getElementById('botao_senha').style.display = 'none';
-                document.getElementById('exibir_senha').style.display = 'none';
-                document.getElementById('fade').style.display = 'none';
-                window.location.href = './home.html' ;
-                
-            }, 1000);
         } else {
             modal('Senha incorreta. Tente novamente.', '../modal/html/modal_error.html', 5000);
         }
     }, 1500);
 });
+
+
+function bloquear() {
+    window.location.href = './bloqueio.html';
+};
+
+// Função para verificar se houve click na tela. 
+document.onclick = function() {
+  clicked = true;
+};
+
+// Função para chamar a tela de bloqueio quando não houver atividade.
+function noClick() {
+  bloquear();
+};
+
+// Verifica a cada 5 minutos se houve um clique
+setInterval(function() {
+  if (clicked) {
+    clicked = false;
+  } else {
+    noClick();
+  }
+}, 1 * 60 * 1000);
