@@ -90,7 +90,7 @@ function lista_user(numerodeusuarios){
         var novoUsuario = document.createElement('div');
         novoUsuario.id = 'user' + i;
         novoUsuario.className = 'imag_user';
-        novoUsuario.style.marginTop = (i * 110) + 'px';
+        novoUsuario.style.marginTop = (i * 120) + 'px';
         novoUsuario.style.marginBottom = '30px';
         novoUsuario.setAttribute('onclick', 'chamar_senha(this.id)');
         var novoParagrafo = document.createElement('p');
@@ -110,13 +110,13 @@ function chamar_senha(usuario) {
     document.getElementById('relogio').style.top = '140px';
     
     if(ultimoBotaoClicado !== null) {
-        document.getElementById(ultimoBotaoClicado).style.width = '65px';
-        document.getElementById(ultimoBotaoClicado).style.height = '65px';
-        document.getElementById(usuario).style.width = '78px';
-        document.getElementById(usuario).style.height = '78px';
+        document.getElementById(ultimoBotaoClicado).style.width = '80px';
+        document.getElementById(ultimoBotaoClicado).style.height = '80px';
+        document.getElementById(usuario).style.width = '90px';
+        document.getElementById(usuario).style.height = '90px';
     } else {
-        document.getElementById(usuario).style.width = '78px';
-        document.getElementById(usuario).style.height = '78px';
+        document.getElementById(usuario).style.width = '90px';
+        document.getElementById(usuario).style.height = '90px';
     }
 
     setTimeout(function() {
