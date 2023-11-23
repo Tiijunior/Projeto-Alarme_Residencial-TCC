@@ -226,6 +226,7 @@ document.getElementById('botao_senha').addEventListener('click', function () {
 
 function bloquear() {
     var cadeado = document.getElementById('cadeado');
+    var lista_user = document.getElementById('lista_user');
 
     if (!clicked && cadeado.style.display === 'none') {
         let intervalId = setInterval(function() {
@@ -248,14 +249,14 @@ function bloquear() {
         }, 2000);
     } else if(cadeado.style.display === '') {
         cadeado.style.display = 'none';
-    } else if(cadeado.style.display === 'none') {
+    } else if(cadeado.style.display === 'none' && lista_user) {
         document.getElementById('relogio').style.transition = '1s';
         document.getElementById('relogio').style.top = '214px';
         document.getElementById('relogio').style.left = '461px';
 
-        document.getElementById('lista_user').style.transition = '1s';
-        document.getElementById('lista_user').style.display = 'list-item';
-        document.getElementById('lista_user').style.top = '830px';
+        lista_user.style.transition = '1s';
+        lista_user.style.display = 'list-item';
+        lista_user.style.top = '830px';
     } else {
         cadeado.style.display = 'none';
     }
