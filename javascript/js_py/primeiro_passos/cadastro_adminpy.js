@@ -25,17 +25,7 @@ function cadastro() {
     var foto_user = imagem_user.name;
     var telefone = document.getElementById('telefone').value;
     var tipo_telefone = document.getElementById('tipo_telefone').value;
-    
 
-    // Limpa os valores do Input na página Cadastro.html (apagar depois)
-    document.getElementById('nome').value = ''
-    document.getElementById('email').value = ''
-    document.getElementById('senha').value = ''
-    document.getElementById('conf_senha').value = ''
-    document.getElementById('telefone').value = ''
-    document.getElementById('tipo_telefone').value = ''
-
-    
 
     var opcoes_python = {
         pythonPath: path_python,

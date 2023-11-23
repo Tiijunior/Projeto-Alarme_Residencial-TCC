@@ -3,10 +3,16 @@ var { PythonShell } = require('python-shell');
 
     const path_windows = 'C:/Users/tj_an/Programação/Envs/Projeto_TCC(Em_Desenvolvimento)/Scripts/python.exe';
     //const path_linux = '/home/tcc/.virtualenvs/Projeto_TCC(x64)/bin/python';
-
+    
+    //No Windows
+    var path_python = path_windows;
+    
+    //No Linux
+    //var path_python = path_linux;
+    
     var opcoes_python = {
         //Mudar o PythonPath no linux.
-        pythonPath: path_windows,
+        pythonPath: path_python,
         scriptPath: path.join(__dirname, './_engine/'),
         args: ['verificar_admin']
         

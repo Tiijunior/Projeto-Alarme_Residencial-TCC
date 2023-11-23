@@ -52,7 +52,7 @@ function cadastro() {
 
     var opcoes_python = {
         pythonPath: path_python,
-        scriptPath: path.join(__dirname, '../../../_engine/'),
+        scriptPath: path.join(__dirname, '../../_engine/'),
         args: [funcao_python,
                nome_equipamento, 
                endereço, 

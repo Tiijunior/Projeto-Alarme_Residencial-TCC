@@ -47,7 +47,7 @@ function cadastro_sensor(sensor) {
 
         var opcoes_python_comodo = {
             pythonPath: path_python,
-            scriptPath: path.join(__dirname, '../../../_engine/'),
+            scriptPath: path.join(__dirname, '../../_engine/'),
             args: [funcao,
                    '',
                    nome_ambiente,

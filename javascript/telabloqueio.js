@@ -1,6 +1,7 @@
+var clicked = false;
 var usuario = [];
 var qtd_user;
-
+var lista = false;
 usuario = localStorage.usuario;
 qtd_user = localStorage.qtd_user;
 
@@ -64,42 +65,59 @@ function animacao_bloqueio(){
 }
 animacao_bloqueio();
 
+document.getElementById('fade').addEventListener('click', () =>  {
+    if(document.getElementById('cadeado').style.display === 'none' && document.getElementById('lista_user').style.top !== '55px') {
+        document.getElementById('cadeado').style.background = 'url(../icons/mdi_lock.svg)';
+        document.getElementById('cadeado').style.backgroundRepeat = 'no-repeat';
+        document.getElementById('cadeado').style.backgroundSize = 'cover';
+        document.getElementById('cadeado').style.display = '';
+    } else if (document.getElementById('lista_user').style.top === '55px') {
+        bloquear();
+    }
+});
+
 
 function desbloquear() {
-    document.getElementById('cadeado').style.transition = '0.5s';
-    document.getElementById('cadeado').style.background = 'url(../icons/lock-open-outline.svg)';
-    document.getElementById('cadeado').style.backgroundRepeat = 'no-repeat';
-    document.getElementById('cadeado').style.backgroundSize = 'cover';
-    
-    setTimeout(function() {
-        document.getElementById('cadeado').style.display = 'none';
-        document.getElementById('relogio').style.transition = '1s';
-        document.getElementById('relogio').style.top = '290px';
-        document.getElementById('relogio').style.left = '336px';
-    
-        document.getElementById('lista_user').style.transition = '1s';
-        document.getElementById('lista_user').style.display = 'list-item';
-        document.getElementById('lista_user').style.top = '55px';
-    }, 1000);
+    if(document.getElementById('cadeado').style.display !== 'none') {
+        document.getElementById('cadeado').style.transition = '0.5s';
+        document.getElementById('cadeado').style.background = 'url(../icons/lock-open-outline.svg)';
+        document.getElementById('cadeado').style.backgroundRepeat = 'no-repeat';
+        document.getElementById('cadeado').style.backgroundSize = 'cover';
+        
+        setTimeout(function() {
+            document.getElementById('cadeado').style.display = 'none';
+            document.getElementById('relogio').style.transition = '1s';
+            document.getElementById('relogio').style.top = '290px';
+            document.getElementById('relogio').style.left = '336px';
+        
+            document.getElementById('lista_user').style.transition = '1s';
+            document.getElementById('lista_user').style.display = 'list-item';
+            document.getElementById('lista_user').style.top = '55px';
+        }, 1000);
+    }
 }
+
 
 function lista_user(numerodeusuarios){
     var listaUser = document.getElementById('lista_user');
     
-    for (var i = 1; i <= numerodeusuarios; i++) {
-        var novoUsuario = document.createElement('div');
-        novoUsuario.id = 'user' + i;
-        novoUsuario.className = 'imag_user';
-        novoUsuario.style.marginTop = (i * 120) + 'px';
-        novoUsuario.style.marginBottom = '30px';
-        novoUsuario.setAttribute('onclick', 'chamar_senha(this.id)');
-        var novoParagrafo = document.createElement('p');
-        novoParagrafo.setAttribute('id', 'nome' + (i + 1))
-        novoParagrafo.className = 'nome_principal';
-        novoParagrafo.textContent = 'Usuário ' + i;
-        novoUsuario.appendChild(novoParagrafo);
-        listaUser.appendChild(novoUsuario);
+    if(!lista) {
+        for (var i = 1; i <= numerodeusuarios; i++) {
+            var novoUsuario = document.createElement('div');
+            novoUsuario.id = 'user' + i;
+            novoUsuario.className = 'imag_user';
+            novoUsuario.style.marginTop = (i * 120) + 'px';
+            novoUsuario.style.marginBottom = '30px';
+            novoUsuario.setAttribute('onclick', 'chamar_senha(this.id)');
+            var novoParagrafo = document.createElement('p');
+            novoParagrafo.setAttribute('id', 'nome' + (i + 1))
+            novoParagrafo.className = 'nome_principal';
+            novoParagrafo.textContent = 'Usuário ' + i;
+            novoUsuario.appendChild(novoParagrafo);
+            listaUser.appendChild(novoUsuario);
+        }
     }
+    lista = true;
 }
 
 var ultimoBotaoClicado = null;
@@ -199,7 +217,19 @@ document.getElementById('botao_senha').addEventListener('click', function () {
 
 
 function bloquear() {
-    window.location.href = './bloqueio.html';
+    var cadeado = document.getElementById('cadeado');
+
+    if(cadeado.style.display === 'none') {
+        document.getElementById('relogio').style.transition = '1s';
+        document.getElementById('relogio').style.top = '214px';
+        document.getElementById('relogio').style.left = '461px';
+
+        document.getElementById('lista_user').style.transition = '1s';
+        document.getElementById('lista_user').style.display = 'list-item';
+        document.getElementById('lista_user').style.top = '830px';
+    } else {
+        document.getElementById('cadeado').style.display = 'none';
+    }
 };
 
 // Função para verificar se houve click na tela. 
@@ -219,4 +249,4 @@ setInterval(function() {
   } else {
     noClick();
   }
-}, 1 * 60 * 1000);
+}, 20 * 1000);
