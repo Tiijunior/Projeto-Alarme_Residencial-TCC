@@ -77,6 +77,7 @@ document.getElementById('fade').addEventListener('click', () =>  {
         document.getElementById('cadeado').style.display = '';
         document.getElementById('fade').style.background = 'rgba(0, 0, 0,0.6)';
         clearInterval(mover_relogio);
+        mover_relogio = '';
         document.getElementById('relogio').style.transition = '1s';
         document.getElementById('relogio').style.top = '214px';
         document.getElementById('relogio').style.left = '461px';
@@ -232,6 +233,7 @@ function bloquear() {
             document.getElementById('fade').style.background = 'rgba(0, 0, 0,' + opacity + ')';
             if(opacity >= 1) clearInterval(intervalId); // Para o setInterval quando a opacidade chega a 1
         }, 50);
+
         setTimeout(() => {
             var relogio = document.getElementById('relogio');
 
