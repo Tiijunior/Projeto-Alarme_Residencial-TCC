@@ -227,8 +227,15 @@ document.getElementById('botao_senha').addEventListener('click', function () {
 function bloquear() {
     var cadeado = document.getElementById('cadeado');
     var lista_user = document.getElementById('lista_user');
+    if(cadeado.style.display === 'none' && lista_user.style.top === '55px') {
+        document.getElementById('relogio').style.transition = '1s';
+        document.getElementById('relogio').style.top = '214px';
+        document.getElementById('relogio').style.left = '461px';
 
-    if (!clicked && cadeado.style.display === 'none') {
+        lista_user.style.transition = '1s';
+        lista_user.style.display = 'list-item';
+        lista_user.style.top = '830px';
+    }  else if (!clicked && cadeado.style.display === 'none') {
         let intervalId = setInterval(function() {
             opacity += 0.01; // Aumenta a opacidade em 0.01 a cada 50ms
             document.getElementById('fade').style.background = 'rgba(0, 0, 0,' + opacity + ')';
@@ -247,17 +254,7 @@ function bloquear() {
                 relogio.style.top = y + 'px'; // Define a posição top do relógio
             }, 5000);            
         }, 2000);
-    } else if(cadeado.style.display === '') {
-        cadeado.style.display = 'none';
-    } else if(cadeado.style.display === 'none' && lista_user) {
-        document.getElementById('relogio').style.transition = '1s';
-        document.getElementById('relogio').style.top = '214px';
-        document.getElementById('relogio').style.left = '461px';
-
-        lista_user.style.transition = '1s';
-        lista_user.style.display = 'list-item';
-        lista_user.style.top = '830px';
-    } else {
+    }  else {
         cadeado.style.display = 'none';
     }
 };
