@@ -94,7 +94,7 @@ function telefone(event) {
 document.getElementById('telefone').onkeyup = telefone;
 
 //Verificar Campos
-function verificar_campos(frase) {
+function verificar_campos() {
     var campo_nome = document.getElementById("nome").value;
     var campo_email = document.getElementById("email").value;
     var campo_telefone = document.getElementById("telefone").value;
@@ -102,7 +102,7 @@ function verificar_campos(frase) {
     var campo_senha = document.getElementById("senha").value;
     var campo_conferir = document.getElementById("conf_senha").value;
 
-    if(campo_nome === '' || campo_email === '' || campo_telefone === '' || (campo_tipo !== "Celular" && campo_tipo !== "Fixo") || campo_senha === '' || campo_conferir === '') {
+    if(campo_nome === '' || campo_email === '' || campo_telefone === '' || campo_tipo === 'Tipo de Telefone' || campo_senha === '' || campo_conferir === '') {
         modal('Não pode haver campos em branco!', '../../modal/html/modal_error.html', 3000);
     }
 };

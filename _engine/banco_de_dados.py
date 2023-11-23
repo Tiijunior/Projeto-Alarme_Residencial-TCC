@@ -369,7 +369,7 @@ def bd_verificar_mostrar_banco(tabela, campo, dados, verificar):
             return "Erro ao conectar ao banco de dados."
         else:
             consulta = f"SELECT * FROM {tabela} WHERE {campo} = %s"
-            cursor = conexao.cursor()
+            cursor = conexao.cursor(buffered=True)
             cursor.execute(consulta, (dados,))
             resultado = cursor.fetchone()
 

@@ -163,10 +163,13 @@ for i in range(len(nome_completo)):
 
 print("Nome: " + nom" e[0], "Sobrenome: " + sobrenome[0], "\n",  "Nome: " + nome[1], "Sobrenome: " + sobrenome[1])
 """
-
+"""
 senha_codificada = banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'nome', 'Tiago', 0)
 senha_codificada = senha_codificada[4].encode()
 senha = codificador_senha.verificar_senha('123456', senha_codificada)
 tipo_user = banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'nome', 'Tiago', 0)
 print(tipo_user[5])
 print(senha)
+"""
+
+print(banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'funcao', 'Administrador', 1))

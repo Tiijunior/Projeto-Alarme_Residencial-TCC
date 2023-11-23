@@ -70,6 +70,7 @@ def cadastrar_usuario(nome_user, sobrenome_user, email, senha, tipo_user, telefo
         banco.tbl_telefone['id_user'] = banco.tbl_usuario['id_user']
         banco.tbl_telefone['numero_telefone'] = telefone
         banco.tbl_telefone['tipo_telefone'] = tipo_telefone
+        banco.tbl_usuario['imagem'] = 'vazio'
 
         print(banco.bd_inserir_usuario())
 
