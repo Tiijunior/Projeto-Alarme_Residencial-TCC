@@ -39,6 +39,10 @@ var { PythonShell } = require('python-shell');
         } else {
             console.error(message)
             modal('Erro ao acessar o Banco de dados. Verifica o log de erro.', './modal/html/modal_error.html', 8000)
+           var reset =  setInterval(() => {
+                window.location.href='index.html';
+            }, 60 * 1000);
+            if(message === 'True' || message === 'False') {clearInterval(reset)}
         }
     });
 

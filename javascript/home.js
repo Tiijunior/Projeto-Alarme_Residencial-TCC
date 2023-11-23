@@ -132,7 +132,8 @@ function chamar_home(){
             document.getElementById('relogio').style.fontSize = '96px';
             document.getElementById('fundo').style.zIndex = 1;
             for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
-                document.getElementsByClassName('texto_meio')[i].style.display = 'flex';
+                document.getElementsByClassName('texto_meio')[i].style.display = '';
+                
             }
         }, 700);
         var novoiframe = document.createElement('iframe');
@@ -348,7 +349,7 @@ function criarComodo(imagem, nome) {
         bloco.id = 'bloco' + comodo;
         bloco.className = 'bloco_comodo';
         bloco.style.top = (comodo - 1) * 20 + 'px';
-        //bloco.setAttribute('onclick', 'local(this.id)');
+        bloco.setAttribute('onclick', 'local(this.id)');
 
         let img = document.createElement('img');
         img.id = 'img_comodo' + comodo;
