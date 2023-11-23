@@ -1,7 +1,11 @@
+var ultimoBotaoClicado = null;
+var verificado;
+let opacity = 0;
 var clicked = false;
 var usuario = [];
 var qtd_user;
 var lista = false;
+let mover_relogio;
 usuario = localStorage.usuario;
 qtd_user = localStorage.qtd_user;
 
@@ -71,6 +75,12 @@ document.getElementById('fade').addEventListener('click', () =>  {
         document.getElementById('cadeado').style.backgroundRepeat = 'no-repeat';
         document.getElementById('cadeado').style.backgroundSize = 'cover';
         document.getElementById('cadeado').style.display = '';
+        document.getElementById('fade').style.background = 'rgba(0, 0, 0,0.6)';
+        clearInterval(mover_relogio);
+        document.getElementById('relogio').style.transition = '1s';
+        document.getElementById('relogio').style.top = '214px';
+        document.getElementById('relogio').style.left = '461px';
+        
     } else if (document.getElementById('lista_user').style.top === '55px') {
         bloquear();
     }
@@ -120,8 +130,6 @@ function lista_user(numerodeusuarios){
     lista = true;
 }
 
-var ultimoBotaoClicado = null;
-var verificado;
 
 function chamar_senha(usuario) {
     document.getElementById('relogio').style.transition = '1s';
@@ -149,7 +157,6 @@ document.getElementById('botao_senha').addEventListener('click', function () {
     if (ultimoBotaoClicado !== null) {
        verificar_user((document.getElementById(ultimoBotaoClicado).textContent), (document.getElementById('senha').value))
         document.getElementById('senha').value = '';
-        
     }
 
     setTimeout(() => {
@@ -219,7 +226,27 @@ document.getElementById('botao_senha').addEventListener('click', function () {
 function bloquear() {
     var cadeado = document.getElementById('cadeado');
 
-    if(cadeado.style.display === 'none') {
+    if (!clicked && cadeado.style.display === 'none') {
+        let intervalId = setInterval(function() {
+            opacity += 0.01; // Aumenta a opacidade em 0.01 a cada 50ms
+            document.getElementById('fade').style.background = 'rgba(0, 0, 0,' + opacity + ')';
+            if(opacity >= 1) clearInterval(intervalId); // Para o setInterval quando a opacidade chega a 1
+        }, 50);
+        setTimeout(() => {
+            var relogio = document.getElementById('relogio');
+
+            mover_relogio = setInterval(function() {
+                var x = Math.floor(Math.random() * 1100); // Gera um número aleatório entre 0 e 1100
+                var y = Math.floor(Math.random() * 680); // Gera um número aleatório entre 0 e 680
+            
+                relogio.style.transition = '10s';
+                relogio.style.left = x + 'px'; // Define a posição left do relógio
+                relogio.style.top = y + 'px'; // Define a posição top do relógio
+            }, 5000);            
+        }, 2000);
+    } else if(cadeado.style.display === '') {
+        cadeado.style.display = 'none';
+    } else if(cadeado.style.display === 'none') {
         document.getElementById('relogio').style.transition = '1s';
         document.getElementById('relogio').style.top = '214px';
         document.getElementById('relogio').style.left = '461px';
@@ -228,7 +255,7 @@ function bloquear() {
         document.getElementById('lista_user').style.display = 'list-item';
         document.getElementById('lista_user').style.top = '830px';
     } else {
-        document.getElementById('cadeado').style.display = 'none';
+        cadeado.style.display = 'none';
     }
 };
 
