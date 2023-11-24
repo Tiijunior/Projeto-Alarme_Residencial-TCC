@@ -4,9 +4,10 @@ var timer;
 var clicked = false;
 var comodo = 1;
 var status_todos = 0;
-var nome = localStorage.nome;
+var nome = []
+nome = localStorage.nome.split(',');
 
-document.getElementById('mensagemId').textContent = 'Olá, '+ nome +'';
+document.getElementById('mensagemId').textContent = 'Olá, '+ nome[1] +'';
 
 //fechar menus
 var fechar_menu = [document.getElementById('fundo'), document.getElementById('meio')];
@@ -21,6 +22,12 @@ fechar_menu.forEach(function(elemento) {
 
 
 function chamar_wifi() {
+
+    document.getElementById('logo_wifi').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        document.getElementById('logo_wifi').style.transform = 'scale(1)';
+    }, 100)
+    
     if(!(document.getElementById('telas').src).includes('wifi.html')) {
         document.getElementById('relogio').style.transition = '1s';
         for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
@@ -42,11 +49,16 @@ function chamar_wifi() {
 };
 
 
-function chamar_comodos() {
+function chamar_comodos() {    
     var menu_esquerdo = document.getElementById('menu_esquerdo');
     
     if(!flag_menu_esquerdo)
     {
+        document.getElementById('btn_comodos').style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            document.getElementById('btn_comodos').style.transform = 'scale(1)';
+        }, 100)
+        
         menu_esquerdo.style.transition = '1s';
         menu_esquerdo.style.display = 'flex';
         menu_esquerdo.style.left = '0';
@@ -110,6 +122,12 @@ function todos_comodos(elemento) {
 
 
 function chamar_home(){
+
+    document.getElementById('btn_home').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        document.getElementById('btn_home').style.transform = 'scale(1)';
+    }, 100)
+    
     if(!(document.getElementById('telas').src === '')) {
         document.getElementById('telas').style.transition = '1s';
         document.getElementById('telas').style.top = '-700px';
@@ -150,6 +168,12 @@ function chamar_home(){
 };
 
 function chamar_conta() {
+
+    document.getElementById('btn_perfil').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        document.getElementById('btn_perfil').style.transform = 'scale(1)';
+    }, 100)
+    
     if(!(document.getElementById('telas').src).includes('novo_perfil.html')) {
         document.getElementById('relogio').style.transition = '1s';
         for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
@@ -273,6 +297,12 @@ function ativar_comodo(elemento){
 }
 
 function local(elemento){
+
+    document.getElementById(elemento).style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        document.getElementById(elemento).style.transform = 'scale(1)';
+    }, 100)
+    
     if(!(document.getElementById('telas').src).includes('novo_local.html')) {
         document.getElementById('relogio').style.transition = '1s';
         for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
@@ -311,6 +341,11 @@ function local(elemento){
 
 
 function bloquear() {
+    document.getElementById('btn_bloqueio').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        document.getElementById('btn_bloqueio').style.transform = 'scale(1)';
+    }, 100)
+    
     window.location.href = './bloqueio.html';
 };
 

@@ -33,11 +33,10 @@
       }
     ],
     "compat-api/css": [
-      "default",
+      "off",
       {
         "ignore": [
-          "user-select",
-          "-webkit-tap-highlight-color"
+          "backdrop-filter"
         ]
       }
     ]

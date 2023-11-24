@@ -9,12 +9,12 @@
 <body id="user" class="container">
     <!--Cabeçalho-->
     <header>
-        <img id="fundo" src="" style="position: fixed; top: -20px; left: -20px; width: 1300px; height: 800px; z-index: 1;" alt="" onerror="this.style.display=''">
+        
         <!--Barra do cabeçalho-->
         <div class="barra">
             <div class="logo"><img src="../icons/Logo 3 - Algiz - Branco.svg" alt=""></div>
-            <div class="logo_wifi" onclick="chamar_wifi()"><img src="../icons/mdi_wifi-strength-off-outline.svg" alt=""></div>
-            <div class="botao_bloqueio" onclick="bloquear()" ><img src="../icons/bxs_exit.svg" alt=""></div>
+            <div id="logo_wifi" class="logo_wifi" onclick="chamar_wifi()"><img src="../icons/mdi_wifi-strength-off-outline.svg" alt=""></div>
+            <div id="btn_bloqueio" class="botao_bloqueio" onclick="bloquear()" ><img src="../icons/bxs_exit.svg" alt=""></div>
         </div>
     </header>
     <!--Corpo Principal-->
@@ -42,6 +42,7 @@
         </div>
     
         <!--Meio-->
+        <div id="fundo" style="position: fixed; background: rgba(0, 0, 0, 0); top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
         <div id="meio">
             <div id="mensagemId" class="texto_meio">Olá, Usuário!</div>
             <div id="relogio"></div>

@@ -19,9 +19,10 @@
     align-items: center;
     flex-shrink: 0;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50% / cover no-repeat;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),  url(../imagem/Display\ -\ Tela\ principal.jpg), lightgray 50%;
     background-size: 1280px 720px;
     background-repeat: no-repeat;
+    
 }
 
 p{
@@ -130,6 +131,7 @@ p{
     top: 125px;
     left: -330px;
     background: rgba(0, 0, 0, 0.40);
+    backdrop-filter: blur(8px);
     z-index: 3;
 }
 
@@ -167,15 +169,26 @@ p{
     height: 360px;
     top: 290px;
     overflow-y: auto;
+    
 }
 
 .bloco_comodo {
     position: relative;
     width: 300px;
-    height: 80px;
-    margin-top: 20px;
-    left: 10px;
+    height: 90px;
+    margin-top: 15px;
+    left: 5px;
     bottom: 80px;
+    
+    border: 2px solid rgba(255, 255, 255, 0.253);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+.bloco_fundo {
+    position: absolute;
+    width: 240px;
+    height: 90px;
 }
 
 .img_comodos {
@@ -183,6 +196,7 @@ p{
     width: 50px;
     height: 35px;
     flex-shrink: 0;
+    margin-top: 10px;
     margin-left: 10px;
 
     background-repeat: no-repeat;
@@ -261,6 +275,7 @@ p{
     top: 125px;
     right: -230px;
     background: rgba(0, 0, 0, 0.40);
+    backdrop-filter: blur(8px);
     z-index: 3;
 }
 
@@ -271,8 +286,12 @@ p{
     flex-shrink: 0;
 
     margin-top: 20px;
-    margin-left: 65px;
+    margin-left: 70px;
     z-index: 3;
+    
+    background: url(../icons/mdi_account-circle.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #nome_user{

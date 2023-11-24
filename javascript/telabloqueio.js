@@ -75,7 +75,7 @@ document.getElementById('fade').addEventListener('click', () =>  {
         document.getElementById('cadeado').style.backgroundSize = 'cover';
         document.getElementById('cadeado').style.display = '';
         document.getElementById('fade').style.background = 'rgba(0, 0, 0,0.6)';
-        document.getElementById('relogio').style.transition = '1s';
+        document.getElementById('relogio').style.transition = '0.8s';
         document.getElementById('relogio').style.top = '214px';
         document.getElementById('relogio').style.left = '461px';
         
@@ -94,11 +94,11 @@ function desbloquear() {
         
         setTimeout(function() {
             document.getElementById('cadeado').style.display = 'none';
-            document.getElementById('relogio').style.transition = '1s';
+            document.getElementById('relogio').style.transition = '0.8s';
             document.getElementById('relogio').style.top = '290px';
             document.getElementById('relogio').style.left = '336px';
         
-            document.getElementById('lista_user').style.transition = '1s';
+            document.getElementById('lista_user').style.transition = '0.8s';
             document.getElementById('lista_user').style.display = 'list-item';
             document.getElementById('lista_user').style.top = '55px';
         }, 1000);
@@ -130,10 +130,11 @@ function lista_user(numerodeusuarios){
 
 
 function chamar_senha(usuario) {
-    document.getElementById('relogio').style.transition = '1s';
+    document.getElementById('relogio').style.transition = '0.8s';
     document.getElementById('relogio').style.top = '140px';
     
     if(ultimoBotaoClicado !== null) {
+        
         document.getElementById(ultimoBotaoClicado).style.width = '80px';
         document.getElementById(ultimoBotaoClicado).style.height = '80px';
         document.getElementById(usuario).style.width = '90px';
@@ -144,8 +145,9 @@ function chamar_senha(usuario) {
     }
 
     setTimeout(function() {
-        document.getElementById('bloco_senha').style.transition = '1s';
+        document.getElementById('bloco_senha').style.transition = '0.8s';
         document.getElementById('bloco_senha').style.display = 'flex';
+        document.getElementById('senha').value = '';
     }, 500);
 
     ultimoBotaoClicado = usuario;
@@ -160,31 +162,34 @@ document.getElementById('botao_senha').addEventListener('click', function () {
     setTimeout(() => {
         
         if(verificado[0].includes('True')) {
-            document.getElementById('relogio').style.transition = '1s';
+            document.getElementById('relogio').style.transition = '0.8s';
             document.getElementById('relogio').style.top = '-600px';
         
-            document.getElementById('lista_user').style.transition = '1s';
+            document.getElementById('lista_user').style.transition = '0.8s';
             document.getElementById('lista_user').style.top = '-600px';
             document.getElementById('lista_user').style.zIndex = '-10';
             
-            document.getElementById('senha').style.transition = '1s';
+            document.getElementById('senha').style.transition = '0.8s';
             document.getElementById('senha').style.top = '-600px';
             document.getElementById('senha').style.zIndex = '-10';
             
-            document.getElementById('botao_senha').style.transition = '1s';
+            document.getElementById('botao_senha').style.transition = '0.8s';
             document.getElementById('botao_senha').style.top = '-600px';
             document.getElementById('botao_senha').style.zIndex = '-10';
             
-            document.getElementById('exibir_senha').style.transition = '1s';
+            document.getElementById('exibir_senha').style.transition = '0.8s';
             document.getElementById('exibir_senha').style.top = '-600px';
             document.getElementById('exibir_senha').style.zIndex = '-10';
             
-            document.getElementById('fade').style.transition = '1s';
+            document.getElementById('fade').style.transition = '0.8s';
             document.getElementById('fade').style.top = '-600px';
 
             for(var i = 0; i <= qtd_user; i++) {
                 if((document.getElementById(ultimoBotaoClicado).textContent) === (usuario[i][1])) {
-                    var nome = document.getElementById(ultimoBotaoClicado).textContent;
+                    var nome = []
+                    nome[0] = usuario[i][0]
+                    nome[1] = document.getElementById(ultimoBotaoClicado).textContent;
+                    nome[2] = usuario[i][3]
                     localStorage.setItem('nome', nome);
                     if(usuario[i][2].includes('administrador')) {
                         
@@ -224,21 +229,38 @@ document.getElementById('botao_senha').addEventListener('click', function () {
 function bloquear() {
     var cadeado = document.getElementById('cadeado');
     var lista_user = document.getElementById('lista_user');
+    var ocultar_senha = document.getElementById('bloco_senha');
 
-    if(cadeado.style.display === 'none' && lista_user.style.top === '55px') {
-        document.getElementById('relogio').style.transition = '1s';
+    if(cadeado.style.display === 'none' && lista_user.style.top === '55px' && ocultar_senha.style.display === 'flex') {
+        ocultar_senha.style.display = 'none';
+        document.getElementById('relogio').style.transition = '0.8s';
         document.getElementById('relogio').style.top = '214px';
         document.getElementById('relogio').style.left = '461px';
         cadeado.style.display = '';
         cadeado.style.background = 'url(../icons/mdi_lock.svg)';
         cadeado.style.backgroundRepeat = 'no-repeat';
         cadeado.style.backgroundSize = 'cover';
+        ultimoBotaoClicado = null;
 
-        lista_user.style.transition = '1s';
+        lista_user.style.transition = '0.8s';
         lista_user.style.display = 'list-item';
         lista_user.style.top = '830px';
 
-    }  else if (!clicked && cadeado.style.display === 'none') {
+    } else if(cadeado.style.display === 'none' && lista_user.style.top === '55px') {
+        document.getElementById('relogio').style.transition = '0.8s';
+        document.getElementById('relogio').style.top = '214px';
+        document.getElementById('relogio').style.left = '461px';
+        cadeado.style.display = '';
+        cadeado.style.background = 'url(../icons/mdi_lock.svg)';
+        cadeado.style.backgroundRepeat = 'no-repeat';
+        cadeado.style.backgroundSize = 'cover';
+        ultimoBotaoClicado = null;
+
+        lista_user.style.transition = '0.8s';
+        lista_user.style.display = 'list-item';
+        lista_user.style.top = '830px';
+
+    } else if (!clicked && cadeado.style.display === 'none') {
         let intervalId = setInterval(function() {
             opacity += 0.01; // Aumenta a opacidade em 0.01 a cada 50ms
             document.getElementById('fade').style.background = 'rgba(0, 0, 0,' + opacity + ')';
@@ -248,16 +270,35 @@ function bloquear() {
         var relogio = document.getElementById('relogio');
         do {
             setTimeout(() => {
-                var x = Math.floor(Math.random() * 1000); // Gera um número aleatório entre 0 e 1100
+                var x = Math.floor(Math.random() * 1000); // Gera um número aleatório entre 0 e 1000
                 var y = Math.floor(Math.random() * 680); // Gera um número aleatório entre 0 e 680
 
-                relogio.style.transition = '5s';
-                relogio.style.left = x + 'px'; // Define a posição left do relógio
-                relogio.style.top = y + 'px'; // Define a posição top do relógio
+                if(y > 505){
+                    relogio.style.transition = '5s';
+                    relogio.style.left = x + 'px'; // Define a posição left do relógio
+                    relogio.style.top = 500 + 'px'; // Define a posição top do relógio
+                } else if(x > 800) {
+                    relogio.style.transition = '5s';
+                    relogio.style.left = 790 + 'px';
+                    relogio.style.top = y + 'px';
+                } else if (y < 30) {
+                    relogio.style.transition = '5s';
+                    relogio.style.left = x + 'px';
+                    relogio.style.top = 35 + 'px';
+                } else if (x < 26) {
+                    relogio.style.transition = '5s';
+                    relogio.style.left = 30 + 'px';
+                    relogio.style.top = y + 'px';
+                } else {
+                    relogio.style.transition = '5s';
+                    relogio.style.left = x + 'px';
+                    relogio.style.top = y + 'px';
+                }
             }, 50);
         } while(document.getElementById('fade').addEventListener('click', () =>{}))
     }  else {
         cadeado.style.display = 'none';
+        ultimoBotaoClicado = null;
     }
 };
 

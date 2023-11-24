@@ -10,6 +10,8 @@ var { PythonShell } = require('python-shell');
     //No Linux
     //var path_python = path_linux;
     
+    localStorage.setItem('path_python', path_python);
+    
     var opcoes_python = {
         //Mudar o PythonPath no linux.
         pythonPath: path_python,

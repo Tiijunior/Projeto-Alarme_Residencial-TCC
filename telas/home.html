@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/home.css">  
 </head>
-<body id="home" class="container">
+<body id="home" class="container" onload="buscar_lista_comodo(), buscar_qtd_comodo()">
     <!--Cabeçalho-->
     <header>
         <!--Barra do cabeçalho-->
         <div class="barra">
             <div class="logo"><img src="../icons/Logo 3 - Algiz - Branco.svg" alt=""></div>
-            <div class="logo_wifi" onclick="chamar_wifi()"><img src="../icons/mdi_wifi-strength-off-outline.svg" alt=""></div>
-            <div class="botao_bloqueio" onclick="bloquear()" ><img src="../icons/bxs_exit.svg" alt=""></div>
+            <div id="logo_wifi" class="logo_wifi" onclick="chamar_wifi()"><img src="../icons/mdi_wifi-strength-off-outline.svg" alt=""></div>
+            <div id="btn_bloqueio" class="botao_bloqueio" onclick="bloquear()" ><img src="../icons/bxs_exit.svg" alt=""></div>
         </div>
     </header>
     <!--Corpo Principal-->
     <main>
-        <div id="fundo" src="" style="position: fixed; background: rgba(0, 0, 0, 0); top: 0; left: 0; width: 100%; height: 100%; z-index: 1;" alt=""></div>
         <!--Barra do corpo principal-->
         <div id="barra_main">
             <button id="btn_comodos" onclick="chamar_comodos()"><img src="../icons/mdi_shield-home.svg" alt=""></button>
@@ -41,6 +40,7 @@
         </div>
     
         <!--Meio-->
+        <div id="fundo" style="position: fixed; background: rgba(0, 0, 0, 0); top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
         <div id="meio">
             <div id="mensagemId" class="texto_meio" style="text-align: center; ">Olá, Administrador!</div>
             <div id="relogio"></div>
@@ -49,8 +49,9 @@
 
         <!--Barra Direita-->
         <div id="menu_direito">
-            <div id="img_perfil" onclick="chamar_conta()"><img src="../icons/mdi_account-circle.svg" alt="">
-            <div id="nome_user">Minha conta</div></div>
+            <div id="img_perfil" onclick="chamar_conta()">
+                <div id="nome_user" style="margin-top: 115px; margin-left: -50px;">Minha conta</div>
+            </div>
             <p style="width: 89px; height: 39px; margin-top: 205px; margin-left: 23px; font-size: 32px;">Perfis</p>
             <button id="adicionar_perfis" onclick="adicionar_perfis()"></button>
             <!--Lista de Usuários-->
@@ -60,6 +61,7 @@
         </div>
     </main>
     <script src="../javascript/home.js"></script>
+    <script src="../javascript/js_py/home.js"></script>
     <script src="../javascript/usuario.js"></script>
     <script src="../javascript/relogio.js"></script>
     <script src="../modal/javascript/chamar_modal.js"></script>
