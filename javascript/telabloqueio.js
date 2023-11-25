@@ -2,11 +2,9 @@ var ultimoBotaoClicado = null;
 var verificado;
 let opacity = 0;
 var clicked = false;
-var usuario = [];
-var qtd_user;
 var lista = false;
-usuario = localStorage.usuario;
-qtd_user = localStorage.qtd_user;
+var nome = []
+
 
 function usuarios() {
     var j = 1
@@ -186,7 +184,6 @@ document.getElementById('botao_senha').addEventListener('click', function () {
 
             for(var i = 0; i <= qtd_user; i++) {
                 if((document.getElementById(ultimoBotaoClicado).textContent) === (usuario[i][1])) {
-                    var nome = []
                     nome[0] = usuario[i][0]
                     nome[1] = document.getElementById(ultimoBotaoClicado).textContent;
                     nome[2] = usuario[i][3]

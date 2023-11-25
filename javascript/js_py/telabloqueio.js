@@ -1,13 +1,13 @@
 var { PythonShell } = require('python-shell');
 var path = require('path');
 var usuario = [];
+var qtd_user;
 let path_python = localStorage.path_python;
 
 function mostrar_usuarios() {
     // busca quantos usuarios tem cadastrado.
     var quantidade = 'quantidade_user';
-    var qtd_user;
-
+    
     var opcoes_quantidade = {
         pythonPath: path_python,
         scriptPath: path.join(__dirname, '../_engine/'),
@@ -18,7 +18,6 @@ function mostrar_usuarios() {
 
     resultado_quantidade.on('message', function (message) {
         qtd_user = (message - 1);
-        localStorage.setItem('qtd_user', qtd_user);
         lista_user(message - 1);
     });
     // Manipulação de erros
@@ -52,7 +51,6 @@ function mostrar_usuarios() {
     resultado_usuarios.on('message', function (lista_users) {
         user = lista_users.split(',');
         usuario.push(user)
-        localStorage.setItem('usuario', usuario);
     });
 
     // Manipulação de erros

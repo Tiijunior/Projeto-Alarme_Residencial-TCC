@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/home.css">  
 </head>
-<body id="home" class="container" onload="buscar_lista_comodo(), buscar_qtd_comodo()">
+<body id="home" class="container" onload="mostrar_usuarios(), buscar_lista_comodo(), buscar_qtd_comodo()">
     <!--Cabeçalho-->
     <header>
         <!--Barra do cabeçalho-->
@@ -21,7 +21,7 @@
         <div id="barra_main">
             <button id="btn_comodos" onclick="chamar_comodos()"><img src="../icons/mdi_shield-home.svg" alt=""></button>
             <button id="btn_home" onclick="chamar_home()"><img src="../icons/mdi_home.svg" alt=""></button>
-            <button id="btn_perfil" onclick="chamar_perfis()"><img src="../icons/mdi_shield-account.svg" alt=""></button>
+            <button id="btn_perfil" onclick="chamar_perfis(), carrega_lista_user()"><img src="../icons/mdi_shield-account.svg" alt=""></button>
         </div>
         <!--Barra Esquerda-->
         <div id="menu_esquerdo">
@@ -33,7 +33,7 @@
             <p style="margin-top: 129px; margin-left: 25px; font-size: 20px;">Todos os Ambientes</p>
             <button id="switch_comodo" onclick="todos_comodos()"></button>
             <!--Lista de Comodos-->
-            <div class="lista" style="position: absolute; width: 310px; height: 510px; top: -80px; left: 10px;">
+            <div class="lista" style="position: absolute; width: 319.48px; height: 510px; top: -80px; left: 10px;">
                 <div id="lista_comodos">
                 </div>
             </div>

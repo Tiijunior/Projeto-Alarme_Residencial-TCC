@@ -4,19 +4,15 @@ var timer;
 var clicked = false;
 var comodo = 1;
 var status_todos = 0;
-var qtd_user = localStorage.qtd_user;
-var quantidade_comodo = sessionStorage.quantidade_comodo;
-var nome = []
-var lista_usuarios = [];
-var lista_comodo = [];
+var nome = [];
+var qtd_user;
 
 // recebe o nome do usuário armazenado no Storage
 nome = localStorage.nome.split(',');
-lista_comodo = localStorage.lista_comodo;
 
 
 document.getElementById('mensagemId').textContent = 'Olá, '+ nome[1] +'';
-lista_user(qtd_user)
+
 // Carrega a foto da minha conta do administrador.
 function imagens(){   
     var img_perfil = document.getElementById('img_perfil');
@@ -28,32 +24,15 @@ function imagens(){
 }
 imagens();
 
-// Separa em uma matriz, os dados do usuários.
-function matrizusuarios() {
-    var j = 0;
-    var usuario = []
-    usuario = localStorage.usuario.split(',');
-
-    for(var i = 0; i <= qtd_user; i++){
-        var dados_usuarios = [];
-        for(var g = 0; g <= qtd_user; g++) {
-            dados_usuarios.push(usuario[j]);
-            j++;            
-        }
-        lista_usuarios.push(dados_usuarios);
-    }
-}
-matrizusuarios();
-
 function carrega_lista_user(){
     var posicao = 1;
     // Percorre a lista de usuários
     for(let i = 0; i <= qtd_user; i++) {
         // Verifica se o usuário atual não é o mesmo que nome[0]
-        if(lista_usuarios[i][0] !== nome[0]) {
+        if(usuario[i][0] !== nome[0]) {
             // Altera o textContent do elemento com a classe 'nome_principal'
-                document.getElementById('user' + posicao).getElementsByClassName('nome_principal')[0].textContent = lista_usuarios[i][1];
-                document.getElementById('user' + posicao).style.background = 'url(../foto/'+(lista_usuarios[i][3]).replace(/ /g, '')+')';
+                document.getElementById('user' + posicao).getElementsByClassName('nome_principal')[0].textContent = usuario[i][1];
+                document.getElementById('user' + posicao).style.background = 'url(../foto/'+(usuario[i][3]).replace(/ /g, '')+')';
                 document.getElementById('user' + posicao).style.backgroundRepeat = 'no-repeat';
                 document.getElementById('user' + posicao).style.backgroundSize = 'cover';
                 document.getElementById('user' + posicao).style.borderRadius = '50%';
@@ -63,12 +42,15 @@ function carrega_lista_user(){
 }
 carrega_lista_user();
 
+
 setTimeout(() => {
+    
     for(let i = 0; i < quantidade_comodo; i++) {
         var tipo_comodo = (lista_comodo[i][3]);
-        criarComodo(tipo_comodo.replace(/ /g, ''), lista_comodo[i][2]);
+        tipo_comodo = (tipo_comodo.replace(/ /g, '')).charAt(0).toUpperCase() + tipo_comodo.slice(2);
+        criarComodo(tipo_comodo, lista_comodo[i][2]);
     }    
-}, 800);
+}, 1000);
 
 //fechar menus
 var fechar_menu = [document.getElementById('fundo'), document.getElementById('meio')];
