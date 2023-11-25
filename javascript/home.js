@@ -17,10 +17,17 @@ document.getElementById('mensagemId').textContent = 'Olá, '+ nome[1] +'';
 function imagens(){   
     var img_perfil = document.getElementById('img_perfil');
 
-    img_perfil.style.background = 'url(../foto/'+ (nome[2]).replace(/ /g, '') +')';
-    img_perfil.style.backgroundRepeat = 'no-repeat';
-    img_perfil.style.backgroundSize = 'cover';
-    img_perfil.style.borderRadius = '50%';
+    if(nome[2].includes('vazio')) {
+        img_perfil.style.background = 'url(../icons/img/mdi_account-circle.svg)';
+        img_perfil.style.backgroundRepeat = 'no-repeat';
+        img_perfil.style.backgroundSize = 'cover';
+        img_perfil.style.borderRadius = '50%';
+    } else {
+        img_perfil.style.background = 'url(../foto/'+ (nome[2]).replace(/ /g, '') +')';
+        img_perfil.style.backgroundRepeat = 'no-repeat';
+        img_perfil.style.backgroundSize = 'cover';
+        img_perfil.style.borderRadius = '50%';
+    }
 }
 imagens();
 

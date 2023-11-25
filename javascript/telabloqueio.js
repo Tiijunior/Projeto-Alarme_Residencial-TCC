@@ -22,9 +22,7 @@ function usuarios() {
     for(var i = 0; i <= qtd_user; i++) {
         if((usuario[i][2]).includes('usuario')){
             document.getElementById('nome' + j).textContent = usuario[i][1];
-            if(!(usuario[i][3]).includes('vazio')){
-                imagens((usuario[i][3]).replace(/ /g, ''), (j-1))
-            }
+            imagens((usuario[i][3]).replace(/ /g, ''), (j-1))
             j++
         } 
     }
@@ -32,19 +30,32 @@ function usuarios() {
 
 
 function imagens(nomeImagem, posicao){
-     
-    if(posicao === 0) {
-        document.getElementById('admin').style.background = 'url(../foto/'+ nomeImagem +')';
-        document.getElementById('admin').style.backgroundRepeat = 'no-repeat';
-        document.getElementById('admin').style.backgroundSize = 'cover';
-        document.getElementById('admin').style.borderRadius = '50%';
+
+    if(nomeImagem.includes('vazio')){
+        if(posicao === 0) {
+            document.getElementById('admin').style.background = 'url(../icons/img/mdi_account-circle.svg)';
+            document.getElementById('admin').style.backgroundRepeat = 'no-repeat';
+            document.getElementById('admin').style.backgroundSize = 'cover';
+            document.getElementById('admin').style.borderRadius = '50%';
+        } else {
+            document.getElementById('user' + posicao).style.background = 'url(../icons/img/mdi_account-circle.svg)';
+            document.getElementById('user' + posicao).style.backgroundRepeat = 'no-repeat';
+            document.getElementById('user' + posicao).style.backgroundSize = 'cover';
+            document.getElementById('user' + posicao).style.borderRadius = '50%';
+        }
     } else {
-        document.getElementById('user' + posicao).style.background = 'url(../foto/'+ nomeImagem +')';
-        document.getElementById('user' + posicao).style.backgroundRepeat = 'no-repeat';
-        document.getElementById('user' + posicao).style.backgroundSize = 'cover';
-        document.getElementById('user' + posicao).style.borderRadius = '50%';
-    }
-    
+        if(posicao === 0) {
+            document.getElementById('admin').style.background = 'url(../foto/'+ nomeImagem +')';
+            document.getElementById('admin').style.backgroundRepeat = 'no-repeat';
+            document.getElementById('admin').style.backgroundSize = 'cover';
+            document.getElementById('admin').style.borderRadius = '50%';
+        } else {
+            document.getElementById('user' + posicao).style.background = 'url(../foto/'+ nomeImagem +')';
+            document.getElementById('user' + posicao).style.backgroundRepeat = 'no-repeat';
+            document.getElementById('user' + posicao).style.backgroundSize = 'cover';
+            document.getElementById('user' + posicao).style.borderRadius = '50%';
+        }
+    }    
 }
 
 function animacao_bloqueio(){ 
