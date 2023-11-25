@@ -12,7 +12,7 @@ var lista_comodo = [];
 
 // recebe o nome do usuário armazenado no Storage
 nome = localStorage.nome.split(',');
-lista_comodo = JSON.parse(sessionStorage.lista_comodo);
+lista_comodo = localStorage.lista_comodo;
 
 
 document.getElementById('mensagemId').textContent = 'Olá, '+ nome[1] +'';
@@ -63,6 +63,12 @@ function carrega_lista_user(){
 }
 carrega_lista_user();
 
+setTimeout(() => {
+    for(let i = 0; i < quantidade_comodo; i++) {
+        var tipo_comodo = (lista_comodo[i][3]);
+        criarComodo(tipo_comodo.replace(/ /g, ''), lista_comodo[i][2]);
+    }    
+}, 800);
 
 //fechar menus
 var fechar_menu = [document.getElementById('fundo'), document.getElementById('meio')];
@@ -141,11 +147,6 @@ function chamar_comodos() {
 
     }
 };
-
-for(let i = 0; i < quantidade_comodo; i++) {
-    var tipo_comodo = (lista_comodo[i][3]);
-    criarComodo(tipo_comodo.replace(/ /g, ''), lista_comodo[i][2])
-}
 
 
 function criarComodo(imagem, nome) {

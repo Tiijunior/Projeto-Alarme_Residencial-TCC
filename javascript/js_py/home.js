@@ -38,7 +38,7 @@ function buscar_lista_comodo() {
     lista.on('message', function(message) {
         resultado_python = ((message.replace(/�/g, 'ç')).replace( /[\(\)']/g, '')).split(',');
         lista_comodo.push(resultado_python);
-        sessionStorage.setItem('lista_comodo', JSON.stringify(lista_comodo));
+        localStorage.setItem('lista_comodo', lista_comodo);
     })
     
 }

@@ -15,7 +15,7 @@
     top: 0;
     left: 0;
     z-index: 5;
-    background-color: rgba(0,0,0, 0.6);
+    background-color: rgba(0,0,0, 0.3);
     opacity: 0;
     transition: opacity 0.5s;
 }
@@ -81,7 +81,7 @@
 .modal_button {
     display: flex;
     width: 18.75rem;
-    height: 2.125rem;
+    height: 3.125rem;
     margin-top: 2rem;
     margin-left: 5.063rem;
     padding: 0.438rem 0;
@@ -95,7 +95,7 @@
     
     color: white;
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;

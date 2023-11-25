@@ -4,9 +4,9 @@ var fade = document.getElementById('fade');
         // Função para alternar as cores
         function alternarCores() {
             if (red) {
-                fade.style.backgroundColor = 'rgba(255, 0, 0, 0.6)';
+                fade.style.backgroundColor = 'rgba(255, 0, 0, 0.4)';
             } else {
-                fade.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+                fade.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
             }
             red = !red; // Inverter o valor de red
         }
