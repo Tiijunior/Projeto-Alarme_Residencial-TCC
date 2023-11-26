@@ -320,11 +320,11 @@ function noClick() {
   bloquear();
 };
 
-// Verifica a cada 5 minutos se houve um clique
-setInterval(function() {
+// Verifica a cada 40 segundos se houve um clique
+var protetor_tela = setInterval(function() {
   if (clicked) {
     clicked = false;
   } else {
     noClick();
   }
-}, 20 * 1000);
+}, 10 * 1000);

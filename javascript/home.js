@@ -38,11 +38,19 @@ function carrega_lista_user(){
         // Verifica se o usuário atual não é o mesmo que nome[0]
         if(usuario[i][0] !== nome[0]) {
             // Altera o textContent do elemento com a classe 'nome_principal'
-                document.getElementById('user' + posicao).getElementsByClassName('nome_principal')[0].textContent = usuario[i][1];
-                document.getElementById('user' + posicao).style.background = 'url(../foto/'+(usuario[i][3]).replace(/ /g, '')+')';
-                document.getElementById('user' + posicao).style.backgroundRepeat = 'no-repeat';
-                document.getElementById('user' + posicao).style.backgroundSize = 'cover';
-                document.getElementById('user' + posicao).style.borderRadius = '50%';
+                if((usuario[i][3]).includes('vazio')){
+                    document.getElementById('user' + posicao).getElementsByClassName('nome_principal')[0].textContent = usuario[i][1];
+                    document.getElementById('user' + posicao).style.background = 'url(../icons/img/mdi_account-circle.svg)';
+                    document.getElementById('user' + posicao).style.backgroundRepeat = 'no-repeat';
+                    document.getElementById('user' + posicao).style.backgroundSize = 'cover';
+                    document.getElementById('user' + posicao).style.borderRadius = '50%';
+                } else {
+                    document.getElementById('user' + posicao).getElementsByClassName('nome_principal')[0].textContent = usuario[i][1];
+                    document.getElementById('user' + posicao).style.background = 'url(../foto/'+(usuario[i][3]).replace(/ /g, '')+')';
+                    document.getElementById('user' + posicao).style.backgroundRepeat = 'no-repeat';
+                    document.getElementById('user' + posicao).style.backgroundSize = 'cover';
+                    document.getElementById('user' + posicao).style.borderRadius = '50%';
+                }
                 posicao ++;
         }
     }

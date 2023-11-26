@@ -1,4 +1,4 @@
-//Modal Sucesso
+// Chama o modal
 function modal(str, src, tempo, tamanho) {
     sessionStorage.setItem('minhaString', str); // Armazene a string no sessionStorage
     sessionStorage.setItem('tamanho', tamanho); // Armazene a string no sessionStorage

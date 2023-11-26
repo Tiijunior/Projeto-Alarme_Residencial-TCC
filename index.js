@@ -16,12 +16,12 @@ app.on('ready', () => {
         }
     });
     
-      //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/home.html')}`);
-      //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/primeiro_passos/cadastro_zona.html')}`);
-      mainWindow.loadURL(`file://${path.join(__dirname, 'index.html')}`);
-
-
     //mainWindow.setFullScreen(true)
     //mainWindow.setMenu(null)
+    
+    //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/home.html')}`);
+    //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/primeiro_passos/cadastro_zona.html')}`);
+    mainWindow.loadURL(`file://${path.join(__dirname, 'index.html')}`);
+
     
 });

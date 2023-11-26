@@ -1,8 +1,6 @@
 document.addEventListener( "DOMContentLoaded", function() {
     var modal = document.getElementById("modal");
-    var fade = document.getElementById("fade");
-
-    document.getElementById('mensagemId').textContent = sessionStorage.local;    
+    var fade = document.getElementById("fade"); 
 
    setTimeout(function() {
     modal.classList.add('mostrar')
