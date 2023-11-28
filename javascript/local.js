@@ -1,4 +1,21 @@
-numero = 2;
+let numero = 2;
+let comodo = []
+let localref = sessionStorage.localref;
+
+comodo = sessionStorage.comodo.split(',');
+sessionStorage.clear();
+
+
+if(localref !== 'home'){
+    document.getElementById('editar_local').style.display = 'none';
+    document.getElementById('adicionar_sensores').style.display = 'none';
+    if(numero < 3) {
+        document.getElementById('editar_sensor1').style.display = 'none';
+    } else {
+        document.getElementById('editar_sensor' + numero).style.display = 'none';
+    }
+}
+
 
 // Garante que o input criado dinamicamente vai receber valores do teclado virtual
 function attachKeyboardToInput(inputElement) {
@@ -8,6 +25,22 @@ function attachKeyboardToInput(inputElement) {
         });
     });
 }
+
+function carregar_valores() {
+    let id_comodo = comodo[0];
+    let nome_comodo = comodo[2];
+    let tipo_comodo = comodo[3];
+    let zona_comodo = comodo[4];
+    let status_comodo = comodo[5];
+    let nome_local = document.getElementById('nome_local');
+    let tipo_local = document.getElementById('tipo_comodo');
+    let zona = document.getElementById('zona');
+
+    nome_local.value = nome_comodo;
+    zona.value = zona_comodo.replace(/ /g, '');
+    tipo_local.click(selecionar_comodo((tipo_comodo.replace(/ /g, '')), '../icons/Quarto.svg'));
+}
+carregar_valores();
 
 function adicionar_sensor() {
     if(document.getElementById('nome_local').value !== '') {
@@ -172,5 +205,51 @@ function editar_sensores(identificador) {
         select_zona.style.background = ' rgba(255, 255, 255, 0.7)';
 
         modal('Suas alterações foram salvas com sucesso!', '../modal/html/modal_sucesso.html', 5000);
+    }
+}
+
+function selecionar_comodo(comodo, icone) {
+    var botao_tipocomodo = document.getElementById('tipo_comodo');
+
+    if (comodo === 'quarto') {
+        botao_tipocomodo.className = 'modal_tipocomodo_button';
+        botao_tipocomodo.innerHTML = '<img src="'+ icone + '" alt="" style="width: 50px; height: 35px; margin-right: 10px">Quarto';
+        botao_tipocomodo.onclick = function() {
+            mostrar_tipocomodo();
+        };
+        tipo_comodo.value = 'quarto';
+        botao_tipocomodo.className = 'tipo_zona';
+    } else if (comodo === 'cozinha') {
+        botao_tipocomodo.className = 'modal_tipocomodo_button';
+        botao_tipocomodo.innerHTML = '<img src="'+ icone + '" alt="" style="width: 50px; height: 35px; margin-right: 10px">Cozinha';
+        botao_tipocomodo.onclick = function() {
+            mostrar_tipocomodo();
+        };
+        tipo_comodo.value = 'cozinha';
+        botao_tipocomodo.className = 'tipo_zona';
+    } else if (comodo === 'sala') {
+        botao_tipocomodo.className = 'modal_tipocomodo_button';
+        botao_tipocomodo.innerHTML = '<img src="'+ icone + '" alt="" style="width: 50px; height: 35px; margin-right: 10px">Sala';
+        botao_tipocomodo.onclick = function() {
+            mostrar_tipocomodo();
+        };
+        tipo_comodo.value = 'sala';
+        botao_tipocomodo.className = 'tipo_zona';
+    } else if (comodo === 'banheiro') {
+        botao_tipocomodo.className = 'modal_tipocomodo_button';
+        botao_tipocomodo.innerHTML = '<img src="'+ icone + '" alt="" style="width: 50px; height: 35px; margin-right: 10px">Banheiro';
+        botao_tipocomodo.onclick = function() {
+            mostrar_tipocomodo();
+        };
+        tipo_comodo.value = 'banheiro';
+        botao_tipocomodo.className = 'tipo_zona';
+    } else if (comodo === 'externo') {
+        botao_tipocomodo.className = 'modal_tipocomodo_button';
+        botao_tipocomodo.innerHTML = '<img src="'+ icone + '" alt="" style="width: 50px; height: 35px; margin-right: 10px">Externo';
+        botao_tipocomodo.onclick = function() {
+            mostrar_tipocomodo();
+        };
+        tipo_comodo.value = 'externo';
+        botao_tipocomodo.className = 'tipo_zona';
     }
 }

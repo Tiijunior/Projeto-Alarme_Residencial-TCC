@@ -19,7 +19,7 @@
     <main>
         <!--Barra do corpo principal-->
         <div id="barra_main">
-            <button id="btn_comodos" onclick="chamar_comodos()"><img src="../icons/mdi_shield-home.svg" alt=""></button>
+            <button id="btn_comodos" onclick="chamar_comodos(), carregar_comodos()"><img src="../icons/mdi_shield-home.svg" alt=""></button>
             <button id="btn_home" onclick="chamar_home()"><img src="../icons/mdi_home.svg" alt=""></button>
             <button id="btn_perfil" onclick="chamar_perfis(), carrega_lista_user()"><img src="../icons/mdi_shield-account.svg" alt=""></button>
         </div>
@@ -61,8 +61,9 @@
         </div>
     </main>
     <script src="../javascript/home.js"></script>
+    <script src="../javascript/menu_esquerdo.js"></script>
+    <script src="../javascript/menu_direito.js"></script>
     <script src="../javascript/js_py/home.js"></script>
-    <script src="../javascript/usuario.js"></script>
     <script src="../javascript/relogio.js"></script>
     <script src="../modal/javascript/chamar_modal.js"></script>
     <script src="../javascript/alarme.js"></script>

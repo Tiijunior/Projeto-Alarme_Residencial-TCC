@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/home_user.css">
     <link rel="stylesheet" href="../css/numeric_keyboard.css">   
 </head>
-<body id="user" class="container">
+<body id="user" class="container" onload="buscar_lista_comodo(), buscar_qtd_comodo()">
     <!--Cabeçalho-->
     <header>
         
@@ -21,7 +21,7 @@
     <main>
         <!--Barra do corpo principal-->
         <div id="barra_main">
-            <button id="btn_comodos" onclick="chamar_comodos()"><img src="../icons/mdi_shield-home.svg" alt=""></button>
+            <button id="btn_comodos" onclick="chamar_comodos(), carregar_comodos()"><img src="../icons/mdi_shield-home.svg" alt=""></button>
             <button id="btn_home" onclick="chamar_home()"><img src="../icons/mdi_home.svg" alt=""></button>
             <button id="btn_perfil" onclick="chamar_conta()"><img src="../icons/mdi_account-circle-menor.svg" alt=""></button>
         </div>
@@ -30,12 +30,13 @@
         <div id="menu_esquerdo">
             <p style="position: fixed; margin-top: 5px; margin-left: 25px; font-size: 32px;
             text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);">Locais</p>
+            <button id="adicionar_comodos" onclick="adicionar_comodo()"></button>
             <p style="width: 286px; height: 40px; margin-top: 79px; margin-left: 25px; font-size: 16px;
             font-weight: 500;">Para visualizar mais detalhes do local, basta clicar nele.</p>
             <p style="margin-top: 129px; margin-left: 25px; font-size: 20px;">Todos os Ambientes</p>
             <button id="switch_comodo" onclick="todos_comodos()"></button>
             <!--Lista de Comodos-->
-            <div class="lista" style="position: absolute; width: 310px; height: 510px; top: -80px; left: 10px;">
+            <div class="lista" style="position: fixed; width: 319.48px; height: 700px; top: -250px; left: 10px; overflow: hidden;">
                 <div id="lista_comodos">
                 </div>
             </div>
@@ -50,9 +51,10 @@
         </div>
     </main>
     <script src="../javascript/home_user.js"></script>
-    <script src="../javascript/usuario.js"></script>
+    <script src="../javascript/js_py/home.js"></script>
+    <script src="../javascript/menu_esquerdo.js"></script>
     <script src="../javascript/relogio.js"></script>
     <script src="../modal/javascript/chamar_modal.js"></script>
-
+    <script src="../javascript/alarme.js"></script>
 </body>
 </html>

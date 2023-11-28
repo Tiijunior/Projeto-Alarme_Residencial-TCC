@@ -119,18 +119,20 @@ p{
     background-color: rgba(0, 0, 0, 0);
 }
 
+
 /*Barra Esquerda*/
 #menu_esquerdo{
-    display: flex;
+    display: block;
     position: fixed;
     width: 330px;
     height: 675px;
-    flex-shrink: 0;
-
+    
     top: 125px;
     left: -330px;
     background: rgba(0, 0, 0, 0.40);
-    z-index: 1;
+    backdrop-filter: blur(8px);
+    z-index: 3;
+    overflow: hidden;
 }
 
 #adicionar_comodos{
@@ -146,8 +148,9 @@ p{
     background-repeat: no-repeat;
     background-size: cover;
     border: none;
+    z-index: 3;
+    
 }
-
 
 #switch_comodo {
     width: 48px; 
@@ -159,26 +162,46 @@ p{
     background: url(../icons/mdi_toggle-switch-desativado-off.svg); 
     background-repeat: no-repeat; 
     background-size: cover;
-    z-index: 1;
 }
 
 /* Lista de Comodos*/
+.lista{
+    display: block;
+    position: fixed;
+    width: 230px;
+    height: 100%;
+    margin-top: 250px;
+    overflow: hidden;
+}
+
 #lista_comodos{
+    display: block;
     position: absolute;
-    width: 330px;
-    height: 360px;
-    top: 250px;
-    left: -10px;
+    width: 334px;
+    height: 400px;
+    top: 170px;
+    left: 0;
     overflow-y: auto;
+    
 }
 
 .bloco_comodo {
     position: relative;
     width: 300px;
-    height: 80px;
-    margin-top: 20px;
-    left: 10px;
+    height: 90px;
+    margin-top: 15px;
+    left: 3px;
     bottom: 80px;
+    
+    border: 2px solid rgba(255, 255, 255, 0.253);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+.bloco_fundo {
+    position: absolute;
+    width: 240px;
+    height: 90px;
 }
 
 .img_comodos {
@@ -186,6 +209,7 @@ p{
     width: 50px;
     height: 35px;
     flex-shrink: 0;
+    margin-top: 10px;
     margin-left: 10px;
 
     background-repeat: no-repeat;
@@ -217,7 +241,6 @@ p{
     font-weight: 500;
     line-height: normal;
 }
-
 
 /*Meio*/
 .texto_meio{

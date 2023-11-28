@@ -7,68 +7,9 @@ var status_todos = 0;
 var nome = [];
 var qtd_user;
 
-// recebe o nome do usuário armazenado no Storage
-nome = localStorage.nome.split(',');
-
-
-document.getElementById('mensagemId').textContent = 'Olá, '+ nome[1] +'';
-
-// Carrega a foto da minha conta do administrador.
-function imagens(){   
-    var img_perfil = document.getElementById('img_perfil');
-
-    if(nome[2].includes('vazio')) {
-        img_perfil.style.background = 'url(../icons/img/mdi_account-circle.svg)';
-        img_perfil.style.backgroundRepeat = 'no-repeat';
-        img_perfil.style.backgroundSize = 'cover';
-        img_perfil.style.borderRadius = '50%';
-    } else {
-        img_perfil.style.background = 'url(../foto/'+ (nome[2]).replace(/ /g, '') +')';
-        img_perfil.style.backgroundRepeat = 'no-repeat';
-        img_perfil.style.backgroundSize = 'cover';
-        img_perfil.style.borderRadius = '50%';
-    }
-}
-imagens();
-
-function carrega_lista_user(){
-    var posicao = 1;
-    // Percorre a lista de usuários
-    for(let i = 0; i <= qtd_user; i++) {
-        // Verifica se o usuário atual não é o mesmo que nome[0]
-        if(usuario[i][0] !== nome[0]) {
-            // Altera o textContent do elemento com a classe 'nome_principal'
-                if((usuario[i][3]).includes('vazio')){
-                    document.getElementById('user' + posicao).getElementsByClassName('nome_principal')[0].textContent = usuario[i][1];
-                    document.getElementById('user' + posicao).style.background = 'url(../icons/img/mdi_account-circle.svg)';
-                    document.getElementById('user' + posicao).style.backgroundRepeat = 'no-repeat';
-                    document.getElementById('user' + posicao).style.backgroundSize = 'cover';
-                    document.getElementById('user' + posicao).style.borderRadius = '50%';
-                } else {
-                    document.getElementById('user' + posicao).getElementsByClassName('nome_principal')[0].textContent = usuario[i][1];
-                    document.getElementById('user' + posicao).style.background = 'url(../foto/'+(usuario[i][3]).replace(/ /g, '')+')';
-                    document.getElementById('user' + posicao).style.backgroundRepeat = 'no-repeat';
-                    document.getElementById('user' + posicao).style.backgroundSize = 'cover';
-                    document.getElementById('user' + posicao).style.borderRadius = '50%';
-                }
-                posicao ++;
-        }
-    }
-}
-carrega_lista_user();
-
-
-setTimeout(() => {
-    
-    for(let i = 0; i < quantidade_comodo; i++) {
-        var tipo_comodo = (lista_comodo[i][3]);
-        tipo_comodo = (tipo_comodo.replace(/ /g, '')).charAt(0).toUpperCase() + tipo_comodo.slice(2);
-        criarComodo(tipo_comodo, lista_comodo[i][2]);
-    }    
-}, 1000);
 
 //fechar menus
-var fechar_menu = [document.getElementById('fundo'), document.getElementById('meio')];
+var fechar_menu = [document.getElementById('fundo'), document.getElementById('meio'), document.getElementsByTagName('iframe')];
 
 fechar_menu.forEach(function(elemento) {
     elemento.addEventListener('click', function() {
@@ -145,127 +86,96 @@ function chamar_comodos() {
     }
 };
 
+function adicionar_comodo(){
 
-function criarComodo(imagem, nome) {
+    document.getElementById('adicionar_comodos').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        document.getElementById('adicionar_comodos').style.transform = 'scale(1)';
+    }, 100)
     
-    let listaComodos = document.getElementById('lista_comodos');
-
-    for (let i = 1; i < 2; i++) {
-        let bloco = document.createElement('div');
-        bloco.id = 'bloco' + comodo;
-        bloco.className = 'bloco_comodo';
-        bloco.style.top = (comodo - 1)  + 'px';
-
-        let div = document.createElement('div');
-        div.id = 'bloco' + comodo;
-        div.className = 'bloco_fundo';
-        div.setAttribute('onclick', 'local(this.id)');
-        bloco.appendChild(div);
-        
-        let img = document.createElement('img');
-        img.id = 'img_comodo' + comodo;
-        img.className = 'img_comodos';
-        img.src = '../icons/' + imagem + '.svg';
-        img.alt = '';
-        bloco.appendChild(img);
-
-        let ativar = document.createElement('div');
-        ativar.id = 'ativar_comodo' + comodo;
-        ativar.className = 'ativar_comodos';
-        ativar.setAttribute('onclick', 'ativar_comodo(this.id)');
-        bloco.appendChild(ativar);
-
-        let texto = document.createElement('p');
-        texto.id = 'texto_comodo' + comodo;
-        texto.className = 'texto_comodos';
-        texto.textContent = nome;
-        bloco.appendChild(texto);
-
-        listaComodos.appendChild(bloco);
-    }
-    comodo++;
-};
-
-
-function ativar_comodo(elemento){
-    var status_comodo = document.getElementById(elemento);
-
-    if(!status_comodo.style.background.includes('switch-on')) {
-        status_comodo.style.width = '50px';
-        status_comodo.style.height = '28px';
-        status_comodo.style.marginTop = '19px';
-        status_comodo.style.background = 'url(../icons/mdi_toggle-switch-on.svg)';
-        status_comodo.style.backgroundRepeat = 'no-repeat';
-        status_comodo.style.backgroundSize = 'cover';
-    } else {
-        status_comodo.style.width = '48px';
-        status_comodo.style.height = '24px';
-        status_comodo.style.marginTop = '21px';
-        status_comodo.style.background = 'url(../icons/mdi_toggle-switch-desativado-off.svg)';
-        status_comodo.style.backgroundRepeat = 'no-repeat';
-        status_comodo.style.backgroundSize = 'cover';
-    }
-
-    for(var i = 1; i < comodo; i++) {
-        if(window.getComputedStyle(document.getElementById('ativar_comodo' + i)).backgroundImage.includes('mdi_toggle-switch-on.svg')) {
-            status_todos++;
-        } else {
-            status_todos = 0;
+    if(!(document.getElementById('telas').src).includes('novo_local.html')) {
+        document.getElementById('relogio').style.transition = '0.8s';
+        for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
+            document.getElementsByClassName('texto_meio')[i].style.display = 'none';
         }
-    };
-    
-    if(status_todos === (comodo - 1)){
-        todos_comodos('ativar');
-    } else if (status_todos === 0) {
-        todos_comodos('desativar');
-    }
+        document.getElementById('relogio').style.top = '8px';
+        document.getElementById('relogio').style.left = '597px';
+        document.getElementById('relogio').style.fontSize = '32px';
+        document.getElementById('relogio').style.zIndex = 2;
+        document.getElementById('fundo').style.zIndex = 0;
+
+        setTimeout(function() {
+            var iframe = document.getElementById('telas');
+            iframe.style.left = '-1280px';
+            
+            setTimeout( function() {
+                iframe.src = './novo_local.html';
+                iframe.style.transition = '2s';
+                iframe.style.left = '0';
+
+                setTimeout( function() {
+                    var menu_esquerdo = document.getElementById('menu_esquerdo');
+                    menu_esquerdo.style.transition = '0.8s';
+                    menu_esquerdo.style.left = '-330px';
+                    menu_esquerdo.style.display = '0';
+                    flag_menu_esquerdo = false
+                }, 1000);
+            }, 200);
+            
+        }, 900);
+
+        document.getElementById('barra_main').style.zIndex = 3;
+        document.getElementById('btn_home').style.zIndex = 4;
+    }   
 };
 
-function todos_comodos(elemento) {
-    var botao = document.getElementById('switch_comodo');
-    
-    if(botao.style.background.includes('switch-on') && elemento === undefined) {
-        botao.style.width = '48px';
-        botao.style.height = '24px';
-        botao.style.marginTop = '130px';
-        botao.style.background = 'url(../icons/mdi_toggle-switch-desativado-off.svg)';
-        botao.style.backgroundRepeat = 'no-repeat';
-        botao.style.backgroundSize = 'cover';
 
-        for(var i = 1; i <= comodo; i++) {
-            if(window.getComputedStyle(document.getElementById('ativar_comodo' + i)).backgroundImage.includes('mdi_toggle-switch-on')) {
-                ativar_comodo('ativar_comodo' + i);
-            };
-        };
+function local(elemento){
+    document.getElementById(elemento).style.boxShadow = '0 0 0 rgba(0, 0, 0, 0)';
+    document.getElementById(elemento).style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        document.getElementById(elemento).style.boxShadow = '0 5px 10px rgba(0, 0, 0, 0.6)';
+        document.getElementById(elemento).style.transform = 'scale(1)';
+    }, 100)
 
-    } else if(elemento === 'ativar') {
-        botao.style.width = '50px';
-        botao.style.height = '28px';
-        botao.style.marginTop = '128px';
-        botao.style.background = 'url(../icons/mdi_toggle-switch-on.svg)';
-        botao.style.backgroundRepeat = 'no-repeat';
-        botao.style.backgroundSize = 'cover';
-    } else if(elemento === 'desativar') {
-        botao.style.width = '48px';
-        botao.style.height = '24px';
-        botao.style.marginTop = '130px';
-        botao.style.background = 'url(../icons/mdi_toggle-switch-desativado-off.svg)';
-        botao.style.backgroundRepeat = 'no-repeat';
-        botao.style.backgroundSize = 'cover';
-    } else {
-        botao.style.width = '50px';
-        botao.style.height = '28px';
-        botao.style.marginTop = '128px';
-        botao.style.background = 'url(../icons/mdi_toggle-switch-on.svg)';
-        botao.style.backgroundRepeat = 'no-repeat';
-        botao.style.backgroundSize = 'cover';
-        for(var i = 1; i < comodo; i++) {
-            if(window.getComputedStyle(document.getElementById('ativar_comodo' + i)).backgroundImage.includes('mdi_toggle-switch-desativado-off.svg')) {
-                ativar_comodo('ativar_comodo' + i);
-            }
-        };        
-    }
+    if(!(document.getElementById('telas').src).includes('novo_local.html')) {
+        document.getElementById('relogio').style.transition = '0.8s';
+        for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
+            document.getElementsByClassName('texto_meio')[i].style.display = 'none';
+        }
+        document.getElementById('relogio').style.top = '8px';
+        document.getElementById('relogio').style.left = '597px';
+        document.getElementById('relogio').style.fontSize = '32px';
+        document.getElementById('relogio').style.zIndex = 2;
+        document.getElementById('fundo').style.zIndex = 0;
+
+        setTimeout(function() {
+            var iframe = document.getElementById('telas');
+            iframe.style.left = '-1280px';
+            
+            setTimeout( function() {
+                iframe.src = './local.html';
+                iframe.style.transition = '2s';
+                iframe.style.left = '0';
+                var localref = 'home';
+                sessionStorage.setItem('comodo', lista_comodo[(elemento.replace(/bloco/g, '')) - 1])
+                sessionStorage.setItem('localref', localref);
+                
+                setTimeout( function() {
+                    var menu_esquerdo = document.getElementById('menu_esquerdo');
+                    menu_esquerdo.style.transition = '0.8s';
+                    menu_esquerdo.style.left = '-330px';
+                    menu_esquerdo.style.display = '0';
+                    flag_menu_esquerdo = false
+                }, 1000);
+            }, 200);
+        }, 900);
+        
+        document.getElementById('barra_main').style.zIndex = 3;
+        document.getElementById('btn_home').style.zIndex = 4;
+    }   
 };
+
 
 
 function chamar_home(){
@@ -476,112 +386,6 @@ function perfil(elemento) {
     }   
 };
 
-
-function adicionar_comodo(){
-
-    document.getElementById('adicionar_comodos').style.transform = 'scale(0.95)';
-    setTimeout(() => {
-        document.getElementById('adicionar_comodos').style.transform = 'scale(1)';
-    }, 100)
-    
-    if(!(document.getElementById('telas').src).includes('novo_local.html')) {
-        document.getElementById('relogio').style.transition = '0.8s';
-        for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
-            document.getElementsByClassName('texto_meio')[i].style.display = 'none';
-        }
-        document.getElementById('relogio').style.top = '8px';
-        document.getElementById('relogio').style.left = '597px';
-        document.getElementById('relogio').style.fontSize = '32px';
-        document.getElementById('relogio').style.zIndex = 2;
-        document.getElementById('fundo').style.zIndex = 0;
-
-        setTimeout(function() {
-            var iframe = document.getElementById('telas');
-            iframe.style.left = '-1280px';
-            
-            setTimeout( function() {
-                iframe.src = './novo_local.html';
-                iframe.style.transition = '2s';
-                iframe.style.left = '0';
-
-                setTimeout( function() {
-                    var menu_esquerdo = document.getElementById('menu_esquerdo');
-                    menu_esquerdo.style.transition = '0.8s';
-                    menu_esquerdo.style.left = '-330px';
-                    menu_esquerdo.style.display = '0';
-                    flag_menu_esquerdo = false
-                }, 1000);
-            }, 200);
-            
-        }, 900);
-
-        document.getElementById('barra_main').style.zIndex = 3;
-        document.getElementById('btn_home').style.zIndex = 4;
-    }   
-};
-
-
-function lista_user(numerodeusuarios){
-    var listaUser = document.getElementById('lista_user');
-    
-    for (var i = 1; i <= numerodeusuarios; i++) {
-        var novoUsuario = document.createElement('div');
-        novoUsuario.id = 'user' + i;
-        novoUsuario.className = 'imag_user';
-        novoUsuario.style.marginTop = (i * 70) + 'px';
-        novoUsuario.setAttribute('onclick', 'perfil(this.id)');
-        var novoParagrafo = document.createElement('p');
-        novoParagrafo.className = 'nome_principal';
-        novoParagrafo.textContent = 'Usuário ' + i;
-        novoUsuario.appendChild(novoParagrafo);
-        listaUser.appendChild(novoUsuario);
-    }
-};
-
-
-function local(elemento){
-    document.getElementById(elemento).style.boxShadow = '0 0 0 rgba(0, 0, 0, 0)';
-    document.getElementById(elemento).style.transform = 'scale(0.95)';
-    setTimeout(() => {
-        document.getElementById(elemento).style.boxShadow = '0 5px 10px rgba(0, 0, 0, 0.6)';
-        document.getElementById(elemento).style.transform = 'scale(1)';
-    }, 100)
-
-    if(!(document.getElementById('telas').src).includes('novo_local.html')) {
-        document.getElementById('relogio').style.transition = '0.8s';
-        for(var i = 0; i < document.getElementsByClassName('texto_meio').length; i++) {
-            document.getElementsByClassName('texto_meio')[i].style.display = 'none';
-        }
-        document.getElementById('relogio').style.top = '8px';
-        document.getElementById('relogio').style.left = '597px';
-        document.getElementById('relogio').style.fontSize = '32px';
-        document.getElementById('relogio').style.zIndex = 2;
-        document.getElementById('fundo').style.zIndex = 0;
-
-        setTimeout(function() {
-            var iframe = document.getElementById('telas');
-            iframe.style.left = '-1280px';
-            
-            setTimeout( function() {
-                iframe.src = './local.html';
-                iframe.style.transition = '2s';
-                iframe.style.left = '0';
-
-                setTimeout( function() {
-                    var menu_esquerdo = document.getElementById('menu_esquerdo');
-                    menu_esquerdo.style.transition = '0.8s';
-                    menu_esquerdo.style.left = '-330px';
-                    menu_esquerdo.style.display = '0';
-                    flag_menu_esquerdo = false
-                }, 1000);
-            }, 200);
-            
-        }, 900);
-
-        document.getElementById('barra_main').style.zIndex = 3;
-        document.getElementById('btn_home').style.zIndex = 4;
-    }   
-};
 
 
 function bloquear() {

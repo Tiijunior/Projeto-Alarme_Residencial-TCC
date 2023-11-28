@@ -171,5 +171,3 @@ tipo_user = banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'nome', 'Ti
 print(tipo_user[5])
 print(senha)
 """
-
-print(banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'funcao', 'Administrador', 1))

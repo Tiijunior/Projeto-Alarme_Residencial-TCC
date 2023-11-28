@@ -1,6 +1,5 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, screen, webFrame} = require('electron');
 const path = require('path');
-
 
 let mainWindow;
 
@@ -8,7 +7,8 @@ app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 720,
-        resizable: false,
+        //resizable: false,
+        //fullscreen: true,
         webPreferences:{
             nodeIntegration: true,
             contextIsolation: false,
@@ -16,7 +16,6 @@ app.on('ready', () => {
         }
     });
     
-    //mainWindow.setFullScreen(true)
     //mainWindow.setMenu(null)
     
     //mainWindow.loadURL(`file://${path.join(__dirname, '/telas/home.html')}`);

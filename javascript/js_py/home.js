@@ -69,7 +69,7 @@ function mostrar_usuarios() {
 
 }
 
-
+// Função para ativar o comodo
 
 function buscar_qtd_comodo() {
     let funcao_python = 'qtd_comodo';
@@ -104,4 +104,19 @@ function buscar_lista_comodo() {
         lista_comodo.push(resultado_python);
     })
     
+}
+
+function ativar_bloco_comodo(id, ativar) {
+    let funcao_python = 'ativar_comodo'
+    let id_comodo = id.replace(/ativar_comodo/g, '');
+    let ativar_bloco = ativar;
+
+    let argumento_python = {
+        pythonPath: path_python,
+        scriptPath: path.join(__dirname, '../_engine/'),
+        args: [funcao_python, id_comodo, ativar_bloco]
+    }
+
+    new PythonShell('home.py', argumento_python);
+
 }
