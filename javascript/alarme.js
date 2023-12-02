@@ -1,6 +1,14 @@
 function alarme(local) {
+
+    var alarme = new Audio('../_engine/Audio/Alarme.mp3');
+    //alarme.play();
+
+    window.addEventListener('message', (event) => {
+        senha_alarme(event.data.senha);
+    })
+
     var iframe = document.createElement('iframe');
-    var local = 'local';
+    var local = local;
 
     if((window.location.pathname).includes('home')){
         sessionStorage.setItem('local', local.toUpperCase());
@@ -36,5 +44,14 @@ function alarme(local) {
         document.getElementById('lista_user').style.transition = '0.8s';
         document.getElementById('lista_user').style.display = 'list-item';
         document.getElementById('lista_user').style.top = '830px';
+    }
+}
+
+function removerIframe() {
+    // Seleciona o iframe pelo atributo src
+    var iframe = document.querySelector("iframe[src='../modal/html/modal_alarme.html']");
+    if (iframe) {
+        // Remove o iframe do DOM
+        document.body.removeChild(iframe);
     }
 }

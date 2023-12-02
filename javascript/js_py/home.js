@@ -1,5 +1,6 @@
 var { PythonShell } = require('python-shell');
 var path = require('path');
+
 var quantidade_comodo;
 var lista_comodo = [];
 var usuario = [];

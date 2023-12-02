@@ -17,5 +17,5 @@ function senha() {
 
     var senha = `${part1}${part2}${part3}${part4}${part5}${part6}`;
 
-    console.log(senha);
+    window.parent.postMessage({senha: senha}, '*');
 }

@@ -22,5 +22,5 @@ var fade = document.getElementById('fade');
             red = !red; // Inverter o valor de red
         }
     
-        // Configurar um temporizador para chamar a função a cada 1000 ms (1 segundo)
-        setInterval(alternarCores, 100);
+        // Configurar um temporizador para chamar a função a cada 80 ms
+        setInterval(alternarCores, 80);

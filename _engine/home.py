@@ -51,17 +51,12 @@ def ativar_sensor():
     banco.bd_atualizar_dados('tbl_sensor', 'status_sensor', ativar, 'id_sensor', sensor_id)
 
 
-def teste():
-    print('Teste Ok')
-
-
 funcoes = {
     "qtd_comodo": qtd_comodo,
     "lista_comodo": lista_comodo,
     "lista_sensor": lista_sensor,
     "ativar_comodo": ativar_comodo,
-    "ativar_sensor": ativar_sensor,
-    "teste": teste
+    "ativar_sensor": ativar_sensor
 }
 
 
