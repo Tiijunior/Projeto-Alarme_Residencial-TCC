@@ -15,7 +15,7 @@
         <div>
             <P style="top: 100px; left: 50px; font-size: 36px;">Locais - <label>Quarto Principal</label></P>
             <button id="editar_local" class="editar" style="position: fixed; top: 140px; left: 1084px;" onclick="editar_ambiente()"></button>
-            <div id="ativar_comodo" class="switch" style="position: fixed;  top: 140px; left: 1151px;"></div>
+            <div id="ativar_comodo" class="switch" style="position: fixed;  top: 140px; left: 1151px;" onclick="ativar('ativar_comodo')"></div>
 
             <input id="nome_local" class="use-keyboard-input" style="position: fixed; width: 548px; height: 60px; top: 210px; left: 50px;" type="text" placeholder="Quarto Principal" disabled>
             <div><span></span>
@@ -58,17 +58,17 @@
                         </select>
                         <select id="porta_sensor1" class="seletcion_sensor" style="left: 756px;" name="" disabled>
                             <option selected disabled>Porta</option>
-                            <option value="Porta 1">Porta 1</option>
-                            <option value="Porta 2">Porta 2</option>
-                            <option value="Porta 3">Porta 3</option>
-                            <option value="Porta 4">Porta 4</option>
-                            <option value="Porta 5">Porta 5</option>
-                            <option value="Porta 6">Porta 6</option>
-                            <option value="Porta 7">Porta 7</option>
-                            <option value="Porta 8">Porta 8</option>
+                            <option value="1">Porta 1</option>
+                            <option value="2">Porta 2</option>
+                            <option value="3">Porta 3</option>
+                            <option value="4">Porta 4</option>
+                            <option value="5">Porta 5</option>
+                            <option value="6">Porta 6</option>
+                            <option value="7">Porta 7</option>
+                            <option value="8">Porta 8</option>
                         </select>                
                         <button id="editar_sensor1" class="editar" style="position: relative; top: 10px; margin-left: 10px;" onclick="editar_sensores('1')"></button>
-                        <div id="switch_sensor1" class="switch" style="position: relative; top: -55px; margin-left: 1101px;"></div>
+                        <div id="switch_sensor1" class="switch" style="position: relative; top: -55px; margin-left: 1101px;" onclick="ativar(this.id)"></div>
                     </div>
                 </div>
             </div>

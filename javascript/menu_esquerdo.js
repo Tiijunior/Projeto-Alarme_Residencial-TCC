@@ -30,6 +30,7 @@ function carregar_comodos() {
         ja_carregado = true;
     }
 }
+
 function criarComodo(imagem, nome, idcomodo) {
     
     let listaComodos = document.getElementById('lista_comodos');
@@ -43,7 +44,7 @@ function criarComodo(imagem, nome, idcomodo) {
         let div = document.createElement('div');
         div.id = 'bloco' + comodo;
         div.className = 'bloco_fundo';
-        div.setAttribute('onclick', 'local(this.id)');
+        div.setAttribute('onclick', "local(this.id), listar_de_sensores((this.id).replace(/bloco/g, ''))");
         bloco.appendChild(div);
         
         let img = document.createElement('img');
@@ -70,6 +71,22 @@ function criarComodo(imagem, nome, idcomodo) {
     comodo++;
 };
 
+function removerComodo(idcomodo) {
+    let bloco = document.getElementById('bloco' + idcomodo);
+    if (bloco) {
+        bloco.parentNode.removeChild(bloco);
+    }
+};
+
+function removerTodosComodos() {
+    let listaComodos = document.getElementById('lista_comodos');
+    // Remove todos os filhos de listaComodos
+    while (listaComodos.firstChild) {
+        listaComodos.removeChild(listaComodos.firstChild);
+    }
+}
+
+
 
 function ativar_comodo(elemento){
     var status_comodo = document.getElementById(elemento);
@@ -83,6 +100,7 @@ function ativar_comodo(elemento){
         status_comodo.style.backgroundSize = 'cover';
         ativar = 1
         
+        lista_comodo[(elemento.replace(/ativar_comodo/g, '')) - 1][5] = ativar;
         ativar_bloco_comodo(elemento, ativar);
     } else {
         status_comodo.style.width = '48px';
@@ -92,6 +110,8 @@ function ativar_comodo(elemento){
         status_comodo.style.backgroundRepeat = 'no-repeat';
         status_comodo.style.backgroundSize = 'cover';        
         ativar = 0
+
+        lista_comodo[(elemento.replace(/ativar_comodo/g, '')) - 1][5] = ativar;
         ativar_bloco_comodo(elemento, ativar);
     }
 };
@@ -147,29 +167,33 @@ function todos_comodos(elemento) {
 
 
 
-
-
-
-    
-
-    /*for(var i = 1; i < comodo; i++) {
-        if(window.getComputedStyle(document.getElementById('ativar_comodo' + i)).backgroundImage.includes('mdi_toggle-switch-on.svg')) {
-            status_todos++;
-        } else {
-            status_todos = 0;
+// Recebe informações do local.html quando o comodo é ativado.
+window.addEventListener('message', (event) => {
+    if(event.data.ambiente === 'ativar') {
+        ativar_bloco_comodo(event.data.id_do_comodo,  event.data.status_comodo);
+        ja_carregado = false;
+        comodo = 1;
+        for(let i = 0; i <= lista_comodo.length + 3; i++) {
+            lista_comodo.pop();
         }
-    };
-    
-    if(status_todos === (comodo - 1)){
-        todos_comodos('ativar');
-    } else if (status_todos === 0) {
-        todos_comodos('desativar');
+        setTimeout(() => {
+            buscar_lista_comodo();
+        buscar_qtd_comodo();
+        if(flag_menu_esquerdo){
+            chamar_comodos();
+        }
+            setTimeout(() => {removerTodosComodos();}, 100);
+        }, 200);
     }
+})
 
-    if(lista_comodo[i][5] == ' 1'){
-            ativar_comodo(('ativar_comodo' + lista_comodo[i][0]));
-        } else {
-            ativar_comodo(('ativar_comodo' + lista_comodo[i][0]));
-            ativar_comodo(('ativar_comodo' + lista_comodo[i][0]));
-        }
-    */
+
+// Recebe informações do local.html quando o sensor é ativado.
+window.addEventListener('message', (event) => {
+    if(event.data.sensor === 'ativar') {        
+        ativar_sensor(
+            event.data.nome_elemento.replace(/switch_sensor/g, ''),
+            event.data.ativa_sensor
+        )
+    }
+})

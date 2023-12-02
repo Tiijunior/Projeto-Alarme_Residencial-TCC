@@ -23,13 +23,33 @@ Processo Javascript para chamar o python, nesse script ele faz o teste
     </script>
 
 
-"""
-WIFI
-import NetworkManager
 
-for dev in NetworkManager.NetworkManager.GetDevices():
-    if dev.DeviceType != NetworkManager.NM_DEVICE_TYPE_WIFI:
-        continue
-    aps = [ap for ap in dev.SpecificDevice().GetAccessPoints()]
-    for ap in sorted(aps, key=lambda ap: ap.Ssid):
-        print("%s:: %s" % (ap.Ssid, ap.Strength))
+# WIFI
+import subprocess
+
+def scan_wifi():
+    command = "nmcli dev wifi list"  # Comando para listar redes Wi-Fi (pode variar de acordo com o sistema)
+    networks = subprocess.run(command, shell=True, capture_output=True, text=True)
+    return networks.stdout
+
+wifi_info = scan_wifi()
+print(wifi_info)
+"""
+import wifi
+
+
+def scan():
+    cells = wifi.Cell.all('wlan0')
+    matrix = []
+    for cell in cells:
+        matrix.append([cell.ssid, cell.signal, cell.quality, cell.frequency, cell.bitrates])
+    return matrix
+
+
+def print_matrix(matrix):
+    for row in matrix:
+        print(row)
+
+
+wifi_list = scan()
+print_matrix(wifi_list)

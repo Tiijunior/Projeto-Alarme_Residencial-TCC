@@ -1,10 +1,14 @@
 let numero = 2;
-let comodo = []
+let dados_do_comodo = [];
+let lista_de_sensores = [];
 let localref = sessionStorage.localref;
+dados_do_comodo = sessionStorage.comodo.split(',');
 
-comodo = sessionStorage.comodo.split(',');
+for(let i = 0; i < (sessionStorage.lista_de_sensores.split(',')).length; i+= 6) {
+    let linha_sensor = (sessionStorage.lista_de_sensores.split(',')).slice(i, i + 6);
+    lista_de_sensores.push(linha_sensor);
+}
 sessionStorage.clear();
-
 
 if(localref !== 'home'){
     document.getElementById('editar_local').style.display = 'none';
@@ -16,7 +20,6 @@ if(localref !== 'home'){
     }
 }
 
-
 // Garante que o input criado dinamicamente vai receber valores do teclado virtual
 function attachKeyboardToInput(inputElement) {
     inputElement.addEventListener("focus", () => {
@@ -27,25 +30,130 @@ function attachKeyboardToInput(inputElement) {
 }
 
 function carregar_valores() {
-    let id_comodo = comodo[0];
-    let nome_comodo = comodo[2];
-    let tipo_comodo = comodo[3];
-    let zona_comodo = comodo[4];
-    let status_comodo = comodo[5];
+    // Comodo
+    let id_comodo = dados_do_comodo[0];
+    let nome_comodo = dados_do_comodo[2];
+    let tipo_comodo = dados_do_comodo[3];
+    let zona_comodo = dados_do_comodo[4];
+
     let nome_local = document.getElementById('nome_local');
     let tipo_local = document.getElementById('tipo_comodo');
     let zona = document.getElementById('zona');
-
+    let status_comodo = document.getElementById('ativar_comodo');
+    
     nome_local.value = nome_comodo;
     zona.value = zona_comodo.replace(/ /g, '');
-    tipo_local.click(selecionar_comodo((tipo_comodo.replace(/ /g, '')), '../icons/Quarto.svg'));
+    if((tipo_comodo.replace(/ /g, '')).includes('quarto')){tipo_local.click(selecionar_comodo((tipo_comodo.replace(/ /g, '')), '../icons/Quarto.svg'));}
+    if((tipo_comodo.replace(/ /g, '')).includes('cozinha')){tipo_local.click(selecionar_comodo((tipo_comodo.replace(/ /g, '')), '../icons/Cozinha.svg'));}
+    if((tipo_comodo.replace(/ /g, '')).includes('sala')){tipo_local.click(selecionar_comodo((tipo_comodo.replace(/ /g, '')), '../icons/Sala.svg'));}
+    if((tipo_comodo.replace(/ /g, '')).includes('banheiro')){tipo_local.click(selecionar_comodo((tipo_comodo.replace(/ /g, '')), '../icons/Banheiro.svg'));}
+    if((tipo_comodo.replace(/ /g, '')).includes('externo')){tipo_local.click(selecionar_comodo((tipo_comodo.replace(/ /g, '')), '../icons/Externo.svg'));}
+    
+    if(dados_do_comodo[5].includes('1')) {
+        status_comodo.style.scale = '1'
+        status_comodo.style.background = "url(../icons/mdi_toggle-switch-on.svg)";
+        status_comodo.style.backgroundRepeat = "no-repeat";
+        status_comodo.style.backgroundSize = "cover";
+    } else {
+        status_comodo.style.scale = '0.90'
+        status_comodo.style.background = "url(../icons/mdi_toggle-switch-desativado-off.svg)";
+        status_comodo.style.backgroundRepeat = "no-repeat";
+        status_comodo.style.backgroundSize = "cover";
+    }
+
+    if(lista_de_sensores.length > 1){
+        
+        for(let i = 1; i < lista_de_sensores.length; i++) {adicionar_sensor();}
+        for(let i = 0; i < lista_de_sensores.length; i++) {
+            document.getElementById('nome_sensor' + (i + 1)).value = lista_de_sensores[i][2];
+            document.getElementById('porta_sensor' + (i + 1)).value = lista_de_sensores[i][3].replace(/ /g, '');
+            document.getElementById('tipo_sensor' + (i + 1)).value = lista_de_sensores[i][4].replace(/ /g, '');
+            
+            if(lista_de_sensores[i][5].includes('1')) {
+                document.getElementById('switch_sensor' + (i + 1)).style.scale = '1';
+                document.getElementById('switch_sensor' + (i + 1)).style.background = "url(../icons/mdi_toggle-switch-on.svg)";
+                document.getElementById('switch_sensor' + (i + 1)).style.backgroundRepeat = "no-repeat";
+                document.getElementById('switch_sensor' + (i + 1)).style.backgroundSize = "cover";
+                document.getElementById('switch_sensor' + (i + 1)).id = lista_de_sensores[i][0];
+            } else {
+                document.getElementById('switch_sensor' + (i + 1)).style.scale = '1';
+                document.getElementById('switch_sensor' + (i + 1)).style.background = "url(../icons/mdi_toggle-switch-desativado-off.svg)";
+                document.getElementById('switch_sensor' + (i + 1)).style.backgroundRepeat = "no-repeat";
+                document.getElementById('switch_sensor' + (i + 1)).style.backgroundSize = "cover";
+                document.getElementById('switch_sensor' + (i + 1)).id = lista_de_sensores[i][0];
+            }
+        }
+    } else {
+        if(!(lista_de_sensores[0]).includes('')) {
+            document.getElementById('nome_sensor1').value = lista_de_sensores[0][2];
+            document.getElementById('porta_sensor1').value = lista_de_sensores[0][3].replace(/ /g, '');
+            document.getElementById('tipo_sensor1').value = lista_de_sensores[0][4].replace(/ /g, '');
+            if(lista_de_sensores[0][5].includes('1')) {
+                document.getElementById('switch_sensor1').style.scale = '1';
+                document.getElementById('switch_sensor1').style.background = "url(../icons/mdi_toggle-switch-on.svg)";
+                document.getElementById('switch_sensor1').style.backgroundRepeat = "no-repeat";
+                document.getElementById('switch_sensor1').style.backgroundSize = "cover";
+            } else {
+                document.getElementById('switch_sensor1').style.scale = '1';
+                document.getElementById('switch_sensor1').style.background = "url(../icons/mdi_toggle-switch-desativado-off.svg)";
+                document.getElementById('switch_sensor1').style.backgroundRepeat = "no-repeat";
+                document.getElementById('switch_sensor1').style.backgroundSize = "cover";
+            }
+        }
+    }
 }
 carregar_valores();
 
+var ativa_comodo;
+function ativar(elemento){
+    var status_comodo = document.getElementById(elemento);
+    if(!status_comodo.style.background.includes('switch-on')) {
+        status_comodo.style.scale = '1';
+        status_comodo.style.background = "url(../icons/mdi_toggle-switch-on.svg)";
+        status_comodo.style.backgroundRepeat = "no-repeat";
+        status_comodo.style.backgroundSize = "cover";
+        ativa_comodo = 1    
+    } else {
+        status_comodo.style.scale = '0.90'
+        status_comodo.style.background = "url(../icons/mdi_toggle-switch-desativado-off.svg)";
+        status_comodo.style.backgroundRepeat = "no-repeat";
+        status_comodo.style.backgroundSize = "cover";       
+        ativa_comodo = 0     
+    }
+};
+
+
+// Adiciona ouvintes de eventos a todos os elementos com a classe 'switch'
+document.querySelectorAll('.switch').forEach(function(element) {
+    element.addEventListener('click', function() {
+        window.parent.postMessage({sensor: 'ativar', nome_elemento: this.id, ativa_sensor: ativa_comodo}, '*');
+    });
+});
+
+
+document.getElementById('ativar_comodo').addEventListener('click', () => {
+    window.parent.postMessage({ambiente: 'ativar', id_do_comodo: dados_do_comodo[0], status_comodo: ativa_comodo}, '*');
+
+    if((document.getElementById('ativar_comodo').style.background).includes('switch-on')) {
+        for(var i = 0; i < lista_de_sensores.length; i++) {
+            document.getElementById('switch_sensor' + (i + 1)).style.scale = '1';
+            document.getElementById('switch_sensor' + (i + 1)).style.background = "url(../icons/mdi_toggle-switch-on.svg)";
+            document.getElementById('switch_sensor' + (i + 1)).style.backgroundRepeat = "no-repeat";
+            document.getElementById('switch_sensor' + (i + 1)).style.backgroundSize = "cover";
+        }
+    } else {
+        for(var i = 0; i < lista_de_sensores.length; i++) {
+            document.getElementById('switch_sensor' + (i + 1)).style.scale = '1';
+            document.getElementById('switch_sensor' + (i + 1)).style.background = "url(../icons/mdi_toggle-switch-desativado-off.svg)";
+            document.getElementById('switch_sensor' + (i + 1)).style.backgroundRepeat = "no-repeat";
+            document.getElementById('switch_sensor' + (i + 1)).style.backgroundSize = "cover";
+        }
+    }
+});
+
+
 function adicionar_sensor() {
-    if(document.getElementById('nome_local').value !== '') {
-        if(document.querySelector('.nome_sensor').value !== '') {
-            var form = document.querySelector('#sensores');
+    var form = document.querySelector('#sensores');
             
             // Cria os elementos
             var div = document.createElement('div');
@@ -74,7 +182,25 @@ function adicionar_sensor() {
                     option.setAttribute("selected", true);
                     option.setAttribute("disabled", true);
                 } else {
-                    option.setAttribute("value", item.toLowerCase().replace(/ /g, "_"));
+                    var value = item.toLowerCase().replace(/ /g, "_");
+                    switch(value) {
+                        case "sensor_magnético_(abertura_de_janela)":
+                        value = "magnetico";
+                        break;
+                        case "sensor_switch_(abertura_de_porta)":
+                        value = "switch";
+                        break;
+                        case "sensor_de_vibração_(janela)":
+                        value = "vibracao";
+                        break;
+                        case "sensor_infravermelho_passivo_(movimento_interno)":
+                        value = "infra_passivo";
+                        break;
+                        case "sensor_infravermelho_ativo_(movimento_externo)":
+                        value = "infra_ativo";
+                        break;
+                    }
+                    option.setAttribute("value", value);
                 }
                 select1.appendChild(option);
             });
@@ -95,7 +221,7 @@ function adicionar_sensor() {
                 } else if (item === opcao_selecionada) {
                     option.setAttribute("disabled", true);
                 } else {
-                    option.setAttribute("value", item);
+                    option.setAttribute("value", item.replace(/Porta /g, ''));
                 }
                 select2.appendChild(option);
             });
@@ -116,7 +242,8 @@ function adicionar_sensor() {
             btn_switch.style.position = 'relative';
             btn_switch.style.top = '-55px';
             btn_switch.style.marginLeft = '1101px';
-
+            btn_switch.setAttribute('onclick', 'ativar(this.id)');
+            
             // Adiciona os elementos criados ao início do formulário
             form.insertBefore(btn_switch, form.firstChild);
             form.insertBefore(btn_editar, form.firstChild);
@@ -131,7 +258,6 @@ function adicionar_sensor() {
             attachKeyboardToInput(input);
 
             numero ++;
-        }
 
         if(numero === 9) {
             document.getElementById('adicionar_sensores').disabled = true;
@@ -139,8 +265,6 @@ function adicionar_sensor() {
         else {
             document.getElementById('adicionar_sensores').disabled = false;
         }
-
-    }
 }
 
 function editar_ambiente() {
@@ -219,6 +343,7 @@ function selecionar_comodo(comodo, icone) {
         };
         tipo_comodo.value = 'quarto';
         botao_tipocomodo.className = 'tipo_zona';
+
     } else if (comodo === 'cozinha') {
         botao_tipocomodo.className = 'modal_tipocomodo_button';
         botao_tipocomodo.innerHTML = '<img src="'+ icone + '" alt="" style="width: 50px; height: 35px; margin-right: 10px">Cozinha';
@@ -227,6 +352,7 @@ function selecionar_comodo(comodo, icone) {
         };
         tipo_comodo.value = 'cozinha';
         botao_tipocomodo.className = 'tipo_zona';
+
     } else if (comodo === 'sala') {
         botao_tipocomodo.className = 'modal_tipocomodo_button';
         botao_tipocomodo.innerHTML = '<img src="'+ icone + '" alt="" style="width: 50px; height: 35px; margin-right: 10px">Sala';
@@ -235,6 +361,7 @@ function selecionar_comodo(comodo, icone) {
         };
         tipo_comodo.value = 'sala';
         botao_tipocomodo.className = 'tipo_zona';
+
     } else if (comodo === 'banheiro') {
         botao_tipocomodo.className = 'modal_tipocomodo_button';
         botao_tipocomodo.innerHTML = '<img src="'+ icone + '" alt="" style="width: 50px; height: 35px; margin-right: 10px">Banheiro';
@@ -243,6 +370,7 @@ function selecionar_comodo(comodo, icone) {
         };
         tipo_comodo.value = 'banheiro';
         botao_tipocomodo.className = 'tipo_zona';
+
     } else if (comodo === 'externo') {
         botao_tipocomodo.className = 'modal_tipocomodo_button';
         botao_tipocomodo.innerHTML = '<img src="'+ icone + '" alt="" style="width: 50px; height: 35px; margin-right: 10px">Externo';

@@ -3,6 +3,7 @@ var path = require('path');
 var quantidade_comodo;
 var lista_comodo = [];
 var usuario = [];
+let lista_de_sensores = [];
 var qtd_user;
 let path_python = localStorage.path_python;
 
@@ -119,4 +120,50 @@ function ativar_bloco_comodo(id, ativar) {
 
     new PythonShell('home.py', argumento_python);
 
+}
+
+function ativar_sensor(id, ativar) {
+    let funcao_python = 'ativar_sensor'
+    let id_sensor = id.replace(/ativar_comodo/g, '');
+    let ativar_sensor = ativar;
+
+    let argumento_python = {
+        pythonPath: path_python,
+        scriptPath: path.join(__dirname, '../_engine/'),
+        args: [funcao_python, id_sensor, ativar_sensor]
+    }
+
+    new PythonShell('home.py', argumento_python);
+}
+
+// busca a lista de sensores relacionado ao comodo.
+function listar_de_sensores(id_comodo) {
+    let sensores = 'lista_sensor';
+        
+    var opcoes_listasensores = {
+        pythonPath: path_python,
+        scriptPath: path.join(__dirname, '../_engine/'),
+        args: [sensores, id_comodo]
+    };
+    
+    var resultado_listasensores = new PythonShell('home.py', opcoes_listasensores)
+
+    resultado_listasensores.on('message', function (message) {
+        var sensor = message.replace( /[\(\)']/g, '').split(',');
+        lista_de_sensores.push(sensor);
+        
+
+    });
+    // Manipulação de erros
+    resultado_listasensores.on('error', function (error) {
+        console.error('Erro ao executar Python: ' + error);
+        modal('Erro ao processar a solicitação. Verifique o console para mais informações.', '../../../modal/html/modal_error.html', 5000, '75px');
+    });
+    
+    resultado_listasensores.end(function (err) {
+        if (err) {
+            console.log(err)
+            modal('Erro ao encerrar PythonShell: ', '../../../modal/html/modal_error.html', 5000);
+        }
+    });
 }

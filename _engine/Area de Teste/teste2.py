@@ -171,3 +171,14 @@ tipo_user = banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'nome', 'Ti
 print(tipo_user[5])
 print(senha)
 """
+sensores = []
+id_comodo = 4
+numero_sensores = banco_de_dados.bd_buscar_dados('tbl_sensor')[0]
+dados_sensor = banco_de_dados.bd_buscar_dados('tbl_sensor')[1]
+
+for numero in range(numero_sensores):
+    if dados_sensor[numero][1] == id_comodo:
+        sensores.append(banco_de_dados.bd_verificar_mostrar_banco('tbl_sensor', 'id_sensor', numero+1, 0))
+
+for numero in range(len(sensores)):
+    print(sensores[numero])

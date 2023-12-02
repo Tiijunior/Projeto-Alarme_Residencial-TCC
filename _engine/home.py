@@ -17,6 +17,20 @@ def lista_comodo():
         print(comodo[1][num])
 
 
+def lista_sensor():
+    id_comodo = sys.argv[2]
+    sensores = []
+    numero_sensores = banco.bd_buscar_dados('tbl_sensor')[0]
+    dados_sensor = banco.bd_buscar_dados('tbl_sensor')[1]
+
+    for numero in range(numero_sensores):
+        if dados_sensor[numero][1] == int(id_comodo):
+            sensores.append(banco.bd_verificar_mostrar_banco('tbl_sensor', 'id_sensor', numero + 1, 0))
+
+    for numero in range(len(sensores)):
+        print(sensores[numero])
+
+
 # ativa os comodos de acordo com o front
 def ativar_comodo():
     comodo_id = sys.argv[2]
@@ -29,10 +43,25 @@ def ativar_comodo():
     banco.bd_atualizar_dados('tbl_sensor', 'status_sensor', ativar, 'id_comodo', comodo_id)
 
 
+def ativar_sensor():
+    sensor_id = sys.argv[2]
+    ativar = sys.argv[3]
+
+    # Ativando o sensor
+    banco.bd_atualizar_dados('tbl_sensor', 'status_sensor', ativar, 'id_sensor', sensor_id)
+
+
+def teste():
+    print('Teste Ok')
+
+
 funcoes = {
     "qtd_comodo": qtd_comodo,
     "lista_comodo": lista_comodo,
-    "ativar_comodo": ativar_comodo
+    "lista_sensor": lista_sensor,
+    "ativar_comodo": ativar_comodo,
+    "ativar_sensor": ativar_sensor,
+    "teste": teste
 }
 
 

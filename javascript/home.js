@@ -7,9 +7,8 @@ var status_todos = 0;
 var nome = [];
 var qtd_user;
 
-
 //fechar menus
-var fechar_menu = [document.getElementById('fundo'), document.getElementById('meio'), document.getElementsByTagName('iframe')];
+var fechar_menu = [document.getElementById('fundo'), document.getElementById('meio')];
 
 fechar_menu.forEach(function(elemento) {
     elemento.addEventListener('click', function() {
@@ -131,6 +130,7 @@ function adicionar_comodo(){
 
 
 function local(elemento){
+    var iframe = document.getElementById('telas');
     document.getElementById(elemento).style.boxShadow = '0 0 0 rgba(0, 0, 0, 0)';
     document.getElementById(elemento).style.transform = 'scale(0.95)';
     setTimeout(() => {
@@ -150,7 +150,6 @@ function local(elemento){
         document.getElementById('fundo').style.zIndex = 0;
 
         setTimeout(function() {
-            var iframe = document.getElementById('telas');
             iframe.style.left = '-1280px';
             
             setTimeout( function() {
@@ -158,7 +157,9 @@ function local(elemento){
                 iframe.style.transition = '2s';
                 iframe.style.left = '0';
                 var localref = 'home';
-                sessionStorage.setItem('comodo', lista_comodo[(elemento.replace(/bloco/g, '')) - 1])
+                sessionStorage.setItem('comodo', lista_comodo[(elemento.replace(/bloco/g, '')) - 1]);
+                sessionStorage.setItem('numero_de_sensor', lista_de_sensores.length)
+                sessionStorage.setItem('lista_de_sensores', lista_de_sensores);
                 sessionStorage.setItem('localref', localref);
                 
                 setTimeout( function() {
@@ -173,7 +174,7 @@ function local(elemento){
         
         document.getElementById('barra_main').style.zIndex = 3;
         document.getElementById('btn_home').style.zIndex = 4;
-    }   
+    }
 };
 
 
@@ -190,6 +191,13 @@ function chamar_home(){
         setTimeout(function() {
             var iframe = document.getElementById('telas');
             iframe.parentNode.removeChild(iframe);
+            if(typeof lista_de_sensores !== 'undefined'){
+                if(lista_de_sensores != '') {
+                    for(let i = 0; i <= lista_de_sensores.length + 2; i++) {
+                        lista_de_sensores.pop();
+                    }
+                }
+            }
         }, 500);
         
         setTimeout(function() {
@@ -211,12 +219,12 @@ function chamar_home(){
         novoiframe.style.width = '100%';
         novoiframe.style.top = '0';
         novoiframe.style.left = '0';
-
+        
         document.getElementById('meio').appendChild(novoiframe);
     }
     else {
         if((window.location.pathname).includes('home_user')) {
-            window.location.href = './home_user.html';
+            window.location.href = './home_user.html';            
         }
         else {
             window.location.href = './home.html';

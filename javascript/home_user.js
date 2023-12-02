@@ -204,6 +204,9 @@ function local(elemento){
                 iframe.src = './local.html';
                 iframe.style.transition = '2s';
                 iframe.style.left = '0';
+                var localref = 'home_user';
+                sessionStorage.setItem('comodo', lista_comodo[(elemento.replace(/bloco/g, '')) - 1])
+                sessionStorage.setItem('localref', localref);
 
                 setTimeout( function() {
                     var menu_esquerdo = document.getElementById('menu_esquerdo');
