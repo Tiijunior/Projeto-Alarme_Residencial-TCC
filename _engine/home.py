@@ -50,6 +50,10 @@ def ativar_sensor():
     # Ativando o sensor
     banco.bd_atualizar_dados('tbl_sensor', 'status_sensor', ativar, 'id_sensor', sensor_id)
 
+    comodo_id = (banco.bd_verificar_mostrar_banco('tbl_sensor', 'id_sensor', sensor_id, 0)[1])
+    if (banco.bd_verificar_mostrar_banco('tbl_comodo', 'id_comodo', 4, 0)[5]) == 0:
+        banco.bd_atualizar_dados('tbl_comodo', 'status_comodo', ativar, 'id_comodo', comodo_id)
+
 
 funcoes = {
     "qtd_comodo": qtd_comodo,

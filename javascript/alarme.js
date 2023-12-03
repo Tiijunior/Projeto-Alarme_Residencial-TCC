@@ -1,8 +1,8 @@
+var alarme_sonoro = new Audio('../_engine/Audio/Alarme.mp3');
+
 function alarme(local) {
-
-    var alarme = new Audio('../_engine/Audio/Alarme.mp3');
-    //alarme.play();
-
+    alarme_sonoro.play();
+    
     window.addEventListener('message', (event) => {
         senha_alarme(event.data.senha);
     })
@@ -53,5 +53,8 @@ function removerIframe() {
     if (iframe) {
         // Remove o iframe do DOM
         document.body.removeChild(iframe);
+        alarme_sonoro.pause();
+        alarme_sonoro.currentTime = 0;
+        bloquear();
     }
 }

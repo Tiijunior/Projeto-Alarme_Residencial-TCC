@@ -58,7 +58,7 @@ function imagens(nomeImagem, posicao){
     }    
 }
 
-function animacao_bloqueio(){ 
+function animacao_bloqueio(){
     setTimeout(() => {
         document.getElementById('fade').style.transition = '3s';
         document.getElementById('fade').style.top = '0';
@@ -141,6 +141,7 @@ function lista_user(numerodeusuarios){
 function chamar_senha(usuario) {
     document.getElementById('relogio').style.transition = '0.8s';
     document.getElementById('relogio').style.top = '140px';
+    document.querySelector('.numeric').style.left = '68%';
     
     if(ultimoBotaoClicado !== null) {
         
@@ -235,6 +236,7 @@ document.getElementById('botao_senha').addEventListener('click', function () {
 
 
 function bloquear() {
+    NumericKeyboard.close();
     var cadeado = document.getElementById('cadeado');
     var lista_user = document.getElementById('lista_user');
     var ocultar_senha = document.getElementById('bloco_senha');

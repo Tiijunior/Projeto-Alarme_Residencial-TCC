@@ -205,7 +205,9 @@ function local(elemento){
                 iframe.style.transition = '2s';
                 iframe.style.left = '0';
                 var localref = 'home_user';
-                sessionStorage.setItem('comodo', lista_comodo[(elemento.replace(/bloco/g, '')) - 1])
+                sessionStorage.setItem('comodo', lista_comodo[(elemento.replace(/bloco/g, '')) - 1]);
+                sessionStorage.setItem('numero_de_sensor', lista_de_sensores.length)
+                sessionStorage.setItem('lista_de_sensores', lista_de_sensores);
                 sessionStorage.setItem('localref', localref);
 
                 setTimeout( function() {

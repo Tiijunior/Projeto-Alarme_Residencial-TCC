@@ -150,3 +150,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// Fecha o teclado quando se clica fora dele ou em elementos que não o utilizam
+document.addEventListener("click", (event) => {
+    if(document.querySelector('.use-numerico-input')) {
+        if (!event.target.closest(".numeric") && !event.target.closest(".use-numerico-input")) {
+            NumericKeyboard.close();
+        }
+    }
+});

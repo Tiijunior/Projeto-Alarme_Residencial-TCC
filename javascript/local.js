@@ -93,11 +93,13 @@ function carregar_valores() {
                 document.getElementById('switch_sensor1').style.background = "url(../icons/mdi_toggle-switch-on.svg)";
                 document.getElementById('switch_sensor1').style.backgroundRepeat = "no-repeat";
                 document.getElementById('switch_sensor1').style.backgroundSize = "cover";
+                document.getElementById('switch_sensor1').id = lista_de_sensores[0][0];
             } else {
                 document.getElementById('switch_sensor1').style.scale = '1';
                 document.getElementById('switch_sensor1').style.background = "url(../icons/mdi_toggle-switch-desativado-off.svg)";
                 document.getElementById('switch_sensor1').style.backgroundRepeat = "no-repeat";
                 document.getElementById('switch_sensor1').style.backgroundSize = "cover";
+                document.getElementById('switch_sensor1').id = lista_de_sensores[0][0];
             }
         }
     }
@@ -106,6 +108,7 @@ carregar_valores();
 
 var ativa_comodo;
 function ativar(elemento){
+    
     var status_comodo = document.getElementById(elemento);
     if(!status_comodo.style.background.includes('switch-on')) {
         status_comodo.style.scale = '1';
@@ -114,11 +117,40 @@ function ativar(elemento){
         status_comodo.style.backgroundSize = "cover";
         ativa_comodo = 1    
     } else {
-        status_comodo.style.scale = '0.90'
+        status_comodo.style.scale = '0.9'
         status_comodo.style.background = "url(../icons/mdi_toggle-switch-desativado-off.svg)";
         status_comodo.style.backgroundRepeat = "no-repeat";
         status_comodo.style.backgroundSize = "cover";       
         ativa_comodo = 0     
+    }
+
+    if(elemento === 'ativar_comodo') {
+        if((document.getElementById('ativar_comodo').style.background).includes('switch-on')) {
+            for(let i = lista_de_sensores[0][0]; i <= lista_de_sensores.length + 1; i++) {
+                
+                document.getElementById((i)).style.scale = '1';
+                document.getElementById((i)).style.background = "url(../icons/mdi_toggle-switch-on.svg)";
+                document.getElementById((i)).style.backgroundRepeat = "no-repeat";
+                document.getElementById((i)).style.backgroundSize = "cover";
+            }
+        } else {
+            for(let i = lista_de_sensores[0][0]; i <= lista_de_sensores.length + 1; i++) {
+                document.getElementById((i)).style.scale = '0.9';
+                document.getElementById((i)).style.background = "url(../icons/mdi_toggle-switch-desativado-off.svg)";
+                document.getElementById((i)).style.backgroundRepeat = "no-repeat";
+                document.getElementById((i)).style.backgroundSize = "cover";
+            }
+        } 
+    } else {
+
+        var status_comodo = document.getElementById('ativar_comodo');
+        if(!status_comodo.style.background.includes('switch-on')) {
+            status_comodo.style.scale = '1';
+            status_comodo.style.background = "url(../icons/mdi_toggle-switch-on.svg)";
+            status_comodo.style.backgroundRepeat = "no-repeat";
+            status_comodo.style.backgroundSize = "cover";
+            ativa_comodo = 1    
+        }
     }
 };
 
@@ -130,25 +162,8 @@ document.querySelectorAll('.switch').forEach(function(element) {
     });
 });
 
-
 document.getElementById('ativar_comodo').addEventListener('click', () => {
     window.parent.postMessage({ambiente: 'ativar', id_do_comodo: dados_do_comodo[0], status_comodo: ativa_comodo}, '*');
-
-    if((document.getElementById('ativar_comodo').style.background).includes('switch-on')) {
-        for(var i = 0; i < lista_de_sensores.length; i++) {
-            document.getElementById('switch_sensor' + (i + 1)).style.scale = '1';
-            document.getElementById('switch_sensor' + (i + 1)).style.background = "url(../icons/mdi_toggle-switch-on.svg)";
-            document.getElementById('switch_sensor' + (i + 1)).style.backgroundRepeat = "no-repeat";
-            document.getElementById('switch_sensor' + (i + 1)).style.backgroundSize = "cover";
-        }
-    } else {
-        for(var i = 0; i < lista_de_sensores.length; i++) {
-            document.getElementById('switch_sensor' + (i + 1)).style.scale = '1';
-            document.getElementById('switch_sensor' + (i + 1)).style.background = "url(../icons/mdi_toggle-switch-desativado-off.svg)";
-            document.getElementById('switch_sensor' + (i + 1)).style.backgroundRepeat = "no-repeat";
-            document.getElementById('switch_sensor' + (i + 1)).style.backgroundSize = "cover";
-        }
-    }
 });
 
 
@@ -267,6 +282,8 @@ function adicionar_sensor() {
         }
 }
 
+
+
 function editar_ambiente() {
     if(!document.getElementById('editar_local').style.background.includes('mdi_check-circle.svg')) {
         var input_local = document.getElementById('nome_local');
@@ -300,6 +317,8 @@ function editar_ambiente() {
 
 }
 
+
+
 function editar_sensores(identificador) {
     if(!document.getElementById('editar_sensor' + identificador).style.background.includes('mdi_check-circle.svg')) {
         var input_local = document.getElementById('nome_sensor' + identificador);
@@ -331,6 +350,8 @@ function editar_sensores(identificador) {
         modal('Suas alterações foram salvas com sucesso!', '../modal/html/modal_sucesso.html', 5000);
     }
 }
+
+
 
 function selecionar_comodo(comodo, icone) {
     var botao_tipocomodo = document.getElementById('tipo_comodo');

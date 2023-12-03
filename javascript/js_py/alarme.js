@@ -1,6 +1,5 @@
 var { PythonShell } = require('python-shell');
 var path = require('path');
-const { type } = require('os');
 
 function senha_alarme(senha) {
     var funcao = 'verificar_senha';
