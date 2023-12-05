@@ -2,7 +2,7 @@ var alarme_sonoro = new Audio('../_engine/Audio/Alarme.mp3');
 
 function alarme(local) {
     alarme_sonoro.play();
-    
+
     window.addEventListener('message', (event) => {
         senha_alarme(event.data.senha);
     })

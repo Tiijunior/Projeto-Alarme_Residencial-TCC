@@ -1,8 +1,9 @@
 # import banco_de_dados
-from _engine import codificador_senha
+# from _engine import codificador_senha
 # import teste_som as som
 
 from _engine import banco_de_dados
+# import execjs
 
 """
     print("\nSeja Bem Vindo ao Sistema de Segurança Algiz Security System")
@@ -183,5 +184,51 @@ for numero in range(numero_sensores):
 for numero in range(len(sensores)):
     print(sensores[numero])
 """
+"""
+from _engine.sensores import *
 
-print(banco_de_dados.bd_verificar_mostrar_banco('tbl_comodo', 'id_comodo', 4, 0)[5])
+portas = []
+contagem = {}
+valores_anteriores = {}
+ativar_alarme = False
+
+zona = int(input('Zona: '))
+
+while True:
+    porta = input('Porta: ')
+
+    if porta != '0':
+        portas.append(f'Porta {porta}')
+    else:
+        break
+
+while True:
+    sensor = sensores.verificar_sensores(zona)
+
+    for i in range(len(portas)):
+        if portas[i] not in sensor:
+            if portas[i] in valores_anteriores:
+                contagem[portas[i]] += 1
+                if contagem[portas[i]] >= 4 and str(zona) in sensor:
+                    print(f"ALARME FOI ACIONADO NA Zona {zona} e {portas[i]}")
+                    if contagem[portas[i]] < 4:
+                        contagem[portas[i]] = 1
+
+
+            else:
+                contagem[portas[i]] = 1
+            valores_anteriores[portas[i]] = portas[i]
+        else:
+            contagem[portas[i]] = 1
+"""
+alarme_zona = banco_de_dados.bd_verificar_mostrar_banco('tbl_comodo', 'zona_comodo', '3', 0)
+alarme_porta = banco_de_dados.bd_buscar_dados('tbl_sensor')
+porta = "Porta 1"
+porta = porta.strip("Porta ")
+
+for registro_porta in range(len(alarme_porta[1])):
+    if int(porta) == alarme_porta[1][registro_porta][3] and alarme_zona[0] == alarme_porta[1][registro_porta][1]:
+        print(alarme_porta[1][registro_porta][2])
+
+print(alarme_zona)
+
