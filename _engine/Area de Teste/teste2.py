@@ -221,14 +221,13 @@ while True:
         else:
             contagem[portas[i]] = 1
 """
-alarme_zona = banco_de_dados.bd_verificar_mostrar_banco('tbl_comodo', 'zona_comodo', '3', 0)
-alarme_porta = banco_de_dados.bd_buscar_dados('tbl_sensor')
-porta = "Porta 1"
-porta = porta.strip("Porta ")
+id_usuario = 1
+equipamento_do_user = None
 
-for registro_porta in range(len(alarme_porta[1])):
-    if int(porta) == alarme_porta[1][registro_porta][3] and alarme_zona[0] == alarme_porta[1][registro_porta][1]:
-        print(alarme_porta[1][registro_porta][2])
+usuario = banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario', 'id_user', id_usuario, 0)
+telefone = banco_de_dados.bd_verificar_mostrar_banco('tbl_telefone', 'id_user', id_usuario, 0)
+if banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario_equipamento', 'id_usuario', id_usuario, 1):
+    user_equipamento = banco_de_dados.bd_verificar_mostrar_banco('tbl_usuario_equipamento', 'id_usuario', id_usuario, 0)
+    equipamento_do_user = banco_de_dados.bd_verificar_mostrar_banco('tbl_equipamento', 'id_equipamento', user_equipamento[1], 0)
 
-print(alarme_zona)
-
+print(usuario, telefone, equipamento_do_user)

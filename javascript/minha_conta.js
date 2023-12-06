@@ -1,6 +1,43 @@
 var imagemcarregada;
 var modal_sucesso = document.getElementById('modal_sucesso').classList.value; 
 var modal_erro = document.getElementById('modal_error').classList.value;
+var minha_conta_dados = sessionStorage.dados_usuario.split(',');
+
+// Carrega dados
+function carregar_dados() {
+    if(!minha_conta_dados[5].includes('None')) {
+        document.getElementById('nome_user').value = minha_conta_dados[0];
+        img_perfil = document.getElementById('foto_perfil');
+        document.getElementById('email').value = minha_conta_dados[2];
+        document.getElementById('telefone').value = minha_conta_dados[3];
+        document.getElementById('tipo_telefone').value = minha_conta_dados[4].replace(/ /g, '');
+        document.getElementById('equipamento').value = minha_conta_dados[6];
+        document.getElementById('endereco').value = minha_conta_dados[7];
+        document.getElementById('numero').value = minha_conta_dados[8];
+        document.getElementById('cep').value = minha_conta_dados[9];
+        document.getElementById('cidade').value = minha_conta_dados[10];
+        document.getElementById('estados').value = minha_conta_dados[11].replace(/ /g, '');
+    } else {
+        document.getElementById('nome_user').value = minha_conta_dados[0];
+        img_perfil = document.getElementById('foto_perfil');
+        document.getElementById('email').value = minha_conta_dados[2];
+        document.getElementById('telefone').value = minha_conta_dados[3];
+        document.getElementById('tipo_telefone').value = minha_conta_dados[4].replace(/ /g, '');
+    }
+
+    if(!minha_conta_dados[1].includes('vazio')){
+        img_perfil.style.background = 'url(../foto/'+ (minha_conta_dados[1]).replace(/ /g, '') +')';
+        img_perfil.style.backgroundRepeat = 'no-repeat';
+        img_perfil.style.backgroundSize = 'cover';
+        img_perfil.style.borderRadius = '50%';
+    } else {
+        img_perfil.style.background = 'url(../icons/mdi_account-circle.svg)';
+        img_perfil.style.backgroundRepeat = 'no-repeat';
+        img_perfil.style.backgroundSize = 'cover';
+        img_perfil.style.borderRadius = '50%';
+    }
+}
+carregar_dados();
 
 // Carregar Imagem
 document.getElementById('btn_imagem').addEventListener('click', function() {

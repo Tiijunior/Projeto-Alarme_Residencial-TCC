@@ -7,6 +7,7 @@ var usuario = [];
 let lista_de_sensores = [];
 var qtd_user;
 let path_python = localStorage.path_python;
+let minha_conta_dados = []
 
 function mostrar_usuarios() {
     // busca quantos usuarios tem cadastrado.
@@ -162,6 +163,69 @@ function listar_de_sensores(id_comodo) {
     });
     
     resultado_listasensores.end(function (err) {
+        if (err) {
+            console.log(err)
+            modal('Erro ao encerrar PythonShell: ', '../../../modal/html/modal_error.html', 5000);
+        }
+    });
+}
+
+function listar_wifi() {
+    let funcao_python = "ssid_wifi";
+    
+    var opcoes_python = {
+        pythonPath: path_python,
+        scriptPath: path.join(__dirname, '../_engine/'),
+        args: [funcao_python]
+    }
+
+    var resultado = new PythonShell('wifi_rasp.py', opcoes_python);
+
+    resultado.on('message', function(message) {
+        message = (message.replace(/ \[/g, "").replace(/]/g, "").replace(/'/g, "")).split(',');
+        
+    });
+    
+    // Manipulação de erros
+    resultado.on('error', function (error) {
+        console.error('Erro ao executar Python: ' + error);
+        modal('Erro ao processar a solicitação. Verifique o console para mais informações.', '../../../modal/html/modal_error.html', 5000, '75px');
+    });
+    
+    resultado.end(function (err) {
+        if (err) {
+            console.log(err)
+            modal('Erro ao encerrar PythonShell: ', '../../../modal/html/modal_error.html', 5000);
+        }
+    });
+}
+
+
+function minha_conta(id_user) {
+    let funcao_python = "minha_conta";
+    console.log(id_user)
+    
+    var opcoes_python = {
+        pythonPath: path_python,
+        scriptPath: path.join(__dirname, '../_engine/'),
+        args: [funcao_python, id_user]
+    }
+
+    var resultado = new PythonShell('home.py', opcoes_python);
+
+    resultado.on('message', function(message) {
+        message = message.split(',');
+        minha_conta_dados = message;
+        
+    });
+    
+    // Manipulação de erros
+    resultado.on('error', function (error) {
+        console.error('Erro ao executar Python: ' + error);
+        modal('Erro ao processar a solicitação. Verifique o console para mais informações.', '../../../modal/html/modal_error.html', 5000, '75px');
+    });
+    
+    resultado.end(function (err) {
         if (err) {
             console.log(err)
             modal('Erro ao encerrar PythonShell: ', '../../../modal/html/modal_error.html', 5000);

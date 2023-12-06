@@ -55,12 +55,41 @@ def ativar_sensor():
         banco.bd_atualizar_dados('tbl_comodo', 'status_comodo', ativar, 'id_comodo', comodo_id)
 
 
+def minha_conta():
+    id_usuario = sys.argv[2]
+    equipamento_do_user = None
+    usuario = banco.bd_verificar_mostrar_banco('tbl_usuario', 'id_user', id_usuario, 0)
+    telefone = banco.bd_verificar_mostrar_banco('tbl_telefone', 'id_user', id_usuario, 0)
+    if banco.bd_verificar_mostrar_banco('tbl_usuario_equipamento', 'id_usuario', id_usuario, 1):
+        user_equipamento = banco.bd_verificar_mostrar_banco('tbl_usuario_equipamento', 'id_usuario', id_usuario, 0)
+        equipamento_do_user = banco.bd_verificar_mostrar_banco('tbl_equipamento', 'id_equipamento', user_equipamento[1], 0)
+
+    nome_completo = usuario[1] + " " + usuario[2] + ","
+    foto_perfil = usuario[6]
+    email = usuario[3]
+    num_telefone = telefone[2]
+    tipo_telefone = telefone[3]
+    if equipamento_do_user is not None:
+        id_equipamento = equipamento_do_user[0]
+        nome_equipamento = equipamento_do_user[1]
+        endereco = equipamento_do_user[2]
+        num_equipamento = equipamento_do_user[3]
+        cep = equipamento_do_user[4]
+        cidade = equipamento_do_user[5]
+        estado = equipamento_do_user[6]
+        print(nome_completo, foto_perfil, ",", email, ",", num_telefone, ",", tipo_telefone, ",", id_equipamento, ",", nome_equipamento, ",", endereco, ",", num_equipamento, ",", cep, ",", cidade, ",", estado)
+
+    else:
+        print(nome_completo, foto_perfil, ",", email, ",", num_telefone, ",", tipo_telefone, ",", equipamento_do_user)
+
+
 funcoes = {
     "qtd_comodo": qtd_comodo,
     "lista_comodo": lista_comodo,
     "lista_sensor": lista_sensor,
     "ativar_comodo": ativar_comodo,
-    "ativar_sensor": ativar_sensor
+    "ativar_sensor": ativar_sensor,
+    "minha_conta": minha_conta
 }
 
 

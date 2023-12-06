@@ -32,21 +32,33 @@ function senha_alarme(senha) {
     });
 }
 
-function verificar_alarme() {
-    var funcao = 'teste';
-
+function verificando_alarme() {
+    
     var opcoes_python = {
         pythonPath: path_python,
         scriptPath: path.join(__dirname, '../_engine/'),
-        args: [funcao]
     }
 
-    var resultado = new PythonShell('alarme.py', opcoes_python);
+    var resultado = new PythonShell('sensores.py', opcoes_python);
 
     resultado.on('message', function(message) {
-        if(message.includes('foi acionado')) {
-            console.log(message)
+        if(message.includes('foi acionado') && alarme_acionado === false) {
+           if(message.includes('sala')) {
+            setTimeout(() => {
+                alarme(message.replace(/.sala./g, ""));
+                alarme_acionado = true;
+            }, 30 * 1000);
+           } else {
+            alarme(message);
+            alarme_acionado = true;
+           }
         }
+
+        setTimeout(() => {
+            alarme_acionado = false;
+            verificando_alarme();
+        }, 60 * 1000)
+        
     });
 
     // Manipulação de erros

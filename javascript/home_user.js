@@ -146,6 +146,7 @@ function chamar_conta() {
                 iframe.src = './minha_conta.html';
                 iframe.style.transition = '2s';
                 iframe.style.left = '0';
+                sessionStorage.setItem("dados_usuario", minha_conta_dados);
 
                 setTimeout( function() {
                     if(window.location.pathname.includes('home.html')) {chamar_perfis();}

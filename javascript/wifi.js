@@ -57,3 +57,19 @@ function ativar_wifi() {
     }
 }
 ativar_wifi();
+
+function criarElementos(quantidade) {
+    var fundo_listawifi = document.getElementById("fundo_listawifi");
+
+    for (var i = 1; i < quantidade; i++) {
+        var div = document.createElement("div");
+        div.className = "itens_wifi";
+        
+        var p = document.createElement("p");
+        p.className = "texto_wifi";
+        p.id = "nome_wifi" + i;
+        
+        div.appendChild(p);
+        fundo_listawifi.appendChild(div);
+    }
+}

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/wifi.css">
     <link rel="stylesheet" href="../css/numeric_keyboard.css">   
 </head>
-<body>
+<body onload="criarElementos(5)">
     <main>
         <!--Meio-->
         <div id="meio">
@@ -17,24 +17,18 @@
                 <p style="position: relative; font-size: 32px; margin-top: 0; left: 50px; text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);">Rede atual</p>
                 <div id="fundo_wifi">
                     <div id="icon_wifi"></div>
-                    <p id="nome_wifi" style="position: absolute; width: 228px; height: 37px; margin-top: 20px; margin-left: 90px; color: #c5c4c4; font-size: 30px; font-weight: 600;">
-                        LOREM IPSUM</p>
+                    <p id="nome_wifi" style="position: absolute; width: 228px; height: 37px; margin-top: 20px; margin-left: 90px; color: #c5c4c4; font-size: 30px; font-weight: 600;"></p>
                     <p id="status_wifi" style="position: absolute; margin-top: 20px; left: 950px; color: #707070; font-size: 24px;">
                         Desconecatado</p>
                     <p id="texto_velocidade" style="position: absolute; margin-top: 71px; left: 84px;  color: #FFF; font-size: 24px;">Velocidade</p>
                     <p id="texto_seguranca" style="position: absolute; margin-top: 71px; left: 352px; color: #FFF; font-size: 24px;">Segurança</p>
-                    <p id="velocidade" style="position: absolute; width: 128px; height: 29px; margin-top: 115px; left: 85px; color: #c5c4c4; font-size: 24px; font-weight: 500;">390 Mbps</p>
-                    <p id="seguranca" style="position: absolute; width: 263px; height: 29px; margin-top: 115px; left: 352px; color: #c5c4c4; font-size: 24px; font-weight: 500;">WPA/WPA2-Personal</p>
+                    <p id="velocidade" style="position: absolute; width: 128px; height: 29px; margin-top: 115px; left: 85px; color: #c5c4c4; font-size: 24px; font-weight: 500;"></p>
+                    <p id="seguranca" style="position: absolute; width: 263px; height: 29px; margin-top: 115px; left: 352px; color: #c5c4c4; font-size: 24px; font-weight: 500;"></p>
                     <p id="texto_reconexao" style="position: absolute; margin-top: 115px; left: 750px; color: #FFF; font-size: 24px; font-weight: 500;">Reconexão Automática</p>
                     <div id="reconexao"></div>
                 </div>
                 <p style="position: relative; margin-top: 10px; left: 50px; font-size: 32px; text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);">Redes dispovíveis</p>
-                <div id="fundo_listawifi">
-                    <div class="itens_wifi"><p class="texto_wifi">Ipsum Lorem</p></div>
-                    <div class="itens_wifi"><p class="texto_wifi">Ipsum</p></div>
-                    <div class="itens_wifi"><p class="texto_wifi">Lorem</p></div>
-
-                </div>
+                <div id="fundo_listawifi"></div>
             </div>
         </div>
     </main>
